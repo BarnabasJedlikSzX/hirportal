@@ -1,5 +1,9 @@
 export interface News {
-    id:number
-    userId:number
-    
+    id:string
+    userId:string
+    createdAt:string
+    imgURL:string
+    title:string
+    subtitle:string
+    content:string
 }
