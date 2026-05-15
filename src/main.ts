@@ -1,5 +1,8 @@
 import './styles/style.css'
-import loggedInUser  from "../src/signup_login";
 
 // Itt meg dobja a hibát
-console.log(loggedInUser)
+let sessionData = sessionStorage.getItem("aktualisUser")
+if (sessionData){
+    let user = JSON.parse(sessionData)
+    console.log(user)
+}
