@@ -1,5 +1,5 @@
 export interface News {
-    id:string
+    id?:string
     userId:string
     createdAt:string
     imgURL:string

@@ -19,6 +19,6 @@ app.post('/upload-image', upload.single('image'), (req, res) => {
     res.send('Image saved');
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("running")
 });
