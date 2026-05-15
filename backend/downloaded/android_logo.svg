@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="400"
+   height="500"
+   viewBox="0 0 400 500"
+   version="1.1"
+   id="android_logo"
+   sodipodi:docname="android_logo.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:sodipodi0="http://sodipodi.sourceforge.net/DTD/sodipodi-0.0.dtd">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1525841"
+     inkscape:cx="27.329894"
+     inkscape:cy="322.31923"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="android_logo" />
+  <sodipodi0:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:document-units="px" />
+  <title
+     id="title1">Android Logo</title>
+  <defs
+     id="defs1">
+    <!-- Bal antenna vágómaszk -->
+    <clipPath
+       id="clip_antenna_left">
+      <rect
+         x="0"
+         y="0"
+         width="400"
+         height="500"
+         id="rect1" />
+    </clipPath>
+  </defs>
+  <!-- Android Robot - szerkeszthető elemek -->
+  <!-- Zöld szín: #A4C639 (eredeti Android zöld) -->
+  <!-- === FEJ === -->
+  <!-- Fej félkör alapja -->
+  <path
+     id="head_base"
+     inkscape:label="Fej - félkör"
+     d="m 117.73006,221.84049 a 82.26994,73.680983 0 0 1 164.53988,0 z"
+     fill="#a4c639"
+     style="stroke-width:1.11224" />
+  <!-- Bal szem -->
+  <circle
+     id="eye_left"
+     inkscape:label="Bal szem"
+     cx="160.44502"
+     cy="182.2251"
+     r="5.01121"
+     fill="#ffffff"
+     style="stroke-width:0.501121" />
+  <!-- Jobb szem -->
+  <circle
+     id="eye_right"
+     inkscape:label="Jobb szem"
+     cx="237.60284"
+     cy="182.65891"
+     r="5.01121"
+     fill="#ffffff"
+     style="stroke-width:0.501121" />
+  <!-- Bal antenna -->
+  <line
+     id="antenna_left"
+     inkscape:label="Bal antenna"
+     x1="160.39716"
+     y1="155.6395"
+     x2="140.39716"
+     y2="133.6395"
+     stroke="#a4c639"
+     stroke-width="8"
+     stroke-linecap="round" />
+  <!-- Jobb antenna -->
+  <line
+     id="antenna_right"
+     inkscape:label="Jobb antenna"
+     x1="235.69858"
+     y1="157.80855"
+     x2="255.69858"
+     y2="135.80855"
+     stroke="#a4c639"
+     stroke-width="8"
+     stroke-linecap="round" />
+  <!-- === TEST === -->
+  <!-- Test fő téglatest lekerekített sarkakkal -->
+  <rect
+     id="body_main"
+     inkscape:label="Test - fő rész"
+     x="118"
+     y="228"
+     width="164"
+     height="145"
+     rx="14"
+     ry="14"
+     fill="#A4C639" />
+  <!-- Test felső rész (fej és test közötti összekötő, nincs lekerekítés alul) -->
+  <rect
+     id="body_top_connector"
+     inkscape:label="Test - felső összekötő"
+     x="118"
+     y="228"
+     width="164"
+     height="20"
+     fill="#A4C639" />
+  <!-- Vízszintes elválasztó vonal (fehér csík) -->
+  <!-- === KAROK === -->
+  <!-- Bal kar -->
+  <rect
+     id="arm_left"
+     inkscape:label="Bal kar"
+     x="78"
+     y="228"
+     width="36"
+     height="110"
+     rx="18"
+     ry="18"
+     fill="#A4C639" />
+  <!-- Jobb kar -->
+  <rect
+     id="arm_right"
+     inkscape:label="Jobb kar"
+     x="286"
+     y="228"
+     width="36"
+     height="110"
+     rx="18"
+     ry="18"
+     fill="#A4C639" />
+  <!-- === LÁBAK === -->
+  <!-- Bal láb -->
+  <rect
+     id="leg_left"
+     inkscape:label="Bal láb"
+     x="143"
+     y="358"
+     width="42"
+     height="80"
+     rx="18"
+     ry="18"
+     fill="#A4C639" />
+  <!-- Jobb láb -->
+  <rect
+     id="leg_right"
+     inkscape:label="Jobb láb"
+     x="215"
+     y="358"
+     width="42"
+     height="80"
+     rx="18"
+     ry="18"
+     fill="#A4C639" />
+  <!-- Lábak és test összekötője (hogy ne legyen rés) -->
+  <rect
+     id="leg_connector"
+     inkscape:label="Lábak - összekötő"
+     x="143"
+     y="355"
+     width="114"
+     height="20"
+     fill="#A4C639" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Android Logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

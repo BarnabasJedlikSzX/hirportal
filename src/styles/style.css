@@ -1,0 +1,14 @@
+body {
+    margin: 10px;
+}
+
+#addImg {
+    background-color: #eee;
+    padding: 20px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#addImg:hover {
+    filter: brightness(0.7);
+}
