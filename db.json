@@ -33,8 +33,8 @@
     ],
     "news": [
         {
-            "id": 1,
-            "userId": 1,
+            "id": "1",
+            "userId": "1",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Orbán börtönben",
@@ -42,8 +42,8 @@
             "content": "bezárták a gecit. yippie"
         },
         {
-            "id": 2,
-            "userId": 2,
+            "id": "2",
+            "userId": "2",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Új metróvonal épül Budapesten",
@@ -51,8 +51,8 @@
             "content": "A tervek szerint 2027-ben kezdik meg az új metróvonal építését."
         },
         {
-            "id": 3,
-            "userId": 3,
+            "id": "3",
+            "userId": "3",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Megnyílt az ország legnagyobb gaming rendezvénye",
@@ -60,8 +60,8 @@
             "content": "A rendezvényen e-sport versenyek és cosplay bemutatók is helyet kaptak."
         },
         {
-            "id": 4,
-            "userId": 4,
+            "id": "4",
+            "userId": "4",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Brutális vihar csapott le Győrre",
@@ -69,8 +69,8 @@
             "content": "A tűzoltóknak több mint 50 helyszínen kellett beavatkozniuk."
         },
         {
-            "id": 5,
-            "userId": 5,
+            "id": "5",
+            "userId": "5",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Új magyar videojáték készül",
@@ -78,8 +78,8 @@
             "content": "A fejlesztők szerint a játék nyitott világú akció-RPG lesz."
         },
         {
-            "id": 6,
-            "userId": 1,
+            "id": "6",
+            "userId": "1",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Leállt a Facebook",
@@ -87,8 +87,8 @@
             "content": "Felhasználók milliói jelentettek bejelentkezési hibákat."
         },
         {
-            "id": 7,
-            "userId": 2,
+            "id": "7",
+            "userId": "2",
             "createdAt": "2026-05-15",
             "imgURL":"image.png",
             "title": "Rekordmeleg várható hétvégén",
