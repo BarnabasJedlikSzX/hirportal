@@ -4,10 +4,10 @@ Ez egy "független" hírportál, amely a legfrissebb híreket és információka
 ## Főbb jellemzők
 - Használt technológiák: Node.js, Bootstrap, JSON-Server, Vite, Multer, Express, CORS
 
-## Futtatás:
-- kép mentéshez szükséges backend: /backend -> "node index.js"
-- frontend: / -> "npm run dev"
-- adatbázis: / -> "npx json-server db.json"
+## Futtatás
+- kép mentéshez szükséges backend: /backend -> `node index.jas`
+- frontend: / -> `npm run dev`
+- adatbázis: / -> `npx json-server db.json`
 
 ## Készítők
 - Páli Dávid
