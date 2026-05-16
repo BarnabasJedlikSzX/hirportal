@@ -21,13 +21,13 @@ function render() {
     news.forEach(n => {
         const card =
             `
-            <div class="card" style="width: 18rem;">
+            <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;">
                 <img src="${n.imgURL}" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">${n.title}</h5>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
-                        <a href="edit.html" class="btn btn-primary">Szerkeszt</a>
+                        <a href="edit.html" class="btn btn-primary me-5">Szerkeszt</a>
                         <a href="TODO" class="btn btn-primary">Elolvas</a>
                     </div>
                 </div>
