@@ -18,29 +18,34 @@
 <body>
   <div id="app">
     <div id="navbar"></div>
+    <h1 class="mb-4" id="header">Hír szerkesztése</h1>
+    <hr>
     <div id="main">
-      <h1 class="mb-4">Hír szerkesztése</h1>
       <div class="row mb-3 align-items-center">
         <div class="col" id="newsImg">
           <label for="imgInput" id="addImg">Kép hozzáadása</label>
           <input type="file" name="imgInput" id="imgInput" style="display: none;">
         </div>
         <div class="col">
-          <input type="text" class="inputField" name="title" id="title" placeholder="Cím">
+          <textarea type="text" class="inputField" name="title" id="title" placeholder="Cím"></textarea>
           <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím">
         </div>
       </div>
       <textarea id="contentEditor"></textarea>
-      <button id="sendNews" class="btn btn-primary">Közzététel</button>
+      <button id="sendNews" class="btn btn-primary my-5 mx-auto d-block w-50">Közzététel</button>
     </div>
   </div>
   <div id="editorHelper" style="display: none;"></div>
   <script>
-    const mde = new EasyMDE({ element: document.querySelector("#contentEditor"), uploadImage: true });
+    const mde = new EasyMDE({
+      element: document.querySelector("#contentEditor"),
+      uploadImage: true,
+      minHeight: "800px"
+    });
 
     setInterval(() => {
       document.querySelector("#editorHelper").innerHTML = mde.value()
-    }, 1000);
+    }, 500);
 
   </script>
   <script type="module" src="/src/edit.ts"></script>

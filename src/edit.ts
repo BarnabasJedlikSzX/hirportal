@@ -35,7 +35,7 @@ document.querySelector("#sendNews")!.addEventListener("click", () => {
     const content = document.querySelector<HTMLTextAreaElement>("#editorHelper")!.innerHTML
     AddNews({
         id: "",
-        userId: "1",
+        userId: JSON.parse(sessionStorage.getItem("aktualisUser")!).id,
         createdAt: new Date().toLocaleString(),
         imgURL: filename,
         title: title,
