@@ -12,7 +12,7 @@ body {
 }
 
 
-#addImg {
+#addImgButton {
     background-color: #eee;
     font-size: 20px;
     cursor: pointer;
@@ -23,7 +23,7 @@ body {
     align-content: center;
 }
 
-#addImg:hover {
+#addImgButton:hover {
     filter: brightness(0.7);
 }
 
@@ -58,10 +58,23 @@ body {
 .newsImg {
     border-radius: 5px;
     width: 100%;
-    margin: 20px 0;
+    user-select: none;
 }
 
 hr {
     color: black;
     border-width: 2px;
+}
+
+#deleteUpload {
+    opacity: 0;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    position: absolute;
+    border-bottom-right-radius: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
 }
