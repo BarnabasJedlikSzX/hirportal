@@ -34,7 +34,6 @@ input.addEventListener("click", () => {
 input.addEventListener("change", async () => {
     if (!input.files) return;
     const file = input.files[0];
-    if (!file) return;
 
     filename = news.length + 1 + "." + file.name.split(".")[1];
 
@@ -61,9 +60,14 @@ document.querySelector("#sendNews")!.addEventListener("click", async () => {
     const subtitle = document.querySelector<HTMLInputElement>("#subtitle")!.value;
     const content = document.querySelector<HTMLTextAreaElement>("#editorHelper")!.innerHTML;
 
+    const loggedIn = sessionStorage.getItem("aktualisUser")
+    let userId = "1"
+    if (loggedIn) userId = JSON.parse(loggedIn).id
+
+
     await AddNews({
         id: "",
-        userId: JSON.parse(sessionStorage.getItem("aktualisUser")!).id,
+        userId: userId,
         createdAt: new Date().toLocaleString(),
         imgURL: filename,
         title: title,
