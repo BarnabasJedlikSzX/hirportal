@@ -1,5 +1,4 @@
 import './styles/style.css'
-import loggedInUser  from "../src/signup_login";
+import { Navbar } from './components/navbar';
 
-// Itt meg dobja a hibát
-console.log(loggedInUser)
+document.querySelector("#navbar")!.innerHTML = Navbar()

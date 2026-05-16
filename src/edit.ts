@@ -1,8 +1,9 @@
 import { AddNews, GetNews } from './api/http';
+import { Navbar } from './components/navbar';
 import './styles/style.css'
 import type { News } from './types/News';
 
-
+document.querySelector("#navbar")!.innerHTML = Navbar()
 const news: News[] = await GetNews()
 let filename: string = ""
 const input = document.querySelector<HTMLInputElement>('#imgInput')!;

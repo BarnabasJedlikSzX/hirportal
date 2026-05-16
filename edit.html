@@ -17,15 +17,7 @@
 
 <body>
   <div id="app">
-    <nav class="navbar bg-warning">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Fideszes Hírportál</a>
-        <div>
-          <a class="btn btn-primary" href="signup_login.html">Bejelentkezés</a>
-          <a class="btn btn-light" href="signup_login.html">Regisztráció</a>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar"></div>
     <div id="main">
       <h1 class="mb-4">Hír szerkesztése</h1>
       <div class="row mb-3 align-items-center">
@@ -34,8 +26,8 @@
           <input type="file" name="imgInput" id="imgInput" style="display: none;">
         </div>
         <div class="col">
-          <input type="text" name="title" id="title" placeholder="Cím">
-          <input type="text" name="subtitle" id="subtitle" placeholder="Alcím">
+          <input type="text" class="inputField" name="title" id="title" placeholder="Cím">
+          <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím">
         </div>
       </div>
       <textarea id="contentEditor"></textarea>
@@ -44,12 +36,12 @@
   </div>
   <div id="editorHelper" style="display: none;"></div>
   <script>
-    const mde = new EasyMDE({ element: document.querySelector("#contentEditor"), uploadImage:true });
-   
+    const mde = new EasyMDE({ element: document.querySelector("#contentEditor"), uploadImage: true });
+
     setInterval(() => {
       document.querySelector("#editorHelper").innerHTML = mde.value()
     }, 1000);
-    
+
   </script>
   <script type="module" src="/src/edit.ts"></script>
 </body>
