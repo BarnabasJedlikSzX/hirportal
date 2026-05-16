@@ -13,6 +13,14 @@ const deleteBtn = document.querySelector<HTMLElement>("#deleteUpload")!;
 const addImgButton = document.querySelector<HTMLElement>("#addImgButton")!;
 const news: News[] = await GetNews()
 
+document.querySelector("#title")!.addEventListener("input", () => {
+    if (document.querySelector<HTMLInputElement>("#title")!.value !== "") document.querySelector<HTMLElement>("#titleError")!.style.display = "none"
+})
+
+document.querySelector("#subtitle")!.addEventListener("input", () => {
+    if (document.querySelector<HTMLInputElement>("#subtitle")!.value !== "") document.querySelector<HTMLElement>("#subtitleError")!.style.display = "none"
+})
+
 imgContainer.addEventListener("mouseover", () => {
     if (uploaded) deleteBtn.style.opacity = "1";
 });
@@ -34,7 +42,8 @@ input.addEventListener("click", () => {
 input.addEventListener("change", async () => {
     if (!input.files) return;
     const file = input.files[0];
-
+    document.querySelector("#imgError")!.innerHTML = ""
+    document.querySelector<HTMLElement>("#imgError")!.style.display = "none"
     filename = news.length + 1 + "." + file.name.split(".")[1];
 
     const renamedFile = new File([file], filename, { type: file.type });

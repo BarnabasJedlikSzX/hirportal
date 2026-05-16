@@ -92,3 +92,8 @@ hr {
 #sendNewsBorder:hover {
     border-color: grey;
 }
+
+.inputError {
+    display: none;
+    color: red;
+}

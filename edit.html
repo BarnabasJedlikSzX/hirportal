@@ -36,16 +36,25 @@
 
         <div class="col">
           <textarea type="text" class="inputField" name="title" id="title" placeholder="Cím"></textarea>
+
           <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím">
+
         </div>
 
       </div>
+      <ul>
+        <p id="imgError" class="inputError"></p>
+        <p id="titleError" class="inputError"></p>
+        <p id="subtitleError" class="inputError"></p>
+        <p id="contentError" class="inputError"></p>
+      </ul>
+
+
 
       <textarea id="contentEditor"></textarea>
 
       <div id="sendNewsBorder" class="text-center my-5 mx-auto d-block w-50">
-        <button id="sendNews" type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
-          data-bs-target="#sendModal">Közzététel</button>
+        <button id="sendNews" type="button" class="btn btn-primary w-100">Közzététel</button>
       </div>
 
 
@@ -79,9 +88,36 @@
     });
 
     setInterval(() => {
+      if (mde.value() !== "") document.querySelector("#contentError").style.display = "none"
       document.querySelector("#editorHelper").innerHTML = mde.value()
     }, 500);
 
+    document.querySelector("#sendNews").addEventListener("click", () => {
+      let errors = false
+      if (!document.querySelector("#imgInput").value) {
+        errors = true
+        document.querySelector("#imgError").innerHTML = "Adj hozzá képet!"
+        document.querySelector("#imgError").style.display = "list-item"
+      }
+      if (!document.querySelector("#title").value) {
+        errors = true
+        document.querySelector("#titleError").innerHTML = "Adj hozzá címet!"
+        document.querySelector("#titleError").style.display = "list-item"
+      }
+      if (!document.querySelector("#subtitle").value) {
+        errors = true
+        document.querySelector("#subtitleError").innerHTML = "Adj hozzá alcímet!"
+        document.querySelector("#subtitleError").style.display = "list-item"
+      }
+      if (!mde.value()) {
+        errors = true
+        document.querySelector("#contentError").innerHTML = "Üres cikket nem tehetsz közzé!"
+        document.querySelector("#contentError").style.display = "list-item"
+      }
+
+
+      if (!errors) bootstrap.Modal.getOrCreateInstance(document.querySelector("#sendModal")).show();
+    })
   </script>
   <script type="module" src="/src/edit.ts"></script>
 </body>
