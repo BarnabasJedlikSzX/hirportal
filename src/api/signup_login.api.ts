@@ -11,14 +11,14 @@ export async function getUsers(): Promise<User[]> {
     return await response.json()
 }
 
-export async function logInUser(id: string): Promise<User>{
-    let response = await fetch(`${BASE_URL}/${id}`, {
-        method: 'PATCH',
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({logged: true})
-    });
-    return await response.json()
-}
+// export async function logInUser(id: string): Promise<User>{
+//     let response = await fetch(`${BASE_URL}/${id}`, {
+//         method: 'PATCH',
+//         headers: {"Content-type": "application/json"},
+//         body: JSON.stringify({logged: true})
+//     });
+//     return await response.json()
+// }
 
 // Ezt akartam arra használni, hogy bárhol le lehessen kérni, egyenlőre nem volt szívem törölni
 //
