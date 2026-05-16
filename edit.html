@@ -43,7 +43,31 @@
 
       <textarea id="contentEditor"></textarea>
 
-      <button id="sendNews" class="btn btn-primary my-5 mx-auto d-block w-50">Közzététel</button>
+      <div id="sendNewsBorder" class="text-center my-5 mx-auto d-block w-50">
+        <button id="sendNews" type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
+          data-bs-target="#sendModal">Közzététel</button>
+      </div>
+
+
+      <div class="modal fade" id="sendModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalLabel">Megerősítés</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Biztosan közzéteszed a cikket?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+              <button type="button" class="btn btn-primary" id="sendModalBtn" style="width: 6.6rem;">Közzététel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
   <div id="editorHelper" style="display: none;"></div>

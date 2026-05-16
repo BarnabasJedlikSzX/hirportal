@@ -55,7 +55,7 @@ input.addEventListener("change", async () => {
     }
 });
 
-document.querySelector("#sendNews")!.addEventListener("click", async () => {
+document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
     const title = document.querySelector<HTMLInputElement>("#title")!.value;
     const subtitle = document.querySelector<HTMLInputElement>("#subtitle")!.value;
     const content = document.querySelector<HTMLTextAreaElement>("#editorHelper")!.innerHTML;
@@ -73,7 +73,15 @@ document.querySelector("#sendNews")!.addEventListener("click", async () => {
         title: title,
         subtitle: subtitle,
         content: content
-    });
+    }).then(() => {
+        document.querySelector("#sendModalBtn")!.innerHTML =
+            `
+            <div class="spinner-border spinner-border-sm" role="status">
+            <span class="visually-hidden">Betöltés...</span>
+            </div>
+            `
+        setTimeout(() => location.reload(), 800)
+    })
 
-    location.reload();
+
 });
