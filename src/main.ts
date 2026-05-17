@@ -27,7 +27,7 @@ function render() {
                     <h5 class="card-title">${n.title}</h5>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
-                        <a href="edit.html" class="btn btn-primary me-5">Szerkeszt</a>
+                        <a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>
                         <a href="TODO" class="btn btn-primary">Elolvas</a>
                     </div>
                 </div>
