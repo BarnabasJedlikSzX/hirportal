@@ -87,14 +87,22 @@
       minHeight: "800px"
     });
 
-    setInterval(() => {
-      if (mde.value() !== "") document.querySelector("#contentError").style.display = "none"
-      document.querySelector("#editorHelper").innerHTML = mde.value()
-    }, 500);
+    const observer = new MutationObserver(() => {
+      observer.disconnect();
+      mde.value(document.querySelector("#editorHelper").innerHTML)
+    });
+    observer.observe(document.querySelector("#editorHelper"), { childList: true, subtree: true, characterData: true });
+
+    mde.codemirror.on("change", () => {
+      if (mde.value() !== "") {
+        document.querySelector("#contentError").style.display = "none";
+        document.querySelector("#editorHelper").innerHTML = mde.value()
+      }
+    });
 
     document.querySelector("#sendNews").addEventListener("click", () => {
       let errors = false
-      if (!document.querySelector("#imgInput").value) {
+      if (!document.querySelector("#newsImg")) {
         errors = true
         document.querySelector("#imgError").innerHTML = "Adj hozzá képet!"
         document.querySelector("#imgError").style.display = "list-item"

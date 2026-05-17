@@ -55,7 +55,7 @@ body {
     resize: none;
 }
 
-.newsImg {
+#newsImg {
     border-radius: 5px;
     width: 100%;
     user-select: none;

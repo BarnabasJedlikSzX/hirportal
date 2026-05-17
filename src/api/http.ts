@@ -7,7 +7,19 @@ export async function AddNews(news: News) {
     })
 }
 
+export async function EditNews(news: News) {
+    await fetch(`http://localhost:3000/news/${news.id}`, {
+        method: "PATCH",
+        body: JSON.stringify(news)
+    })
+}
+
 export async function GetNews(): Promise<News[]> {
     const res = await fetch("http://localhost:3000/news", { method: "GET" })
+    return await res.json()
+}
+
+export async function GetNewsById(newsId: string) {
+    const res = await fetch(`http://localhost:3000/news/${newsId}`, { method: "GET" })
     return await res.json()
 }
