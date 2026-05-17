@@ -19,7 +19,9 @@ export async function GetNews(): Promise<News[]> {
     return await res.json()
 }
 
-export async function GetNewsById(newsId: string) {
+export async function GetNewsById(newsId: string): Promise<News | string> {
     const res = await fetch(`http://localhost:3000/news/${newsId}`, { method: "GET" })
-    return await res.json()
+    const json = await res.json()
+    if (json.error) return "Not Found"
+    return json
 }
