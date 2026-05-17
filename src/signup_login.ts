@@ -4,7 +4,11 @@ import { Navbar } from './components/navbar';
 
 let users: User[] = await getUsers();
 let body = document.getElementById("body") as HTMLDivElement
-console.log(users)
+let data = localStorage.getItem("aktualisUser")
+if (data) {
+    window.location.replace("http://localhost:5173/")
+}
+
 
 function LoadPage(){
         body.innerHTML += `
