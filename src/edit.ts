@@ -10,7 +10,7 @@ let filename: string = ""
 let uploaded = false
 
 
-const loggedIn = sessionStorage.getItem("aktualisUser")
+const loggedIn = localStorage.getItem("aktualisUser")
 const input = document.querySelector<HTMLInputElement>('#imgInput')!;
 const imgContainer = document.querySelector("#imgContainer")!;
 const deleteBtn = document.querySelector<HTMLElement>("#deleteUpload")!;
@@ -142,3 +142,9 @@ document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
 
 
 });
+
+document.getElementById("logout")?.addEventListener("click", () =>{
+    localStorage.removeItem('aktualisUser');
+    window.location.replace("http://localhost:5173/")
+
+})

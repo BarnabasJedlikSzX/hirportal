@@ -2,19 +2,23 @@ import './styles/style.css'
 import { Navbar } from './components/navbar';
 import { GetNews } from './api/http';
 import type { News } from './types/News';
+import type { User } from "./types/User";
 
 document.querySelector("#navbar")!.innerHTML = Navbar()
 
+let author = false
 // Itt meg dobja a hibát
-let sessionData = sessionStorage.getItem("aktualisUser")
-if (sessionData) {
-    let user = JSON.parse(sessionData)
+let data = localStorage.getItem("aktualisUser")
+if (data) {
+    let user: User = JSON.parse(data) as User
+    author = user.author
     console.log(user)
 }
 
 const newsDiv = document.getElementById('news') as HTMLDivElement;
 
 let news: News[] = await GetNews();
+
 
 function render() {
     newsDiv.innerHTML = '';
@@ -27,7 +31,7 @@ function render() {
                     <h5 class="card-title">${n.title}</h5>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
-                        <a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>
+                        ${author ? `<a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>` : ''}
                         <a href="TODO" class="btn btn-primary">Elolvas</a>
                     </div>
                 </div>
@@ -37,3 +41,7 @@ function render() {
     });
 }
 render();
+document.getElementById("logout")?.addEventListener("click", () =>{
+    localStorage.removeItem('aktualisUser');
+    window.location.reload();
+})
