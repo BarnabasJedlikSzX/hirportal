@@ -24,7 +24,7 @@ function render() {
     newsDiv.innerHTML = '';
     news.forEach(n => {
         let canEdit = false;
-        let user: User = JSON.parse(data) as User;
+        let user: User = JSON.parse(data!) as User;
         if (user) {
             if (user.id == n.userId) {
                 canEdit = true;
@@ -39,11 +39,12 @@ function render() {
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
                         ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>` : ''}
-                        <a href="TODO" class="btn btn-primary">Elolvas</a>
+                        <a href="read.html" class="btn btn-primary" id="${n.id}">Elolvas</a>
                     </div>
                 </div>
             </div>
         `;
+        // document.getElementById(n.id!)!.addEventListener
         newsDiv.innerHTML += card;
     });
 }
@@ -52,3 +53,4 @@ document.getElementById("logout")?.addEventListener("click", () =>{
     localStorage.removeItem('aktualisUser');
     window.location.reload();
 })
+
