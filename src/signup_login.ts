@@ -1,6 +1,9 @@
+import './styles/style.css'
+import './styles/signup_login.css'
 import type { User } from "./types/User";
-import { getUsers, createUser } from "./api/user_handler";
+import { getUsers, createUser, getNewUser } from "./api/user_handler";
 import { Navbar } from './components/navbar';
+import {emailFoglalt, emailValidForma, saveAndContinue, inputNotFilled, showError, showSuccess} from './components/user_validations'
 
 let users: User[] = await getUsers();
 let body = document.getElementById("body") as HTMLDivElement
@@ -11,12 +14,11 @@ if (data) {
 
 
 function LoadPage() {
+    Navbar()
     body.classList += "container"
     body.innerHTML += `
     <form id="login">
-            <div id="errors">
-                
-            </div>
+            <div id="errors"></div>
             <div id="success"></div>
             <h1>Bejelentkezés</h1>
             <div>
@@ -73,10 +75,15 @@ function LoadPage() {
         </from>`
 
     let loginDiv = document.getElementById("login");
+    let loginInputs: HTMLInputElement[] = [...document.getElementById("login")!.querySelectorAll("input")] as HTMLInputElement[]
+
     let signupDiv = document.getElementById("signup");
+    let signupInputs: HTMLInputElement[] = [...document.getElementById("signup")!.querySelectorAll("input")] as HTMLInputElement[]
+
     let succesDiv = document.getElementById("success") as HTMLDivElement
+
+
     passwordVisible([loginDiv?.querySelector("#pwd") as HTMLInputElement, signupDiv?.querySelector("#pwd1") as HTMLInputElement, signupDiv?.querySelector("#pwd2") as HTMLInputElement])
-    Navbar()
 
     document.getElementById("loginbtn")?.addEventListener("click", async () => {
 
@@ -84,25 +91,28 @@ function LoadPage() {
         let password = (loginDiv?.querySelector("#pwd") as HTMLInputElement).value
         let foundUser = users.find(m => m.email == email && m.password == password)
         console.log(foundUser)
-        if (loginValidation(email, password, foundUser) && foundUser != undefined) {
+        if (loginValidation(loginInputs, foundUser) && foundUser != undefined) {
             succesDiv.innerHTML += "Sikeres bejelentkezés!"
             await showSuccess()
             saveAndContinue(foundUser)
+            window.location.replace("/")
+
         }
 
     })
-    document.getElementById("signupbtn")?.addEventListener("click", async () => {
 
+    document.getElementById("signupbtn")?.addEventListener("click", async () => {
         let name = (signupDiv?.querySelector(".name") as HTMLInputElement).value
         let email = (signupDiv?.querySelector(".email") as HTMLInputElement).value
         let pwd1 = (signupDiv?.querySelector("#pwd1") as HTMLInputElement).value
         let pwd2 = (signupDiv?.querySelector("#pwd2") as HTMLInputElement).value
-
-        signinValidation(email, name, pwd1, pwd2)
         
 
-        if (emailValidForma(email) && !emailFoglalt(email) 
-            && pwd1 === pwd2 && !inputNotFilled([email, name, pwd1, pwd2])) {
+        signinValidation(signupInputs)
+        
+
+        if (emailValidForma(email) && !emailFoglalt(email, users) 
+            && pwd1 === pwd2 && !inputNotFilled(signupInputs)) {
             let newUser: User = {
                 name: name,
                 email: email,
@@ -111,8 +121,12 @@ function LoadPage() {
             }
             if (await createUser(newUser)){
                 succesDiv.innerHTML += "Sikeres regisztrálás!"
+                newUser = await getNewUser(newUser)
+                console.log(newUser)
                 await showSuccess()
                 saveAndContinue(newUser)
+                window.location.replace("/")
+
             }
             
         }
@@ -123,66 +137,24 @@ function LoadPage() {
 LoadPage()
 
 
-function emailValidForma(email: string): boolean {
-    // Szabványos, megbízható e-mail formátum ellenőrző reguláris kifejezés
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email);
-}
 
-function emailFoglalt(email: string): boolean {
-    let hasonlo = users.find(m => m.email == email)
-    if (hasonlo) {
-        return true
-    }
-    else {
-        return false
-    }
-}
 
-function saveAndContinue(user: User) {
-    window.globalisUser = {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        author: user.author
-    }
+function signinValidation(inputs: HTMLInputElement[]): Object{
+    let email = (inputs.find(i => i.classList.contains("email")) as HTMLInputElement).value
+    let pwd1 = (inputs.find(i => i.id == "pwd1") as HTMLInputElement).value
+    let pwd2 = (inputs.find(i => i.id == "pwd2") as HTMLInputElement).value
 
-    localStorage.setItem("aktualisUser", JSON.stringify(window.globalisUser));
-    window.location.replace("/")
-}
-
-function inputNotFilled(inputs: string[]): boolean{
-    let emptyInput = false;
-    inputs.forEach(input =>{
-        if (!input && input.trim() == ""){
-            emptyInput = true
-        }
-    })
-    return emptyInput
-}
-
-function showError(errortexts: string[]){
-    let errorArea = document.getElementById("errors") as HTMLParagraphElement
-    errorArea.innerHTML = ""
-    errortexts.forEach(error =>{
-        let errorParag = document.createElement("p")
-        errorParag.innerText += `${error}`
-        errorArea.appendChild(errorParag)
-    })
-}
-
-function signinValidation(email: string, name: string, pwd1: string, pwd2: string){
     let errors: string[] = []
-    if (inputNotFilled([email, name, pwd1, pwd2])){
+    if (inputNotFilled(inputs)){
         errors.push("Mezők kitöltése kötelező")
     }
 
-    if (!inputNotFilled([email, name, pwd1, pwd2])){
+    if (!inputNotFilled(inputs)){
         if (emailValidForma(email) == false) {
             errors.push("Nem megfelelő e-mail formátum")
                 //hibaüzenet
         }
-        if (emailFoglalt(email) == true) {
+        if (emailFoglalt(email, users) == true) {
             errors.push("E-mail használatban")    
             //hibaüzenet
         }
@@ -191,15 +163,18 @@ function signinValidation(email: string, name: string, pwd1: string, pwd2: strin
         }
     }
     showError(errors)
+    return {}
 }
 
-function loginValidation(email: string, name: string, foundUser: User | undefined): boolean{
+function loginValidation(inputs: HTMLInputElement[], foundUser: User | undefined): boolean{
+    let email = (inputs.find(i => i.classList.contains("email")) as HTMLInputElement).value
+
     let errors: string[] = []
-    if (inputNotFilled([email, name])){
+    if (inputNotFilled(inputs)){
         errors.push("Mezők kitöltése kötelező")
     }
 
-    if (!inputNotFilled([email, name])){
+    if (!inputNotFilled(inputs)){
         if (emailValidForma(email) == false) {
             errors.push("Nem megfelelő e-mail formátum")
                 //hibaüzenet
@@ -215,10 +190,7 @@ function loginValidation(email: string, name: string, foundUser: User | undefine
     else{ return false}
 }
 
-async function showSuccess(){
-  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-  await delay(2000);  
-} 
+
 
 function passwordVisible(passwordInputs: HTMLInputElement[]) {
     passwordInputs.forEach(input =>{

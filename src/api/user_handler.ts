@@ -25,13 +25,34 @@ export async function createUser(newUser: User): Promise<boolean>{
     }
 }
 
-// Ezt akartam arra használni, hogy bárhol le lehessen kérni, egyenlőre nem volt szívem törölni
-//
-// export async function getUser() : Promise<User[]> {
-//     let response = await fetch(BASE_URL, {method: 'GET'});
-//     if(!response.ok){
-//         console.error("HTTP Error:", response.status)
-//     }
-//     let users: User[] = await response.json()
-//     return users.filter(u => u.logged == true)
-// }
+export async function getUser(loggedIn: User) : Promise<User> {
+    let response = await fetch(BASE_URL, {method: 'GET'});
+    if(!response.ok){
+        console.error("HTTP Error:", response.status)
+    }
+    let users: User[] = await response.json()
+    return users.filter(u => u.id == loggedIn.id)[0]
+}
+
+export async function getNewUser(loggedIn: User) : Promise<User> {
+    let response = await fetch(BASE_URL, {method: 'GET'});
+    if(!response.ok){
+        console.error("HTTP Error:", response.status)
+    }
+    let users: User[] = await response.json()
+    return users.filter(u=> u.email == loggedIn.email && u.password == loggedIn.password)[0]
+}
+
+export async function updateUser(updatedUser: User): Promise<boolean>{
+    let response = await fetch(`${BASE_URL}/${updatedUser.id}`, {
+        method: 'PATCH',
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify(updatedUser)
+    });
+    if (!response.ok){
+        return false
+    }
+    else {
+        return true
+    }
+}

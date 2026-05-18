@@ -11,6 +11,7 @@ let data = localStorage.getItem("aktualisUser")
 const newsDiv = document.getElementById('news') as HTMLDivElement;
 
 let news: News[] = await GetNews();
+console.log(data)
 
 
 function render() {
