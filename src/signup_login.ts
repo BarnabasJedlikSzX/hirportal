@@ -11,56 +11,79 @@ if (data) {
 
 
 function LoadPage() {
+    body.classList += "container"
     body.innerHTML += `
-            <div id="login">
-                <h1>Bejelentkezés</h1>
-
+    <form id="login">
+            <div id="errors">
+                
+            </div>
+            <div id="success"></div>
+            <h1>Bejelentkezés</h1>
+            <div>
+            
                 <label for="email">E-mail</label>
                 <input name="email" class="email" type="text">
-
-                <label for="pwd">Jelszó</label>
-                <input name="pwd" class="pwd" type="text">
-
-                <button id="loginbtn">Bejelentkezés</button>
             </div>
-            <div id="signup">
+            
+            <div>
+                <label for="pwd">Jelszó</label>
+                <input id="pwd" name="pwd" type="password">
+                <input class="pwd" type="checkbox">
+            </div>
+            <a class="btn btn-outline-primary" id="loginbtn">Bejelentkezés</a>
+        </form>
+
+        <form id="signup">
                 <h1>Regisztráció</h1>
+                <div>
+                    <label for="name">Felhasználó név</label>
+                    <input name="name" class="name" type="text">
+                </div>
 
-                <label for="name">Felhasználó név</label>
-                <input name="name" class="name" type="text">
+                <div>
+                    <label for="email-r">E-mail</label>
+                    <input name="email-r" class="email" type="text">
+                </div>
+                
+                <div>
+                    <label for="pwd-r1">Jelszó</label>
+                    <div>
+                        <input name="pwd-r1" id="pwd1" type="password">
+                        <input class="pwd1" type="checkbox">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="pwd-r2">Jelszó mégegyszer</label>
+                    <div>
+                        <input name="pwd-r2" id="pwd2" type="password">
+                        <input class="pwd2" type="checkbox">
+                    </div>
+                </div>
 
-                <label for="email-r">E-mail</label>
-                <input name="email-r" class="email" type="text">
 
-                <label for="pwd-r1">Jelszó</label>
-                <input name="pwd-r1" id="pwd1">
 
-                <label for="pwd-r2">Jelszó mégegyszer</label>
-                <input name="pwd-r2" id="pwd2">
-
-                <button id="signupbtn">Regisztráció</button>
+                <a id="signupbtn" class="btn btn-outline-primary">Regisztráció</a>
                 <br>
                 <br>
                 <p>asd@gmail.com</p>
                 <p>bela@gmail.com</p>
                 <p>qwerty</p>
             </div>
-            <div id="errors">
-                
-            </div>
-            <div id="success">
-            </div>`
+        </from>`
 
     let loginDiv = document.getElementById("login");
     let signupDiv = document.getElementById("signup");
     let succesDiv = document.getElementById("success") as HTMLDivElement
-
+    passwordVisible([loginDiv?.querySelector("#pwd") as HTMLInputElement, signupDiv?.querySelector("#pwd1") as HTMLInputElement, signupDiv?.querySelector("#pwd2") as HTMLInputElement])
     Navbar()
+
     document.getElementById("loginbtn")?.addEventListener("click", async () => {
 
         let email = (loginDiv?.querySelector(".email") as HTMLInputElement).value
-        let password = (loginDiv?.querySelector(".pwd") as HTMLInputElement).value
+        let password = (loginDiv?.querySelector("#pwd") as HTMLInputElement).value
         let foundUser = users.find(m => m.email == email && m.password == password)
+        console.log(foundUser)
         if (loginValidation(email, password, foundUser) && foundUser != undefined) {
             succesDiv.innerHTML += "Sikeres bejelentkezés!"
             await showSuccess()
@@ -196,3 +219,20 @@ async function showSuccess(){
   const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
   await delay(2000);  
 } 
+
+function passwordVisible(passwordInputs: HTMLInputElement[]) {
+    passwordInputs.forEach(input =>{
+        let checkBox = document.querySelector(`.${input.id}`)
+        if (checkBox != null){
+            checkBox.addEventListener("change", ()=>{
+                console.log("szex")
+                if (input.type === "password") {
+                    input.type = "text";    
+                } else {
+                    input.type = "password"; 
+                }
+            })
+        }
+    })
+    
+}
