@@ -1,12 +1,31 @@
+import { Nevnapok } from "../api/http"
 import type { User } from "../types/User"
 
-export function Navbar() {
+export async function Navbar() {
     const loggedIn = localStorage.getItem("aktualisUser")
+    if (location.pathname === "/" || location.pathname.includes("read")) {
+        const today = new Date();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
 
+        const nevnapok = await Nevnapok(month, day)
+        const [first, second] = nevnapok
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 2);
+        document.querySelector("#navbar")!.innerHTML = `
+        <div id="topBar">
+        <p class="m-0">
+        <span class="fw-bold">${today.toLocaleString()} </span>
+         - ${first}, ${second}
+         </p>
+        </div>
+        
+        `
+    }
     if (loggedIn) {
         const user: User = JSON.parse(loggedIn)
 
-        document.querySelector("#navbar")!.innerHTML = `
+        document.querySelector("#navbar")!.innerHTML += `
         <nav class="navbar bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Fideszes Hírportál</a>
@@ -33,7 +52,7 @@ export function Navbar() {
         `
 
     } else {
-        document.querySelector("#navbar")!.innerHTML = `
+        document.querySelector("#navbar")!.innerHTML += `
         <nav class="navbar bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Fideszes Hírportál</a>
