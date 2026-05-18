@@ -58,7 +58,7 @@ if (newsId) {
         addImgButton.style.display = "none";
         imgContainer.insertAdjacentHTML("beforeend", `<img src="./backend/downloaded/${editNews.imgURL}" id="newsImg">`);
         uploaded = true;
-
+        filename = editNews.imgURL
         document.querySelector<HTMLButtonElement>("#deleteNewsBtn")!.style.display = "block"
         document.querySelector<HTMLButtonElement>("#deleteModalBtn")!.addEventListener("click", async () => {
             await DeleteNews(newsId).then(() => {
