@@ -4,7 +4,7 @@ import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
 
-document.querySelector("#navbar")!.innerHTML = Navbar()
+Navbar()
 
 let filename: string = ""
 let uploaded = false
@@ -155,9 +155,3 @@ function AddAnimation() {
             `
     setTimeout(() => location.reload(), 800)
 }
-
-document.getElementById("logout")?.addEventListener("click", () => {
-    localStorage.removeItem('aktualisUser');
-    window.location.replace("/")
-
-})

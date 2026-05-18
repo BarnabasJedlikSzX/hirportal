@@ -6,18 +6,18 @@ export function Navbar() {
     if (loggedIn) {
         const user: User = JSON.parse(loggedIn)
 
-        return `
+        document.querySelector("#navbar")!.innerHTML = `
         <nav class="navbar bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Fideszes Hírportál</a>
-                <button id="logout">Kijelentkezés</button>
+                <button id="logout" class="btn btn-primary">Kijelentkezés</button>
                 <div>${user.name}</div>
             </div>
         </nav>
         `
-        
+
     } else {
-        return `
+        document.querySelector("#navbar")!.innerHTML = `
         <nav class="navbar bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Fideszes Hírportál</a>
@@ -28,5 +28,9 @@ export function Navbar() {
         </nav>
     `
     }
-    
+    document.getElementById("logout")?.addEventListener("click", () => {
+        localStorage.removeItem('aktualisUser');
+        window.location.replace("/")
+
+    })
 }

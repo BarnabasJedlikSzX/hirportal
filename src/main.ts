@@ -4,7 +4,7 @@ import { GetNews } from './api/http';
 import type { News } from './types/News';
 import type { User } from "./types/User";
 
-document.querySelector("#navbar")!.innerHTML = Navbar()
+Navbar()
 
 let data = localStorage.getItem("aktualisUser")
 
@@ -42,8 +42,3 @@ function render() {
     });
 }
 render();
-document.getElementById("logout")?.addEventListener("click", () =>{
-    localStorage.removeItem('aktualisUser');
-    window.location.reload();
-})
-
