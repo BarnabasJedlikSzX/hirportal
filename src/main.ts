@@ -32,7 +32,7 @@ function render() {
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
                         ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>` : ''}
-                        <a href="read.html" class="btn btn-primary" id="${n.id}">Elolvas</a>
+                        <a href="read.html?id=${n.id}" class="btn btn-primary" id="${n.id}">Elolvas</a>
                     </div>
                 </div>
             </div>
