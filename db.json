@@ -77,11 +77,12 @@
     {
       "id": "2",
       "userId": "1",
-      "createdAt": "17/05/2026, 12:11:11 (szerkesztve)",
-      "imgURL": "2.jpg",
+      "createdAt": "18/05/2026, 19:42:03 (szerkesztve)",
+      "imgURL": "",
       "title": "Magyar Péter transznéger migránsokat vinne az óvodákba",
-      "subtitle": "Jövőre indul a projekt",
-      "content": "A tervek szerint 2027-ben kezdik meg az új metróvonal építését."
+      "subtitle": "Jövőre indul a projekt!",
+      "content": "A tervek szerint 2027-ben kezdik meg az új metróvonal építését.",
+      "topic": "Magyar Péter"
     },
     {
       "id": "3",
@@ -111,15 +112,6 @@
       "content": "A fejlesztők szerint a játék nyitott világú akció-RPG lesz."
     },
     {
-      "id": "6",
-      "userId": "1",
-      "createdAt": "2026-05-15",
-      "imgURL": "image.png",
-      "title": "Leállt a Facebook",
-      "subtitle": "Világszintű problémák",
-      "content": "Felhasználók milliói jelentettek bejelentkezési hibákat."
-    },
-    {
       "id": "7",
       "userId": "2",
       "createdAt": "2026-05-15",
@@ -129,23 +121,14 @@
       "content": "Az orvosok fokozott folyadékbevitelt javasolnak."
     },
     {
-      "id": "7_DIXM2a3P4",
+      "id": "bioBcPeLDdk",
       "userId": "1",
-      "createdAt": "16/05/2026, 15:32:33",
-      "imgURL": "8.jpg",
-      "title": "ds",
-      "subtitle": "dsaas",
-      "content": "dsad"
-    },
-    {
-      "id": "joop5QPPGOQ",
-      "userId": "1",
-      "createdAt": "18/05/2026, 15:59:57 (szerkesztve)",
-      "imgURL": "3.jpg",
-      "topic": "Politika",
-      "title": "md test",
-      "subtitle": "asd",
-      "content": "**sdsaa** asdsdsd \n# dsd\n### ds"
+      "createdAt": "18/05/2026, 19:46:23 (szerkesztve)",
+      "imgURL": "6.jpg",
+      "topic": "Magyar Péter",
+      "title": "Magyar Péter meg fog ölni mindenkit",
+      "subtitle": "Eskü.",
+      "content": "**Magyar Péter** miniszterelnök és pártja bejelentette, hogy a jövő hónaptól leállítja a vízumok kiadását az Európai Unión kívüli munkavállalóknak. A lépés ugyan a szavazótábor számára örömteli, azonban a gazdasági környezet tekintetében már közel sem ennyire egyértelmű a helyzet. Ugyan Magyarországon van munkavállalói tartalék a szakértők szerint, azonban vannak olyan ágazatok, ahol elengedhetetlen a külföldi munkavállalók alkalmazása. \n\n„Nem engedjük, hogy külföldi vendégmunkások elvegyék a magyarok munkáját és lenyomják a fizetéseket” – áll a Tisza-parti kiáltványában, amivel nem kevés *aggodalmat* keltett a miniszterelnök Magyarország néhány legnagyobb külföldi befektetőjének a körében.\n\nA Randstad munkaerő-kölcsönző cég regionális vezetője figyelmeztetett, hogy a teljes tilalom megterhelheti a külföldi munkaerőtől függő vállalatokat, aminek a levét végső soron a magyar gazdaság ihatja meg. A hivatalos statisztikák szerint a külföld**i munkavállalók a magyar munkaerő mindössze 2 százalékát teszik ki. Németországgal, Lengyelországgal vagy Csehországgal ellentétben Magyarország nem tapasztalt nagymértékű ukrán menekült beáramlást a munkaerőpiac megerősítése érdekében.**\n\nBizonyos ágazatok, mint például a feldolgozóipar és a szolgáltatások, azonban nagymértékben függenek a külföldi munkavállalóktól, mondják az üzleti vezetők.\n\n„Az EU-n kívüli munkavállalók teljes betiltása hosszú távon nem lenne életképes” – mondta Baja Sándor, a Randstad csehországi, magyar és romániai ügyvezető igazgatója, megjegyezve, hogy a magyar munkaerő nagy része a következő évtizedben nyugdíjba vonul.\n# \"\n***„Az EU-n kívüli munkavállalók teljes betiltása hosszú távon nem lenne életképes”***\n# \"\n\n„Őszintén remélem, hogy Kapitány István gazdasági miniszter és csapata hagyja, hogy a gazdasági racionalitás győzedelmeskedjen” – mondta Baja a Reutersnek. Baja szerint a 25 év alattiak, az 55 év felettiek és a kisebb városok lakói egy körülbelül 400 000 fős kiaknázatlan munkaerőbázist képviselnek, de a mobilitási korlátok akadályozzák, hogy ez enyhítse a hiányt.\n\nA munkaerőhiány miatti leállások pedig végső soron a magyar emberek munkahelyeit is veszélybe sodorhatják, hiszen könnyen lehet, hogy a vállalatok nem tudják majd kimozogni a hirtelen kiesést, emiatt pedig elbocsájtásokra kényszerülhetnek. "
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

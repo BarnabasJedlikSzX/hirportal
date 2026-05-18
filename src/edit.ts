@@ -1,4 +1,4 @@
-import { AddNews, EditNews, GetNewsById } from './api/http';
+import { AddNews, DeleteNews, EditNews, GetNewsById } from './api/http';
 import { Navbar } from './components/navbar';
 import './styles/style.css'
 import type { News } from './types/News';
@@ -58,7 +58,19 @@ if (newsId) {
         addImgButton.style.display = "none";
         imgContainer.insertAdjacentHTML("beforeend", `<img src="./backend/downloaded/${editNews.imgURL}" id="newsImg">`);
         uploaded = true;
-
+        filename = editNews.imgURL
+        document.querySelector<HTMLButtonElement>("#deleteNewsBtn")!.style.display = "block"
+        document.querySelector<HTMLButtonElement>("#deleteModalBtn")!.addEventListener("click", async () => {
+            await DeleteNews(newsId).then(() => {
+                document.querySelector("#deleteModalBtn")!.innerHTML =
+                    `
+                    <div class="spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Betöltés...</span>
+                    </div>
+            `
+                setTimeout(() => location.replace("/"), 800)
+            })
+        })
 
         document.querySelector("#sendNews")!.innerHTML = "Módosítás"
         document.querySelector("#sendNews")!.className = "btn btn-warning w-100"
@@ -134,7 +146,7 @@ document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
     const news: News = {
         id: newsId!,
         userId: currentUser.id!,
-        createdAt: new Date().toLocaleString() + " (szerkesztve)",
+        createdAt: new Date().toLocaleString(),
         imgURL: filename,
         topic: topic,
         title: title,
@@ -142,7 +154,10 @@ document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
         content: content
     }
 
-    if (document.querySelector("#sendModalBtn")!.classList.contains("editNews")) await EditNews(news).then(() => AddAnimation())
+    if (document.querySelector("#sendModalBtn")!.classList.contains("editNews")) {
+        news.createdAt += " (szerkesztve)"
+        await EditNews(news).then(() => AddAnimation())
+    }
     else await AddNews(news).then(() => AddAnimation())
 });
 
