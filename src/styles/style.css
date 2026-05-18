@@ -19,7 +19,7 @@ body {
     transition: 0.5s;
     width: 100%;
     text-align: center;
-    height: 10rem;
+    height: 18rem;
     align-content: center;
 }
 
@@ -96,4 +96,20 @@ hr {
 .inputError {
     display: none;
     color: red;
+}
+
+.dropdown-menu {
+  transition: opacity 0.25s ease, transform 0.25s ease, display 0.25s;
+  display: none; /* still works with allow-discrete */
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+@starting-style {
+  .dropdown-menu.show {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
 }

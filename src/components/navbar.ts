@@ -10,8 +10,24 @@ export function Navbar() {
         <nav class="navbar bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Fideszes Hírportál</a>
-                <button id="logout" class="btn btn-primary">Kijelentkezés</button>
-                <div>${user.name}</div>
+                <div class="d-flex">
+                  <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        ${user.name}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li style="justify-self:center;" class="w-75 m-2">
+                            <a class="btn btn-outline-dark fw-bold w-100 text-center" href="edit.html" style="width:3rem;">+</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="profile.html">Profil</a>
+                        </li>
+                        <li>
+                            <button id="logout" class="btn text-primary dropdown-item" style="cursor: pointer;">Kijelentkezés</button>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
             </div>
         </nav>
         `
@@ -31,6 +47,5 @@ export function Navbar() {
     document.getElementById("logout")?.addEventListener("click", () => {
         localStorage.removeItem('aktualisUser');
         window.location.replace("/")
-
     })
 }
