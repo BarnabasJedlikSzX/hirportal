@@ -47,10 +47,13 @@ function LoadPage() {
             </div>
             <div id="errors">
                 
+            </div>
+            <div id="success">
             </div>`
 
     let loginDiv = document.getElementById("login");
     let signupDiv = document.getElementById("signup");
+    let succesDiv = document.getElementById("success") as HTMLDivElement
 
     Navbar()
     document.getElementById("loginbtn")?.addEventListener("click", async () => {
@@ -59,6 +62,8 @@ function LoadPage() {
         let password = (loginDiv?.querySelector(".pwd") as HTMLInputElement).value
         let foundUser = users.find(m => m.email == email && m.password == password)
         if (loginValidation(email, password, foundUser) && foundUser != undefined) {
+            succesDiv.innerHTML += "Sikeres bejelentkezés!"
+            await showSuccess()
             saveAndContinue(foundUser)
         }
 
@@ -81,8 +86,12 @@ function LoadPage() {
                 password: pwd1,
                 author: false
             }
-            let savedUser: User = await createUser(newUser)
-            saveAndContinue(savedUser)
+            if (await createUser(newUser)){
+                succesDiv.innerHTML += "Sikeres regisztrálás!"
+                await showSuccess()
+                saveAndContinue(newUser)
+            }
+            
         }
 
 
@@ -182,3 +191,8 @@ function loginValidation(email: string, name: string, foundUser: User | undefine
     }
     else{ return false}
 }
+
+async function showSuccess(){
+  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+  await delay(2000);  
+} 

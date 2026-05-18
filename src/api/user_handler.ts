@@ -11,13 +11,18 @@ export async function getUsers(): Promise<User[]> {
     return await response.json()
 }
 
-export async function createUser(newUser: User): Promise<User>{
+export async function createUser(newUser: User): Promise<boolean>{
     let response = await fetch(`${BASE_URL}`, {
         method: 'POST',
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(newUser)
     });
-    return await response.json()
+    if (!response.ok){
+        return false
+    }
+    else {
+        return true
+    }
 }
 
 // Ezt akartam arra használni, hogy bárhol le lehessen kérni, egyenlőre nem volt szívem törölni
