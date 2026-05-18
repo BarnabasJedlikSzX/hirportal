@@ -26,7 +26,7 @@ function render() {
         const card =
             `
             <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;">
-                <img src="${n.imgURL}" class="card-img-top" alt="">
+                <img src="./backend/downloaded/${n.imgURL}" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">${n.title}</h5>
                     <p class="card-text">${n.createdAt}</p>
