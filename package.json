@@ -13,6 +13,7 @@
     "vite": "^8.0.13"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.15"
+    "json-server": "^1.0.0-beta.15",
+    "marked": "^18.0.3"
   }
 }

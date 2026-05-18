@@ -4,7 +4,7 @@ import { Navbar } from './components/navbar';
 import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
-
+import { marked } from "marked";
 Navbar()
 
 let users: User[] = await getUsers()
@@ -35,11 +35,11 @@ if (newsID) {
 function render(n: News) {
     let author: User;
     users.forEach(u => {
-        if (u.id == n.userId){
+        if (u.id == n.userId) {
             author = u
         }
-    });    
-    mainDiv.innerHTML += `
+    });
+    mainDiv.innerHTML = `
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
@@ -60,7 +60,7 @@ function render(n: News) {
 
     
                 <div class="fs-5 lh-lg">
-                    ${n.content}  
+                ${marked.parse(n.content)}
                 </div>
             </div>
         </div>
