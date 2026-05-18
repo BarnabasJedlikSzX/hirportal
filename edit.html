@@ -38,9 +38,15 @@
           <textarea type="text" class="inputField" name="title" id="title" placeholder="Cím"></textarea>
 
           <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím">
-          <select id="topic" class="inputField w-50 form-select">
-            <option value="default">Téma megadása</option>
-          </select>
+
+
+          <div class="d-flex align-items-center">
+            <select id="topic" class="inputField w-50 form-select">
+              <option value="default" selected>Téma megadása</option>
+            </select>
+            <button id="deleteNewsBtn" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"
+              class="btn btn-outline-danger w-50" style="height: fit-content; display: none;">Hír törlése</button>
+          </div>
         </div>
 
       </div>
@@ -74,6 +80,25 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
               <button type="button" class="btn btn-primary" id="sendModalBtn" style="width: 6.6rem;">Közzététel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="label">Megerősítés</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Biztosan törlöd a cikket?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+              <button type="button" class="btn btn-danger" id="deleteModalBtn" style="width: 6.6rem;">Hír
+                törlése</button>
             </div>
           </div>
         </div>

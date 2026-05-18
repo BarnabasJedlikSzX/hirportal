@@ -28,7 +28,11 @@ export async function GetNewsById(newsId: string): Promise<News | string> {
     } else return "Not Found"
 }
 
-export async function Nevnapok(month:string, day:string): Promise<string[]> {
-    const res = await fetch(`https://api.nevnapok.eu/nap/${month}-${day}`, {method:"GET"})
+export async function Nevnapok(month: string, day: string): Promise<string[]> {
+    const res = await fetch(`https://api.nevnapok.eu/nap/${month}-${day}`, { method: "GET" })
     return (await res.json())[`${month}-${day}`]
+}
+
+export async function DeleteNews(newsId: string) {
+    await fetch(`http://localhost:3000/news/${newsId}`, { method: "DELETE" })
 }
