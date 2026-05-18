@@ -6,14 +6,7 @@ import type { User } from "./types/User";
 
 document.querySelector("#navbar")!.innerHTML = Navbar()
 
-let author = false
-// Itt meg dobja a hibát
 let data = localStorage.getItem("aktualisUser")
-if (data) {
-    let user: User = JSON.parse(data) as User
-    author = user.author
-    console.log(user)
-}
 
 const newsDiv = document.getElementById('news') as HTMLDivElement;
 

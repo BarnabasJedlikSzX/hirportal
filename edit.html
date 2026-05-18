@@ -38,15 +38,18 @@
           <textarea type="text" class="inputField" name="title" id="title" placeholder="Cím"></textarea>
 
           <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím">
-
+          <select id="topic" class="inputField w-50">
+            <option value="default">Téma megadása</option>
+          </select>
         </div>
 
       </div>
       <ul>
-        <p id="imgError" class="inputError"></p>
-        <p id="titleError" class="inputError"></p>
-        <p id="subtitleError" class="inputError"></p>
-        <p id="contentError" class="inputError"></p>
+        <p id="imgError" class="inputError">Adj hozzá képet!</p>
+        <p id="topicError" class="inputError">Adj meg egy témát!</p>
+        <p id="titleError" class="inputError">Adj hozzá címet!</p>
+        <p id="subtitleError" class="inputError">Adj hozzá alcímet!</p>
+        <p id="contentError" class="inputError">Üres cikket nem tehetsz közzé!</p>
       </ul>
 
 
@@ -104,22 +107,22 @@
       let errors = false
       if (!document.querySelector("#newsImg")) {
         errors = true
-        document.querySelector("#imgError").innerHTML = "Adj hozzá képet!"
         document.querySelector("#imgError").style.display = "list-item"
+      }
+      if (document.querySelector("#topic").value === "default") {
+        errors = true
+        document.querySelector("#topicError").style.display = "list-item"
       }
       if (!document.querySelector("#title").value) {
         errors = true
-        document.querySelector("#titleError").innerHTML = "Adj hozzá címet!"
         document.querySelector("#titleError").style.display = "list-item"
       }
       if (!document.querySelector("#subtitle").value) {
         errors = true
-        document.querySelector("#subtitleError").innerHTML = "Adj hozzá alcímet!"
         document.querySelector("#subtitleError").style.display = "list-item"
       }
       if (!mde.value()) {
         errors = true
-        document.querySelector("#contentError").innerHTML = "Üres cikket nem tehetsz közzé!"
         document.querySelector("#contentError").style.display = "list-item"
       }
 

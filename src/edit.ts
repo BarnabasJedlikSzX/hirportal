@@ -19,11 +19,38 @@ const params = new URLSearchParams(window.location.search);
 const newsId = params.get('id');
 const editNews: News | string = await GetNewsById(newsId!)
 const currentUser: User = JSON.parse(loggedIn!)
+const topics = [
+    "Politika",
+    "Tech",
+    "Ukrajna",
+    "Magyar Péter",
+    "Belügy",
+    "Bulvár",
+    "Tóth Gabi"
+]
+
+for (let topic of topics) {
+    const option = document.createElement("option")
+    option.innerText = topic
+    option.value = topic
+    document.querySelector("#topic")!.appendChild(option)
+}
+
+function Error(code: number) {
+    switch (code) {
+        case 404: document.querySelector("#main")!.innerHTML = `<h2>404 Not found</h2>`
+            break
+        case 401: document.querySelector("#main")!.innerHTML = `<h2>401 Unauthorized</h2>`
+            break
+        default: document.querySelector("#main")!.innerHTML = `<h2>Error</h2>`
+    }
+}
 
 if (newsId) {
-    if ((typeof editNews) === "string") document.querySelector("#main")!.innerHTML = `<h2>404 Not found</h2>`
-    else if (!loggedIn || (currentUser.id !== editNews.userId)) document.querySelector("#main")!.innerHTML = `<h2>401 Unauthorized</h2>`
+    if ((typeof editNews) === "string") Error(404)
+    else if (!loggedIn || (currentUser.id !== editNews.userId) || !currentUser.author) Error(401)
     else {
+        document.querySelector<HTMLInputElement>("#topic")!.value = editNews.topic
         document.querySelector<HTMLInputElement>("#title")!.value = editNews.title
         document.querySelector<HTMLInputElement>("#subtitle")!.value = editNews.subtitle
         document.querySelector<HTMLInputElement>("#editorHelper")!.innerHTML = editNews.content
@@ -43,7 +70,11 @@ if (newsId) {
     }
 }
 // TODO: megnézni author-e
-else if (!loggedIn) document.querySelector("#main")!.innerHTML = `<h2>401 Unauthorized</h2>`
+else if (!loggedIn || !currentUser.author) Error(401)
+
+document.querySelector("#topic")!.addEventListener("input", () => {
+    if (document.querySelector<HTMLInputElement>("#topic")!.value !== "default") document.querySelector<HTMLElement>("#topicError")!.style.display = "none"
+})
 
 document.querySelector("#title")!.addEventListener("input", () => {
     if (document.querySelector<HTMLInputElement>("#title")!.value !== "") document.querySelector<HTMLElement>("#titleError")!.style.display = "none"
@@ -96,55 +127,37 @@ input.addEventListener("input", async () => {
 });
 
 document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
+    const topic = document.querySelector<HTMLSelectElement>("#topic")!.value;
     const title = document.querySelector<HTMLInputElement>("#title")!.value;
     const subtitle = document.querySelector<HTMLInputElement>("#subtitle")!.value;
     const content = document.querySelector<HTMLTextAreaElement>("#editorHelper")!.innerHTML;
-
-
-    if (document.querySelector("#sendModalBtn")!.classList.contains("editNews")) {
-        await EditNews({
-            id: newsId!,
-            userId: currentUser.id!,
-            createdAt: new Date().toLocaleString() + " (szerkesztve)",
-            imgURL: filename,
-            title: title,
-            subtitle: subtitle,
-            content: content
-        }).then(() => {
-            document.querySelector("#sendModalBtn")!.innerHTML =
-                `
-            <div class="spinner-border spinner-border-sm" role="status">
-            <span class="visually-hidden">Betöltés...</span>
-            </div>
-            `
-            setTimeout(() => location.reload(), 800)
-        })
-    } else {
-        await AddNews({
-            id: "",
-            userId: currentUser.id!,
-            createdAt: new Date().toLocaleString(),
-            imgURL: filename,
-            title: title,
-            subtitle: subtitle,
-            content: content
-        }).then(() => {
-            document.querySelector("#sendModalBtn")!.innerHTML =
-                `
-            <div class="spinner-border spinner-border-sm" role="status">
-            <span class="visually-hidden">Betöltés...</span>
-            </div>
-            `
-            setTimeout(() => location.reload(), 800)
-        })
-
+    const news: News = {
+        id: newsId!,
+        userId: currentUser.id!,
+        createdAt: new Date().toLocaleString() + " (szerkesztve)",
+        imgURL: filename,
+        topic: topic,
+        title: title,
+        subtitle: subtitle,
+        content: content
     }
 
-
+    if (document.querySelector("#sendModalBtn")!.classList.contains("editNews")) await EditNews(news).then(() => AddAnimation())
+    else await AddNews(news).then(() => AddAnimation())
 });
 
-document.getElementById("logout")?.addEventListener("click", () =>{
+function AddAnimation() {
+    document.querySelector("#sendModalBtn")!.innerHTML =
+        `
+        <div class="spinner-border spinner-border-sm" role="status">
+        <span class="visually-hidden">Betöltés...</span>
+        </div>
+            `
+    setTimeout(() => location.reload(), 800)
+}
+
+document.getElementById("logout")?.addEventListener("click", () => {
     localStorage.removeItem('aktualisUser');
-    window.location.replace("http://localhost:5173/")
+    window.location.replace("/")
 
 })
