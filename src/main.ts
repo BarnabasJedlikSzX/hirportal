@@ -23,6 +23,13 @@ let news: News[] = await GetNews();
 function render() {
     newsDiv.innerHTML = '';
     news.forEach(n => {
+        let canEdit = false;
+        let user: User = JSON.parse(data) as User;
+        if (user) {
+            if (user.id == n.userId) {
+                canEdit = true;
+            }
+        }
         const card =
             `
             <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;">
@@ -31,7 +38,7 @@ function render() {
                     <h5 class="card-title">${n.title}</h5>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
-                        ${author ? `<a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>` : ''}
+                        ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>` : ''}
                         <a href="TODO" class="btn btn-primary">Elolvas</a>
                     </div>
                 </div>
