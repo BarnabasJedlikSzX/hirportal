@@ -27,3 +27,8 @@ export async function GetNewsById(newsId: string): Promise<News | string> {
         return json
     } else return "Not Found"
 }
+
+export async function Nevnapok(month:string, day:string): Promise<string[]> {
+    const res = await fetch(`https://api.nevnapok.eu/nap/${month}-${day}`, {method:"GET"})
+    return (await res.json())[`${month}-${day}`]
+}
