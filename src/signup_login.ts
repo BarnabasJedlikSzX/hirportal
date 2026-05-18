@@ -54,7 +54,8 @@ function LoadPage() {
 
         let email = (loginDiv?.querySelector(".email") as HTMLInputElement).value
         let password = (loginDiv?.querySelector(".pwd") as HTMLInputElement).value
-        if (emailValidForma(email) && emailFoglalt(email)) {
+        console.log(inputNotFilled([email, password]))
+        if (emailValidForma(email) && emailFoglalt(email) && !inputNotFilled([email, password]) ) {
             let foundUser = users.find(m => m.email == email && m.password == password)
             console.log(foundUser)
             if (foundUser != undefined) {
@@ -87,7 +88,8 @@ function LoadPage() {
             console.log("jelszók nem egyeznek")
             //hibaüzenet
         }
-        if (emailValidForma(email) && !emailFoglalt(email) && pwd1 === pwd2) {
+        if (emailValidForma(email) && !emailFoglalt(email) 
+            && pwd1 === pwd2 && !inputNotFilled([email, name, pwd1, pwd2])) {
             console.log("minden fasza")
             let newUser: User = {
                 name: name,
@@ -131,4 +133,14 @@ function saveAndContinue(user: User) {
     console.log(window.globalisUser)
     localStorage.setItem("aktualisUser", JSON.stringify(window.globalisUser));
     window.location.replace("/")
+}
+
+function inputNotFilled(inputs: string[]): boolean{
+    let emptyInput = false;
+    inputs.forEach(input =>{
+        if (!input && input.trim() == ""){
+            emptyInput = true
+        }
+    })
+    return emptyInput
 }
