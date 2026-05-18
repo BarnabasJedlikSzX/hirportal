@@ -44,6 +44,9 @@ function LoadPage() {
                 <p>asd@gmail.com</p>
                 <p>bela@gmail.com</p>
                 <p>qwerty</p>
+            </div>
+            <div id="errors">
+                
             </div>`
 
     let loginDiv = document.getElementById("login");
@@ -54,18 +57,9 @@ function LoadPage() {
 
         let email = (loginDiv?.querySelector(".email") as HTMLInputElement).value
         let password = (loginDiv?.querySelector(".pwd") as HTMLInputElement).value
-        console.log(inputNotFilled([email, password]))
-        if (emailValidForma(email) && emailFoglalt(email) && !inputNotFilled([email, password]) ) {
-            let foundUser = users.find(m => m.email == email && m.password == password)
-            console.log(foundUser)
-            if (foundUser != undefined) {
-                saveAndContinue(foundUser)
-            }
-            else {
-                //TODO: hibaüzenet
-                console.log("nope")
-            }
-
+        let foundUser = users.find(m => m.email == email && m.password == password)
+        if (loginValidation(email, password, foundUser) && foundUser != undefined) {
+            saveAndContinue(foundUser)
         }
 
     })
@@ -76,28 +70,18 @@ function LoadPage() {
         let pwd1 = (signupDiv?.querySelector("#pwd1") as HTMLInputElement).value
         let pwd2 = (signupDiv?.querySelector("#pwd2") as HTMLInputElement).value
 
-        if (emailValidForma(email) == false) {
-            console.log("szar email formátum")
-            //hibaüzenet
-        }
-        if (emailFoglalt(email) == true) {
-            console.log("foglalt email")
-            //hibaüzenet
-        }
-        if (pwd1 != pwd2) {
-            console.log("jelszók nem egyeznek")
-            //hibaüzenet
-        }
+        signinValidation(email, name, pwd1, pwd2)
+        
+
         if (emailValidForma(email) && !emailFoglalt(email) 
             && pwd1 === pwd2 && !inputNotFilled([email, name, pwd1, pwd2])) {
-            console.log("minden fasza")
             let newUser: User = {
                 name: name,
                 email: email,
                 password: pwd1,
                 author: false
             }
-            let savedUser: User = await (createUser(newUser))
+            let savedUser: User = await createUser(newUser)
             saveAndContinue(savedUser)
         }
 
@@ -130,7 +114,7 @@ function saveAndContinue(user: User) {
         name: user.name,
         author: user.author
     }
-    console.log(window.globalisUser)
+
     localStorage.setItem("aktualisUser", JSON.stringify(window.globalisUser));
     window.location.replace("/")
 }
@@ -143,4 +127,58 @@ function inputNotFilled(inputs: string[]): boolean{
         }
     })
     return emptyInput
+}
+
+function showError(errortexts: string[]){
+    let errorArea = document.getElementById("errors") as HTMLParagraphElement
+    errorArea.innerHTML = ""
+    errortexts.forEach(error =>{
+        let errorParag = document.createElement("p")
+        errorParag.innerText += `${error}`
+        errorArea.appendChild(errorParag)
+    })
+}
+
+function signinValidation(email: string, name: string, pwd1: string, pwd2: string){
+    let errors: string[] = []
+    if (inputNotFilled([email, name, pwd1, pwd2])){
+        errors.push("Mezők kitöltése kötelező")
+    }
+
+    if (!inputNotFilled([email, name, pwd1, pwd2])){
+        if (emailValidForma(email) == false) {
+            errors.push("Nem megfelelő e-mail formátum")
+                //hibaüzenet
+        }
+        if (emailFoglalt(email) == true) {
+            errors.push("E-mail használatban")    
+            //hibaüzenet
+        }
+        if (pwd1 != pwd2) {
+            errors.push("Nem egyező jelszavak")
+        }
+    }
+    showError(errors)
+}
+
+function loginValidation(email: string, name: string, foundUser: User | undefined): boolean{
+    let errors: string[] = []
+    if (inputNotFilled([email, name])){
+        errors.push("Mezők kitöltése kötelező")
+    }
+
+    if (!inputNotFilled([email, name])){
+        if (emailValidForma(email) == false) {
+            errors.push("Nem megfelelő e-mail formátum")
+                //hibaüzenet
+        }
+        if (foundUser == undefined) {
+            errors.push("Hibás email cím vagy jelszó")
+        }
+    }
+    showError(errors)
+    if(errors.length == 0){
+        return true
+    }
+    else{ return false}
 }
