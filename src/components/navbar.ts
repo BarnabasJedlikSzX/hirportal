@@ -32,7 +32,7 @@ export async function Navbar() {
                     <p class="m-0">Keresés</p>
                 </div>
 
-                <a href="/">
+                <a href="/" class="d-none d-md-block user-select-none">
                     <img src="src/img/logo.png" style="height:5rem; margin:5px;"/>
                 </a>
 
@@ -70,7 +70,7 @@ export async function Navbar() {
                         <p class="m-0">Keresés</p>
                     </div>
 
-                    <a href="/">
+                    <a href="/" class="d-none d-md-block user-select-none">
                         <img src="src/img/logo.png" style="height:5rem; margin:5px;"/>
                     </a>
 

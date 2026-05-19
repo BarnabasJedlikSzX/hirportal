@@ -20,7 +20,7 @@ function render() {
         let canEdit = false;
         let user: User = JSON.parse(data!) as User;
         if (user) {
-            if (user.id == n.userId) {
+            if (user.id == n.userId && user.author) {
                 canEdit = true;
             }
         }
@@ -32,8 +32,8 @@ function render() {
                     <h5 class="card-title">${n.title}</h5>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
-                        ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-primary me-5">Szerkeszt</a>` : ''}
-                        <a href="read.html?id=${n.id}" class="btn btn-primary" id="${n.id}">Elolvas</a>
+                        ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5">Szerkeszt</a>` : ''}
+                        <a href="read.html?id=${n.id}" class="btn btn-warning" id="${n.id}">Elolvas</a>
                     </div>
                 </div>
             </div>
