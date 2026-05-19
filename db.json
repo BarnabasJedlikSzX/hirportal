@@ -5,7 +5,7 @@
       "email": "asd@gmail.com",
       "password": "123",
       "name": "Pilter József",
-      "author": false
+      "author": true
     },
     {
       "id": "2",

@@ -11,7 +11,7 @@ let data = localStorage.getItem("aktualisUser")
 if (data) {
     window.location.replace("/")
 }
-Navbar()
+await Navbar()
 
 function LoadPage() {
     body.classList += "container"

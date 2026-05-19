@@ -14,7 +14,7 @@ let loggedIn: User = JSON.parse(data!) as User;
 let user: User = await getUser(loggedIn)
 
 
-Navbar()
+await Navbar()
 
 //let user: User = aktUser[0]
 let body = document.getElementById("body") as HTMLDivElement
