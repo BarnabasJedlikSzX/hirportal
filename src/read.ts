@@ -1,5 +1,6 @@
 import { GetNewsById } from './api/http';
 import { getUsers } from './api/user_handler';
+import { Error } from './components/error';
 import { Navbar } from './components/navbar';
 import './styles/style.css'
 import type { News } from './types/News';
@@ -19,13 +20,6 @@ let currentlyReading: News | string = await GetNewsById(newsID!);
 
 
 
-function Error(code: number) {
-    switch (code) {
-        case 404: document.querySelector("#main")!.innerHTML = `<h2>404 Not found</h2>`
-            break
-        default: document.querySelector("#main")!.innerHTML = `<h2>Error</h2>`
-    }
-}
 
 if (newsID) {
     if ((typeof currentlyReading) === "string") Error(404)
