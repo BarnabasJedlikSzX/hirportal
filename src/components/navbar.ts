@@ -70,7 +70,7 @@ export function Navbar() {
                 <div class="container-fluid">
 
                 <div class="d-flex" style="min-width: 150px;">
-                    <p class="m-0">Keresés</p>
+                    <p class="m-0" id="search">Keresés</p>
                 </div>
 
                 <a href="/" class="d-none d-md-block user-select-none">

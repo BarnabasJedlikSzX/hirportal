@@ -83,3 +83,15 @@ function newsRender(updatedNews: News[]) {
         newsDiv.innerHTML += card;
     });
 }
+
+document.getElementById('search')!.addEventListener('click', () => {
+    const searchBar = document.getElementById('searchBar') as HTMLDivElement;
+    searchBar.innerHTML = 
+    `
+    <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5">
+        <input type="text" class="form-control w-50" placeholder="Keresés">
+        <button class="btn btn-secondary">Keresés</button>
+    </div>
+    `;
+    searchBar.style.display = 'block';
+})
