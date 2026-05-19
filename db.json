@@ -51,7 +51,9 @@
       "imgURL": "image.png",
       "title": "Orbán börtönben",
       "subtitle": "VÉGRE",
-      "content": "bezárták a gecit. yippie"
+      "content": "bezárták a gecit. yippie",
+      "topic": "Orbán Viktor"
+
     },
     {
       "id": "2",
@@ -70,7 +72,8 @@
       "imgURL": "image.png",
       "title": "Megnyílt az ország legnagyobb gaming rendezvénye",
       "subtitle": "Több ezer látogató érkezett",
-      "content": "A rendezvényen e-sport versenyek és cosplay bemutatók is helyet kaptak."
+      "content": "A rendezvényen e-sport versenyek és cosplay bemutatók is helyet kaptak.",
+      "topic": "Rendezvények"
     },
     {
       "id": "4",
@@ -79,7 +82,8 @@
       "imgURL": "image.png",
       "title": "Brutális vihar csapott le Győrre",
       "subtitle": "Több utcát elöntött a víz",
-      "content": "A tűzoltóknak több mint 50 helyszínen kellett beavatkozniuk."
+      "content": "A tűzoltóknak több mint 50 helyszínen kellett beavatkozniuk.",
+      "topic": "Időjárás"
     },
     {
       "id": "5",
@@ -88,7 +92,8 @@
       "imgURL": "image.png",
       "title": "Új magyar videojáték készül",
       "subtitle": "2026-ban jelenhet meg",
-      "content": "A fejlesztők szerint a játék nyitott világú akció-RPG lesz."
+      "content": "A fejlesztők szerint a játék nyitott világú akció-RPG lesz.",
+      "topic": "Magyarok"
     },
     {
       "id": "7",
@@ -97,7 +102,8 @@
       "imgURL": "image.png",
       "title": "Rekordmeleg várható hétvégén",
       "subtitle": "35 fok fölé emelkedhet a hőmérséklet",
-      "content": "Az orvosok fokozott folyadékbevitelt javasolnak."
+      "content": "Az orvosok fokozott folyadékbevitelt javasolnak.",
+      "topic": "Időjárás"
     },
     {
       "id": "bioBcPeLDdk",

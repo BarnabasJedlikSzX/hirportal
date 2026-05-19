@@ -48,6 +48,8 @@ function render(n: News) {
                     <span>${n.createdAt}</span>
                     <span>•</span>
                     <span>Szerző: ${author!.name}</span>
+                    <span>•</span>
+                    <span>Téma: <b>${n.topic}</b></span>
                 </div>
 
                 <img src="./backend/downloaded/${n.imgURL}" alt="${n.title}" class="img-fluid mb-4 rounded">

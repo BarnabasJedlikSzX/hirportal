@@ -30,6 +30,7 @@ function render() {
                 <img src="./backend/downloaded/${n.imgURL}" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">${n.title}</h5>
+                    <p class="card-text">${n.topic}</p>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
                         ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5">Szerkeszt</a>` : ''}
