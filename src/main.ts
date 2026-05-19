@@ -69,19 +69,17 @@ function newsRender(updatedNews: News[]) {
         const card =
             `
             <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;">
-                <img src="./backend/downloaded/${n.imgURL}" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">${n.title}</h5>
-                    <p class="card-text text-success">${n.topic}</p>
-                    <p class="card-text">${n.createdAt}</p>
-                    <div style='display: flex;'>
+                <a href="read.html?id=${n.id}" class="text-white text-decoration-none" id="${n.id}">
+                    <img src="./backend/downloaded/${n.imgURL}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">${n.title}</h5>
+                        <p class="card-text text-success">${n.topic}</p>
+                        <p class="card-text">${n.createdAt}</p>
                         ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5">Szerkeszt</a>` : ''}
-                        <a href="read.html?id=${n.id}" class="btn btn-warning" id="${n.id}">Elolvas</a>
                     </div>
-                </div>
+                </a>
             </div>
         `;
-        // document.getElementById(n.id!)!.addEventListener
         newsDiv.innerHTML += card;
     });
 }
