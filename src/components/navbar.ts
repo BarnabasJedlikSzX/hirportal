@@ -51,7 +51,7 @@ export async function Navbar() {
          <span class="fw-bold"> - ${weather.description}</span>
          </p>
         <p class="m-0 me-3">
-        <span class="fw-bold">${today.toLocaleString()} </span>
+        <span class="fw-bold">${today.toLocaleString().slice(0,10)} </span>
          - ${first}, ${second}
          </p>
         
