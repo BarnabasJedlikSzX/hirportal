@@ -11,10 +11,9 @@ let data = localStorage.getItem("aktualisUser")
 if (data) {
     window.location.replace("/")
 }
-
+Navbar()
 
 function LoadPage() {
-    Navbar()
     body.classList += "container"
     body.innerHTML += `
     <form id="login">
@@ -114,6 +113,7 @@ function LoadPage() {
         if (emailValidForma(email) && !emailFoglalt(email, users) 
             && pwd1 === pwd2 && !inputNotFilled(signupInputs)) {
             let newUser: User = {
+                id: "",
                 name: name,
                 email: email,
                 password: pwd1,

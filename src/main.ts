@@ -4,7 +4,7 @@ import { GetNews } from './api/http';
 import type { News } from './types/News';
 import type { User } from "./types/User";
 
-Navbar()
+await Navbar()
 
 let data = localStorage.getItem("aktualisUser")
 

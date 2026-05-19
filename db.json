@@ -5,7 +5,7 @@
       "email": "asd@gmail.com",
       "password": "123",
       "name": "Pilter József",
-      "author": true
+      "author": false
     },
     {
       "id": "2",
@@ -36,39 +36,11 @@
       "author": false
     },
     {
-      "name": "Páli Dávid",
-      "email": "pali@gmail.com",
-      "password": "123",
-      "author": false,
-      "id": "CdEYYcCxjME"
-    },
-    {
-      "name": "Pilter Igor",
-      "email": "pilter.igor2067@gmail.com",
-      "password": "321",
-      "author": false,
-      "id": "Livm7rKj7iM"
-    },
-    {
-      "name": "Pilter Tódor",
-      "email": "pilter.todor42069@gmail.com",
-      "password": "012",
-      "author": false,
-      "id": "GHppG7G2hEQ"
-    },
-    {
-      "name": "Kizmus Tódor",
-      "email": "asd@asd.com",
+      "id": "3RHy0nx0xU8",
+      "name": "ASd",
+      "email": "asd@a.com",
       "password": "asd",
-      "author": false,
-      "id": "aK063gbMh9I"
-    },
-    {
-      "name": "Zsó Fika",
-      "email": "lik@gmail.com",
-      "password": "asd",
-      "author": false,
-      "id": "ueD2G0Az49c"
+      "author": false
     }
   ],
   "news": [

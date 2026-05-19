@@ -14,11 +14,11 @@ let loggedIn: User = JSON.parse(data!) as User;
 let user: User = await getUser(loggedIn)
 
 
+Navbar()
 
 //let user: User = aktUser[0]
 let body = document.getElementById("body") as HTMLDivElement
 function LoadPage() {
-    Navbar()
     console.log()
     body.classList += "container"
     body.innerHTML += `
