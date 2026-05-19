@@ -56,3 +56,13 @@ export async function updateUser(updatedUser: User): Promise<boolean>{
         return true
     }
 }
+
+export async function deletUser(id:string ): Promise<boolean> {
+    let response = await fetch(`${BASE_URL}/${id}`, {method: "DELETE"});
+    if (!response.ok){
+        return false
+    }
+    else {
+        return true
+    }
+}

@@ -1,5 +1,6 @@
+import { showConfirm, showPopup } from '../src/components/popup';
 import type { User } from "./types/User";
-import { getUser, getUsers, updateUser } from "./api/user_handler";
+import { deletUser, getUser, getUsers, updateUser } from "./api/user_handler";
 import { Navbar } from './components/navbar';
 import {emailFoglalt, emailValidForma, saveAndContinue, inputNotFilled, showError, showSuccess} from './components/user_validations'
 
@@ -19,7 +20,8 @@ Navbar()
 //let user: User = aktUser[0]
 let body = document.getElementById("body") as HTMLDivElement
 function LoadPage() {
-    console.log()
+
+    
     body.classList += "container"
     body.innerHTML += `
         <form id="profile">
@@ -58,15 +60,13 @@ function LoadPage() {
             </div>
         </from>`
 
-        let succesDiv = document.getElementById("success") as HTMLDivElement
 
         
         document.getElementById("modifySaveBtn")?.addEventListener("click", async ()=>{
             let inputs: HTMLInputElement[] = [...document.getElementById("profile")!.querySelectorAll("input")] as HTMLInputElement[]
             passwordHandler()
-
+            
             let btn = document.getElementById("modifySaveBtn")
-            console.log()
             switch(btn?.dataset.purpose){
                 case "modify":
                     btn!.dataset.purpose = "save"
@@ -80,54 +80,102 @@ function LoadPage() {
                     btn!.dataset.purpose = "modify"
                     btn!.classList = "btn btn-outline-success"
                     btn!.innerHTML = "Szerkesztés"
-                    
+                        
+                    inputs.splice(inputs.indexOf(document.getElementById("pwd1") as HTMLInputElement), 1)
+                    console.log(inputs)
                     let errors: string[] = []
                     let modified: User = collectData(inputs)
                     let password = user.password
-                    if (inputNotFilled(inputs)){
-                        errors.push("Ne hagyjon üresen mezőt")
-                    }
-                    if (!inputNotFilled(inputs)){
-                        if (modified.email != user.email && emailFoglalt(modified.email, users)){
-                            errors.push("E-mail használatban")
+                    if (changesMade(user, modified) == true){
+                        console.log("mosmivan")
+                        if (inputNotFilled(inputs)){
+                            errors.push("Ne hagyjon üresen mezőt")
                         }
-                        if (!emailValidForma(modified.email)){
-                            errors.push("Nem megfelelő e-mail formátum")
+                        if (!inputNotFilled(inputs)){
+                            if (modified.email != user.email && emailFoglalt(modified.email, users)){
+                                errors.push("E-mail használatban")
+                            }
+                            if (!emailValidForma(modified.email)){
+                                errors.push("Nem megfelelő e-mail formátum")
+                            }
+                            let pwd1 = (document.getElementById("pwd1") as HTMLInputElement).value
+                            if (document.getElementById("pwd2")){
+                                let pwd2 = (document.getElementById("pwd2") as HTMLInputElement).value
+                                if (pwd1 != pwd2){
+                                    errors.push("Nem egyeznek a jelszavak")
+                                }
+                                else if (pwd1 == user.password && pwd2 == user.password){
+                                    //sztem az nem baj
+                                }
+                                else{
+                                    password = pwd1
+                                    modified.password = password
+                                }
+                            }
                         }
-                        let pwd1 = (document.getElementById("pwd1") as HTMLInputElement).value
-                        if (document.getElementById("pwd2")){
-                            let pwd2 = (document.getElementById("pwd2") as HTMLInputElement).value
-                            if (pwd1 != pwd2){
-                                errors.push("Nem egyeznek a jelszavak")
+
+                        
+                        if (errors.length == 0 && changesMade(user, modified)){
+                            if(await updateUser(modified)){
+                                saveAndContinue(modified)
+                                await showPopup({
+                                    title: "Sikeres szerkesztés",
+                                    message: undefined,
+                                    duration: 2000
+                                })
+                                await showSuccess(2000)
+                                window.location.reload()
                             }
-                            else if (pwd1 == user.password && pwd2 == user.password){
-                                //sztem az nem baj
-                            }
-                            else{
-                                password = pwd1
-                                modified.password = password
-                            }
+                        }
+                        else{
+
+                            await showPopup({
+                                title: "Szerkesztési problémák",
+                                message: showError(errors),
+                                duration: 1800 
+                            })
                         }
                     }
 
-                    console.log(user)
-                    console.log(modified)
-                    if (errors.length == 0 && changesMade(user, modified)){
-                        if(await updateUser(modified)){
-                            succesDiv.innerHTML += "Sikeres szerkesztés!"
-                            await showSuccess()
-                            succesDiv.innerHTML = ""
-                            saveAndContinue(modified)
-                            window.location.reload()
-                        }
-                    }
 
                     disableInputs(inputs)
-                    showError(errors)
+                    
+
             }
         })
-        
 
+        document.getElementById("deleteBtn")?.addEventListener("click", async ()=>{      
+        // Meghívjuk a TS függvényünket és megvárjuk a választ
+            const konfirmalva = await showConfirm({
+                title: 'Fiók végleges törlése',
+                message: 'Biztosan törölni szeretnéd a fiókod? A folyamat visszafordíthatatlan.',
+                confirmText: 'Igen',
+                cancelText: 'Mégse'
+            });
+        
+            // Itt a kód megállt, amíg a felhasználó nem kattintott a modalban!
+            if (konfirmalva) {
+                if (await deletUser(user.id!)){
+                    localStorage.removeItem("aktualisUser")
+                    window.globalisUser = null;
+                    await showPopup({
+                        title: "Sikeres törlés",
+                        message: "Tovább irányítás a főoldalra",
+                        confirmText: undefined,
+                        cancelText: undefined
+                    })
+                    await showSuccess(1000)
+                    window.location.replace("/")
+                }
+            } else {
+                console.log('A felhasználó meggondolta magát, nem történik semmi.');
+            }
+
+        
+        });
+            
+        
+        
     
 }
 LoadPage()
@@ -141,7 +189,7 @@ function changesMade(before: User, after: User): boolean{
 }
 
 function ableInputs(inputs: HTMLInputElement[]){
-    console.log(inputs)
+    
     inputs.forEach(input =>{
         input.disabled = false
     })
@@ -180,7 +228,6 @@ function passwordVisible(passwordInputs: HTMLInputElement[]) {
         let checkBox = document.querySelector(`.${input.id}`)
         if (checkBox != null){
             checkBox.addEventListener("change", ()=>{
-                console.log("szex")
                 if (input.type === "password") {
                     input.type = "text";    
                 } else {

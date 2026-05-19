@@ -93,7 +93,7 @@ function LoadPage() {
         console.log(foundUser)
         if (loginValidation(loginInputs, foundUser) && foundUser != undefined) {
             succesDiv.innerHTML += "Sikeres bejelentkezés!"
-            await showSuccess()
+            await showSuccess(2000)
             saveAndContinue(foundUser)
             window.location.replace("/")
 
@@ -124,7 +124,7 @@ function LoadPage() {
                 succesDiv.innerHTML += "Sikeres regisztrálás!"
                 newUser = await getNewUser(newUser)
                 console.log(newUser)
-                await showSuccess()
+                await showSuccess(2000)
                 saveAndContinue(newUser)
                 window.location.replace("/")
 
@@ -190,8 +190,6 @@ function loginValidation(inputs: HTMLInputElement[], foundUser: User | undefined
     }
     else{ return false}
 }
-
-
 
 function passwordVisible(passwordInputs: HTMLInputElement[]) {
     passwordInputs.forEach(input =>{

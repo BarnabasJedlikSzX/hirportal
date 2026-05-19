@@ -37,17 +37,15 @@ export function inputNotFilled(inputs: HTMLInputElement[]): boolean{
     return emptyInput
 }
 
-export function showError(errortexts: string[]){
-    let errorArea = document.getElementById("errors") as HTMLParagraphElement
-    errorArea.innerHTML = ""
+export function showError(errortexts: string[]): string{
+    let errorString = ""
     errortexts.forEach(error =>{
-        let errorParag = document.createElement("p")
-        errorParag.innerText += `${error}`
-        errorArea.appendChild(errorParag)
+        errorString += `<p>${error}</p>`
     })
+    return errorString
 }
 
-export async function showSuccess(){
+export async function showSuccess(toWait: number){
   const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-  await delay(2000);  
+  await delay(toWait);  
 } 

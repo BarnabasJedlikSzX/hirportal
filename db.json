@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "asd@gmail.com",
-      "password": "123",
-      "name": "Pilter József",
-      "author": true
-    },
-    {
       "id": "2",
       "email": "asd2@gmail.com",
       "password": "321",
@@ -41,23 +34,29 @@
       "email": "asd@a.com",
       "password": "asd",
       "author": false
+    },
+    {
+      "id": "utn9_Otb5NQ",
+      "name": "Pilter Barnabás József",
+      "email": "asd@gmail.com",
+      "password": "123",
+      "author": true
     }
   ],
   "news": [
     {
       "id": "1",
-      "userId": "1",
+      "userId": null,
       "createdAt": "2026-05-15",
       "imgURL": "image.png",
       "title": "Orbán börtönben",
       "subtitle": "VÉGRE",
       "content": "bezárták a gecit. yippie",
       "topic": "Orbán Viktor"
-
     },
     {
       "id": "2",
-      "userId": "1",
+      "userId": null,
       "createdAt": "18/05/2026, 19:42:03 (szerkesztve)",
       "imgURL": "",
       "title": "Magyar Péter transznéger migránsokat vinne az óvodákba",
@@ -107,7 +106,7 @@
     },
     {
       "id": "bioBcPeLDdk",
-      "userId": "1",
+      "userId": null,
       "createdAt": "18/05/2026, 19:46:23 (szerkesztve)",
       "imgURL": "6.jpg",
       "topic": "Magyar Péter",
