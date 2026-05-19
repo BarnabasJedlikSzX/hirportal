@@ -6,41 +6,43 @@ document.querySelector("head")!.innerHTML += `
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 `
 document.querySelector("#app")!.innerHTML += `<button type="button" id="scrollToTop"><i class="bi bi-arrow-up-circle-fill"></i></button>`
-export async function Navbar() {
-    const loggedIn = localStorage.getItem("aktualisUser")
 
-    const [eur, usd] = await GetCurrencies()
-    const weather = await GetWeather()
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+        document.querySelector<HTMLElement>("#scrollToTop")!.style.scale = "1"
+        document.querySelector<HTMLElement>("#navbar")!.style.opacity = "0"
+        document.querySelector<HTMLElement>("#navbar")!.style.pointerEvents = "none"
+    }
+    else {
+        document.querySelector<HTMLElement>("#scrollToTop")!.style.scale = "0"
+        document.querySelector<HTMLElement>("#navbar")!.style.pointerEvents = "all"
+        document.querySelector<HTMLElement>("#navbar")!.style.opacity = "1"
+    }
+})
+
+document.querySelector("#scrollToTop")!.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+async function TopBar() {
     const today = new Date();
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
+
     const nevnapok = await Nevnapok(month, day)
+    const [eur, usd] = await GetCurrencies()
+    const weather = await GetWeather()
+
     const [first, second] = nevnapok
         .sort(() => Math.random() - 0.5)
         .slice(0, 2);
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-            document.querySelector<HTMLElement>("#scrollToTop")!.style.scale = "1"
-            document.querySelector<HTMLElement>("#navbar")!.style.opacity = "0"
-            document.querySelector<HTMLElement>("#navbar")!.style.pointerEvents = "none"
-        }
-        else {
-            document.querySelector<HTMLElement>("#scrollToTop")!.style.scale = "0"
-            document.querySelector<HTMLElement>("#navbar")!.style.pointerEvents = "all"
-            document.querySelector<HTMLElement>("#navbar")!.style.opacity = "1"
-        }
-    })
 
-
-
-    document.querySelector("#scrollToTop")!.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    document.querySelector("#navbar")!.innerHTML = `
+    document.querySelector("#navbar")!.insertAdjacentHTML("afterbegin", `
         <div id="topBar" class="d-flex justify-content-between">
          <p class="m-0 ms-3">
          <span class="fw-bold">EUR:</span> ${eur.rates.HUF.toPrecision(5)} FT, <span class="fw-bold">USD:</span> ${usd.rates.HUF.toPrecision(5)} FT
@@ -51,15 +53,19 @@ export async function Navbar() {
          <span class="fw-bold"> - ${weather.description}</span>
          </p>
         <p class="m-0 me-3">
-        <span class="fw-bold">${today.toLocaleString().slice(0,10)} </span>
+        <span class="fw-bold">${today.toLocaleString().slice(0, 10)} </span>
          - ${first}, ${second}
          </p>
         
         </div>
-        `
-    const user: User = JSON.parse(loggedIn!)
+        `)
+}
 
-    document.querySelector("#navbar")!.innerHTML += `
+export function Navbar() {
+    const loggedIn = localStorage.getItem("aktualisUser")
+    const user: User = JSON.parse(loggedIn!)
+    TopBar()
+    document.querySelector("#navbar")!.insertAdjacentHTML("beforeend", `
             <nav class="navbar bg-warning p-0">
                 <div class="container-fluid">
 
@@ -99,11 +105,9 @@ export async function Navbar() {
 
                 </div>
             </nav>
-            `
-
-
-
+            `)
     document.getElementById("logout")?.addEventListener("click", () => {
+        console.log("asd")
         localStorage.removeItem('aktualisUser');
         window.location.replace("/")
     })

@@ -6,7 +6,8 @@ import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
 import { marked } from "marked";
-await Navbar()
+
+Navbar()
 
 let users: User[] = await getUsers()
 

@@ -5,7 +5,7 @@ import type { News } from './types/News';
 import type { User } from "./types/User";
 import { topics } from './global/topics';
 
-await Navbar()
+Navbar()
 
 let data = localStorage.getItem("aktualisUser")
 

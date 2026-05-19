@@ -6,7 +6,7 @@ import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
 
-await Navbar()
+Navbar()
 
 let filename: string = ""
 let uploaded = false
