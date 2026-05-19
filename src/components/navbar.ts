@@ -1,11 +1,11 @@
 import { GetCurrencies, GetWeather, Nevnapok } from "../api/http"
 import type { User } from "../types/User"
 
-document.querySelector("head")!.innerHTML += `
+document.querySelector("head")!.insertAdjacentHTML("beforeend", `
 <link rel="shortcut icon" href="src/img/logo2.png" type="image/x-icon">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-`
-document.querySelector("#app")!.innerHTML += `<button type="button" id="scrollToTop"><i class="bi bi-arrow-up-circle-fill"></i></button>`
+`)
+document.querySelector("#app")!.insertAdjacentHTML("beforeend", `<button type="button" id="scrollToTop"><i class="bi bi-arrow-up-circle-fill"></i></button>`)
 
 
 window.addEventListener("scroll", () => {
@@ -70,7 +70,7 @@ export function Navbar() {
                 <div class="container-fluid">
 
                 <div class="d-flex" style="min-width: 150px;">
-                    <p class="m-0">Keresés</p>
+                    <p class="m-0" id="search">Keresés</p>
                 </div>
 
                 <a href="/" class="d-none d-md-block user-select-none">
@@ -107,7 +107,6 @@ export function Navbar() {
             </nav>
             `)
     document.getElementById("logout")?.addEventListener("click", () => {
-        console.log("asd")
         localStorage.removeItem('aktualisUser');
         window.location.replace("/")
     })
