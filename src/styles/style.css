@@ -184,3 +184,7 @@ hr {
 #navbar .btn-outline-dark {
     border: none;
 }
+
+body:has(.CodeMirror-sided) #navbar, body:has(.CodeMirror-fullscreen) #navbar  {
+  display: none;
+}
