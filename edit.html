@@ -16,7 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
 </head>
 
-<body>
+<body data-bs-theme="dark">
   <div id="app">
 
     <div id="navbar"></div>
@@ -29,19 +29,20 @@
 
       <div class="row mb-3 align-items-center">
         <div class="col" id="imgContainer" style="position: relative;">
-          <a id="deleteUpload"><i class="bi bi-x-circle-fill" style="filter: invert(1);"></i></a>
+          <a id="deleteUpload"><i class="bi bi-x-circle-fill"></i></a>
           <label for="imgInput" id="addImgButton">Kép hozzáadása</label>
           <input type="file" name="imgInput" id="imgInput" style="display: none;">
         </div>
 
         <div class="col">
-          <textarea type="text" class="inputField" name="title" id="title" placeholder="Cím"></textarea>
+          <textarea type="text" class="inputField" name="title" id="title" placeholder="Cím"
+            data-bs-theme="dark"></textarea>
 
-          <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím">
+          <input type="text" class="inputField" name="subtitle" id="subtitle" placeholder="Alcím" data-bs-theme="dark">
 
 
           <div class="d-flex align-items-center">
-            <select id="topic" class="inputField w-50 form-select">
+            <select id="topic" class="inputField w-50 form-select" data-bs-theme="dark">
               <option value="default" selected>Téma megadása</option>
             </select>
             <button id="deleteNewsBtn" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"

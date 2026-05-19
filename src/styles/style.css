@@ -2,6 +2,7 @@
 
 body {
     font-family: Akt, Arial;
+    background-color: rgb(36, 36, 36);
 }
 
 #main,
@@ -13,7 +14,7 @@ body {
 
 
 #addImgButton {
-    background-color: #eee;
+    background-color: #4e4e4e;
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
@@ -21,10 +22,11 @@ body {
     text-align: center;
     height: 18rem;
     align-content: center;
+    color: #ccc;
 }
 
 #addImgButton:hover {
-    filter: brightness(0.7);
+    filter: brightness(1.6);
 }
 
 .inputField:hover {
@@ -44,14 +46,13 @@ body {
 
 .inputField:focus {
     outline: none;
-    border-color: blue;
+    border-color: orange;
 }
 
 #title {
     font-weight: bold;
-    font-size: 1.5rem;
-    height: 6rem;
-    max-height: 6rem;
+    font-size: 2rem;
+    height: 7.5rem;
     resize: none;
 }
 
@@ -128,4 +129,58 @@ hr {
     position: sticky;
     top: 0;
     z-index: 100;
+    color: black;
+}
+
+/* Dark theme for EasyMDE */
+.EasyMDEContainer {
+    background: #1e1e1e;
+}
+
+.EasyMDEContainer .CodeMirror {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.EasyMDEContainer .editor-toolbar {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+.EasyMDEContainer .editor-toolbar button {
+    color: #e0e0e0 !important;
+}
+
+.EasyMDEContainer .editor-toolbar button:hover,
+.EasyMDEContainer .editor-toolbar button.active {
+    background: #444;
+    border-color: #555;
+}
+
+.EasyMDEContainer .editor-toolbar i.separator {
+    border-color: #555;
+}
+
+.EasyMDEContainer .editor-preview {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.EasyMDEContainer .editor-preview-side {
+    background: #1e1e1e;
+    border-color: #444;
+}
+
+.EasyMDEContainer .CodeMirror-cursor {
+    border-left-color: #e0e0e0;
+}
+
+.CodeMirror-selected {
+    background: #3a3a3a !important;
+}
+
+
+#navbar .btn-outline-dark {
+    border: none;
 }

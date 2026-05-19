@@ -38,7 +38,7 @@ export async function Navbar() {
 
                 <div class="d-flex justify-content-end" style="min-width: 150px;">
                     <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         ${user.name}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" id="mainDropdown">
@@ -56,9 +56,10 @@ export async function Navbar() {
             </nav>
             `
         if (user.author) document.querySelector("#mainDropdown")!.insertAdjacentHTML("afterbegin",
-            `<li style="justify-self:center;" class="w-75 m-2">
-                        <a class="btn btn-outline-dark fw-bold w-100 text-center" href="edit.html" style="width:3rem;">+</a>
-                        </li>`
+            `
+            <li style="justify-self:center;" class="w-75 m-2">
+                <a class="btn btn-outline-light fw-bold w-100 text-center" href="edit.html" style="width:3rem;">+</a>
+            </li>`
         );
 
     } else {

@@ -117,7 +117,6 @@ input.addEventListener("click", () => {
 input.addEventListener("input", async () => {
     if (!input.files) return;
     const file = input.files[0];
-    document.querySelector("#imgError")!.innerHTML = ""
     document.querySelector<HTMLElement>("#imgError")!.style.display = "none"
 
     const formData = new FormData();
