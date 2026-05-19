@@ -1,9 +1,9 @@
 export const topics = [
     "Politika",
     "Tech",
-    "Ukrajna",
+    "Időjárás",
     "Magyar Péter",
     "Belügy",
     "Bulvár",
-    "Tóth Gabi"
+    "Orbán Viktor"
 ]

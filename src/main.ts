@@ -3,18 +3,37 @@ import { Navbar } from './components/navbar';
 import { GetNews } from './api/http';
 import type { News } from './types/News';
 import type { User } from "./types/User";
+import { topics } from './global/topics';
 
 await Navbar()
 
 let data = localStorage.getItem("aktualisUser")
 
 const newsDiv = document.getElementById('news') as HTMLDivElement;
+const topicSort = document.getElementById('topicSort') as HTMLDivElement;
 
 let news: News[] = await GetNews();
 console.log(data)
 
-
 function render() {
+    topic();
+    newsRender();
+}
+render();
+
+function topic() {
+    topicSort.innerHTML = '';
+    let counter = 0;
+    topics.forEach(t => {
+        counter++;
+        topicSort.innerHTML += 
+        `
+            <span class="m-auto" id="${counter}">${t}</span>
+        `;
+    });
+}
+
+function newsRender() {
     newsDiv.innerHTML = '';
     news.forEach(n => {
         let canEdit = false;
@@ -30,7 +49,7 @@ function render() {
                 <img src="./backend/downloaded/${n.imgURL}" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">${n.title}</h5>
-                    <p class="card-text">${n.topic}</p>
+                    <p class="card-text text-success">${n.topic}</p>
                     <p class="card-text">${n.createdAt}</p>
                     <div style='display: flex;'>
                         ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5">Szerkeszt</a>` : ''}
@@ -43,4 +62,3 @@ function render() {
         newsDiv.innerHTML += card;
     });
 }
-render();
