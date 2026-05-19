@@ -1,6 +1,7 @@
 import { AddNews, DeleteNews, EditNews, GetNewsById } from './api/http';
 import { Error } from './components/error';
 import { Navbar } from './components/navbar';
+import { topics } from './global/topics';
 import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
@@ -20,15 +21,7 @@ const params = new URLSearchParams(window.location.search);
 const newsId = params.get('id');
 const editNews: News | string = await GetNewsById(newsId!)
 const currentUser: User = JSON.parse(loggedIn!)
-const topics = [
-    "Politika",
-    "Tech",
-    "Ukrajna",
-    "Magyar Péter",
-    "Belügy",
-    "Bulvár",
-    "Tóth Gabi"
-]
+
 
 for (let topic of topics) {
     const option = document.createElement("option")
