@@ -100,6 +100,7 @@ function LoadPage() {
                             }
                             let pwd1 = (document.getElementById("pwd1") as HTMLInputElement).value
                             if (document.getElementById("pwd2")){
+                                // Itt van a kutya elásva
                                 let pwd2 = (document.getElementById("pwd2") as HTMLInputElement).value
                                 if (pwd1 != pwd2){
                                     errors.push("Nem egyeznek a jelszavak")
@@ -139,8 +140,6 @@ function LoadPage() {
 
 
                     disableInputs(inputs)
-                    
-
             }
         })
 
