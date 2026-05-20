@@ -50,7 +50,7 @@ async function TopBar() {
          <p class="m-0">
          <span class="text-info">${weather.min}°</span> / 
          <span class="text-warning">${weather.max}°</span>
-         <span class="fw-bold"> - ${weather.description}</span>
+         <span class="fw-bold"> ${weather.description !== "" ? " - " + weather.description : ""}</span>
          </p>
         <p class="m-0 me-3">
         <span class="fw-bold">${today.toLocaleString().slice(0, 10)} </span>
@@ -67,10 +67,21 @@ export function Navbar() {
     TopBar()
     document.querySelector("#navbar")!.insertAdjacentHTML("beforeend", `
             <nav class="navbar bg-warning p-0">
-                <div class="container-fluid">
+                <div class="container-fluid p-0 px-md-3">
 
                 <div class="d-flex" style="min-width: 150px;">
-                    <p class="m-0" id="search">Keresés</p>
+                        <button class="btn btn-dark p-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-hash fs-3"></i></button>
+                ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light h-25 m-auto ms-3" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}
+
+                             <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Témák</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>asd</p>
+  </div>
+</div>
                 </div>
 
                 <a href="/" class="d-none d-md-block user-select-none">
@@ -80,10 +91,10 @@ export function Navbar() {
                 <div class="d-flex justify-content-end" style="min-width: 150px;">
                    ${loggedIn ?
             `<div class="btn-group">
-                    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button type="button" class="btn btn-dark p-4 fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         ${user.name}
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end" id="mainDropdown">
+                    <ul class="dropdown-menu dropdown-menu-end mt-3" id="mainDropdown">
                         ${user.author ?
                 `
                         <li style="justify-self:center;" class="w-75 m-2">
@@ -99,7 +110,7 @@ export function Navbar() {
                     </ul>
                     </div>`
             :
-            `<a class="btn btn-outline-dark" href="signup_login.html">Bejelentkezés</a>`
+            `<a class="btn btn-dark p-4 fw-bold" href="signup_login.html">Bejelentkezés</a>`
         }
                 </div>
 

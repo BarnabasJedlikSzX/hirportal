@@ -55,17 +55,17 @@ export async function GetWeather() {
     const code = data.daily.weathercode[0];
 
     return { max, min, description: weatherCodeToText(code) };
-}
 
-function weatherCodeToText(code: number) {
-    if (code === 0) return 'Tiszta ég';
-    if (code <= 3) return 'Részben felhős';
-    if (code <= 49) return 'Köd';
-    if (code <= 59) return 'Szitálás';
-    if (code <= 69) return 'Eső';
-    if (code <= 79) return 'Havazás';
-    if (code <= 82) return 'Zápor';
-    if (code <= 86) return 'Hózápor';
-    if (code <= 99) return 'Zivatar';
-    return 'Ismeretlen';
+    function weatherCodeToText(code: number) {
+        if (code === 0) return 'Tiszta ég';
+        if (code <= 3) return 'Részben felhős';
+        if (code <= 49) return 'Köd';
+        if (code <= 59) return 'Szitálás';
+        if (code <= 69) return 'Eső';
+        if (code <= 79) return 'Havazás';
+        if (code <= 82) return 'Zápor';
+        if (code <= 86) return 'Hózápor';
+        if (code <= 99) return 'Zivatar';
+        return '';
+    }
 }

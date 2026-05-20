@@ -30,7 +30,7 @@ body {
 }
 
 .inputField:hover {
-    filter: brightness(0.95);
+    filter: brightness(1.6);
 }
 
 .inputField {
@@ -181,10 +181,6 @@ hr {
     background: #3a3a3a !important;
 }
 
-
-#navbar .btn-outline-dark {
-    border: none;
-}
 
 body:has(.CodeMirror-sided) #navbar,
 body:has(.CodeMirror-fullscreen) #navbar {
