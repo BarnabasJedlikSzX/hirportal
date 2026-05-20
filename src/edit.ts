@@ -5,6 +5,9 @@ import { topics } from './global/topics';
 import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
+import { Modal } from 'bootstrap';
+import EasyMDE from 'easymde';
+
 
 Navbar()
 
@@ -21,7 +24,10 @@ const params = new URLSearchParams(window.location.search);
 const newsId = params.get('id');
 const editNews: News | string = await GetNewsById(newsId!)
 const currentUser: User = JSON.parse(loggedIn!)
-
+const mde = new EasyMDE({
+    element: document.querySelector("#contentEditor")!,
+    minHeight: "800px"
+});
 
 for (let topic of topics) {
     const option = document.createElement("option")
@@ -39,7 +45,7 @@ if (newsId) {
         document.querySelector<HTMLInputElement>("#topic")!.value = editNews.topic
         document.querySelector<HTMLInputElement>("#title")!.value = editNews.title
         document.querySelector<HTMLInputElement>("#subtitle")!.value = editNews.subtitle
-        document.querySelector<HTMLInputElement>("#editorHelper")!.innerHTML = editNews.content
+        mde.value(editNews.content)
 
         addImgButton.style.display = "none";
         imgContainer.insertAdjacentHTML("beforeend", `<img src="./backend/downloaded/${editNews.imgURL}" id="newsImg">`);
@@ -127,7 +133,7 @@ document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
     const topic = document.querySelector<HTMLSelectElement>("#topic")!.value;
     const title = document.querySelector<HTMLInputElement>("#title")!.value;
     const subtitle = document.querySelector<HTMLInputElement>("#subtitle")!.value;
-    const content = document.querySelector<HTMLTextAreaElement>("#editorHelper")!.innerHTML;
+    const content = mde.value();
     const news: News = {
         id: newsId!,
         userId: currentUser.id!,
@@ -155,3 +161,37 @@ function AddAnimation() {
             `
     setTimeout(() => location.reload(), 800)
 }
+
+
+mde.codemirror.on("change", () => {
+    if (mde.value() !== "") {
+        document.querySelector<HTMLElement>("#contentError")!.style.display = "none";
+    }
+});
+
+document.querySelector("#sendNews")!.addEventListener("click", () => {
+    let errors = false
+    if (!document.querySelector("#newsImg")) {
+        errors = true
+        document.querySelector<HTMLElement>("#imgError")!.style.display = "list-item"
+    }
+    if (document.querySelector<HTMLInputElement>("#topic")!.value === "default") {
+        errors = true
+        document.querySelector<HTMLElement>("#topicError")!.style.display = "list-item"
+    }
+    if (!document.querySelector<HTMLInputElement>("#title")!.value) {
+        errors = true
+        document.querySelector<HTMLElement>("#titleError")!.style.display = "list-item"
+    }
+    if (!document.querySelector<HTMLInputElement>("#subtitle")!.value) {
+        errors = true
+        document.querySelector<HTMLElement>("#subtitleError")!.style.display = "list-item"
+    }
+    if (!mde.value()) {
+        errors = true
+        document.querySelector<HTMLElement>("#contentError")!.style.display = "list-item"
+    }
+
+
+    if (!errors) Modal.getOrCreateInstance(document.querySelector("#sendModal")!).show();
+})

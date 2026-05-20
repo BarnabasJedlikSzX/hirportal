@@ -107,54 +107,6 @@
 
     </div>
   </div>
-  <div id="editorHelper" style="display: none;"></div>
-  <script>
-    const mde = new EasyMDE({
-      element: document.querySelector("#contentEditor"),
-      uploadImage: true,
-      minHeight: "800px"
-    });
-
-    const observer = new MutationObserver(() => {
-      observer.disconnect();
-      mde.value(document.querySelector("#editorHelper").innerHTML)
-    });
-    observer.observe(document.querySelector("#editorHelper"), { childList: true, subtree: true, characterData: true });
-
-    mde.codemirror.on("change", () => {
-      if (mde.value() !== "") {
-        document.querySelector("#contentError").style.display = "none";
-        document.querySelector("#editorHelper").innerHTML = mde.value()
-      }
-    });
-
-    document.querySelector("#sendNews").addEventListener("click", () => {
-      let errors = false
-      if (!document.querySelector("#newsImg")) {
-        errors = true
-        document.querySelector("#imgError").style.display = "list-item"
-      }
-      if (document.querySelector("#topic").value === "default") {
-        errors = true
-        document.querySelector("#topicError").style.display = "list-item"
-      }
-      if (!document.querySelector("#title").value) {
-        errors = true
-        document.querySelector("#titleError").style.display = "list-item"
-      }
-      if (!document.querySelector("#subtitle").value) {
-        errors = true
-        document.querySelector("#subtitleError").style.display = "list-item"
-      }
-      if (!mde.value()) {
-        errors = true
-        document.querySelector("#contentError").style.display = "list-item"
-      }
-
-
-      if (!errors) bootstrap.Modal.getOrCreateInstance(document.querySelector("#sendModal")).show();
-    })
-  </script>
   <script type="module" src="/src/edit.ts"></script>
 </body>
 
