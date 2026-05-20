@@ -5,9 +5,18 @@ document.querySelector("head")!.insertAdjacentHTML("beforeend", `
 <link rel="shortcut icon" href="src/img/logo2.png" type="image/x-icon">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 `)
-document.querySelector("#app")!.insertAdjacentHTML("beforeend", `<button type="button" id="scrollToTop"><i class="bi bi-arrow-up-circle-fill"></i></button>`)
-
-
+document.querySelector("#app")!.insertAdjacentHTML("beforeend", `
+    <button type="button" id="scrollToTop"><i class="bi bi-arrow-up-circle-fill"></i></button>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Témák</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>asd</p>
+  </div>
+</div>
+    `)
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
         document.querySelector<HTMLElement>("#scrollToTop")!.style.scale = "1"
@@ -70,18 +79,8 @@ export function Navbar() {
                 <div class="container-fluid p-0 px-md-3">
 
                 <div class="d-flex" style="min-width: 150px;">
-                        <button class="btn btn-dark p-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-hash fs-3"></i></button>
-                ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light h-25 m-auto ms-3" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}
-
-                             <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Témák</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <p>asd</p>
-  </div>
-</div>
+                    <button class="btn btn-dark p-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-hash fs-3"></i></button>
+                    ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light h-25 m-auto ms-3" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}   
                 </div>
 
                 <a href="/" class="d-none d-md-block user-select-none">
