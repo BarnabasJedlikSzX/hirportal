@@ -124,22 +124,20 @@ function LoadPage() {
                                     message: undefined,
                                     duration: 2000
                                 })
-                                await showSuccess(2000)
+                                await showSuccess(1500)
                                 window.location.reload()
                             }
                         }
                         else{
-
-                            await showPopup({
+                            await showConfirm({
                                 title: "Szerkesztési problémák",
                                 message: showError(errors),
-                                duration: 1800 
                             })
                         }
                     }
+                    
+                disableInputs(inputs)
 
-
-                    disableInputs(inputs)
             }
         })
 

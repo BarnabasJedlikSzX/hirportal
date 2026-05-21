@@ -37,10 +37,17 @@
     },
     {
       "id": "utn9_Otb5NQ",
-      "name": "Pilter Barnabás",
+      "name": "Pilter Barnabás ",
       "email": "asd@gmail.com",
       "password": "123",
       "author": true
+    },
+    {
+      "id": "pP09gELPyT4",
+      "name": "Asdasd",
+      "email": "pali@gmail.com",
+      "password": "asd",
+      "author": false
     }
   ],
   "news": [
