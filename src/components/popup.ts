@@ -115,7 +115,6 @@ export async function  showPopup(options: PopupTexts): Promise<boolean> {
 
     resolve(true);    // Visszaadjuk az eredményt (true vagy false)
     // 5. Megjelenítés
-    console.log("fasz")
     bootstrapModal.show();
   });
 }

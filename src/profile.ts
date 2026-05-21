@@ -39,10 +39,15 @@ function LoadPage() {
                 </div>
                 
                 <div id="passwords">
-                    <div>
+                    <div >
                         <label for="pwd-r1">Jelszó</label>
                         <input name="pwd-r1" id="pwd1" type="password" value="${user.password}" disabled>
                         <input class="pwd1" type="checkbox" disabled>
+                    </div>
+                    <div class="d-none">
+                        <label for="pwd-r1">Jelszó mégegyszer</label>
+                        <input name="pwd-r2" id="pwd2" type="password">
+                        <input class="pwd2" type="checkbox" >
                     </div>
                 </div>
                 
@@ -76,31 +81,23 @@ function LoadPage() {
                     
                     passwordVisible([document.getElementById("pwd1") as HTMLInputElement])
                     break;
-                case "save":
-                    btn!.dataset.purpose = "modify"
-                    btn!.classList = "btn btn-outline-success"
-                    btn!.innerHTML = "Szerkesztés"
-                        
-                    inputs.splice(inputs.indexOf(document.getElementById("pwd1") as HTMLInputElement), 1)
-                    console.log(inputs)
+                case "save":                        
+                    inputs.splice(inputs.indexOf(document.querySelector(".pwd1") as HTMLInputElement), 1)
+                    inputs.splice(inputs.indexOf(document.querySelector(".pwd2") as HTMLInputElement), 1)
                     let errors: string[] = []
                     let modified: User = collectData(inputs)
                     let password = user.password
                     if (changesMade(user, modified) == true){
-                        console.log("mosmivan")
-                        if (inputNotFilled(inputs)){
-                            errors.push("Ne hagyjon üresen mezőt")
-                        }
-                        if (!inputNotFilled(inputs)){
-                            if (modified.email != user.email && emailFoglalt(modified.email, users)){
-                                errors.push("E-mail használatban")
-                            }
-                            if (!emailValidForma(modified.email)){
-                                errors.push("Nem megfelelő e-mail formátum")
-                            }
-                            let pwd1 = (document.getElementById("pwd1") as HTMLInputElement).value
-                            if (document.getElementById("pwd2")){
-                                // Itt van a kutya elásva
+                        let pwd1 = (document.getElementById("pwd1") as HTMLInputElement).value
+                        if (pwd1 != password){
+                            if ((document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList.contains("d-flex")
+                                 && pwd1 != user.password){
+                                console.log("ide bejön?")
+                                //inputs.push(document.getElementById("pwd2") as HTMLInputElement)
+                                // if (inputNotFilled(inputs)){
+                                    //     errors.push("Ne hagyjon üresen mezőt")
+                                //     console.log("scascca")
+                                // }
                                 let pwd2 = (document.getElementById("pwd2") as HTMLInputElement).value
                                 if (pwd1 != pwd2){
                                     errors.push("Nem egyeznek a jelszavak")
@@ -112,10 +109,30 @@ function LoadPage() {
                                     password = pwd1
                                     modified.password = password
                                 }
+                                console.log((document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList)
+                            }
+                            console.log(inputs)
+                            console.log(document.getElementById("pwd2"))
+                            console.log("itt vagyunk?")
+                        }
+                        else if ((document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList.contains("d-none")){
+                            inputs.splice(inputs.indexOf(document.querySelector("#pwd2") as HTMLInputElement), 1) 
+                        }
+                        
+                        if (inputNotFilled(inputs)){
+                            errors.push("Ne hagyjon üresen mezőt")
+                        }
+                        if (!inputNotFilled(inputs)){
+                            if (modified.email != user.email && emailFoglalt(modified.email, users)){
+                                errors.push("E-mail használatban")
+                            }
+                            if (!emailValidForma(modified.email)){
+                                errors.push("Nem megfelelő e-mail formátum")
                             }
                         }
-
                         
+
+                    
                         if (errors.length == 0 && changesMade(user, modified)){
                             if(await updateUser(modified)){
                                 saveAndContinue(modified)
@@ -125,6 +142,7 @@ function LoadPage() {
                                     duration: 2000
                                 })
                                 await showSuccess(1500)
+                                errors =[]
                                 window.location.reload()
                             }
                         }
@@ -134,10 +152,14 @@ function LoadPage() {
                                 message: showError(errors),
                             })
                         }
-                    }
                     
-                disableInputs(inputs)
-
+                    }
+                    if (errors.length == 0){
+                        btn!.dataset.purpose = "modify"
+                        btn!.classList = "btn btn-outline-success"
+                        btn!.innerHTML = "Szerkesztés"
+                        disableInputs(inputs)
+                    }
             }
         })
 
@@ -193,15 +215,7 @@ function ableInputs(inputs: HTMLInputElement[]){
 }
 
 function disableInputs(inputs: HTMLInputElement[]){
-    let passwordArea = document.getElementById('passwords') as HTMLElement
-    passwordArea.innerHTML = ""
-    passwordArea.innerHTML = `
-                    <div>
-                        <label for="pwd-r1">Jelszó</label>
-                        <input name="pwd-r1" id="pwd1" type="password" value="${user.password}" disabled>
-                        <input class="pwd1" type="checkbox" disabled>
-                    </div>
-            `
+    (document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList = "d-none"
     inputs.forEach(input =>{
         input.disabled = true
     })
@@ -213,7 +227,7 @@ function collectData(inputs: HTMLInputElement[]):User{
         id: user.id,
         name: (inputs.find(i => i.classList.contains("name")) as HTMLInputElement).value,
         email: (inputs.find(i => i.classList.contains("email")) as HTMLInputElement).value,
-        password: user.password,
+        password: (document.getElementById("pwd1") as HTMLInputElement).value,
         author: (inputs.find(i => i.classList.contains("author")) as HTMLInputElement).checked,
     }
     return modifiedUser
@@ -249,16 +263,7 @@ function passwordHandler(){
     // })
     
     document.getElementById("pwd1")?.addEventListener("click", () =>{
-        let passwordArea = document.getElementById('passwords') as HTMLElement
-        let pwd2Input = `
-            <div>
-                <label for="pwd-r1">Jelszó mégegyszer</label>
-                <input name="pwd-r2" id="pwd2" type="password">
-                <input class="pwd2" type="checkbox" >
-            </div>
-        `
-        passwordArea.innerHTML += pwd2Input
-        passwordVisible([document.getElementById("pwd1") as HTMLInputElement, document.getElementById("pwd2") as HTMLInputElement])
+        (document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList = "d-flex"
     })
 
     
