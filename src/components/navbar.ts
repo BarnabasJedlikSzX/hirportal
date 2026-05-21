@@ -1,3 +1,4 @@
+import { GetFormattedDate } from "../api/getFormattedDate"
 import { GetCurrencies, GetWeather, Nevnapok } from "../api/http"
 import type { User } from "../types/User"
 
@@ -62,7 +63,7 @@ async function TopBar() {
          <span class="fw-bold"> ${weather.description !== "" ? " - " + weather.description : ""}</span>
          </p>
         <p class="m-0 me-2 col text-end">
-        <span class="fw-bold">${today.toLocaleString().slice(0, 10)} </span>
+        <span class="fw-bold">${GetFormattedDate().slice(0, 13)} </span>
          - ${first}, ${second}
          </p>
         
