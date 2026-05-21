@@ -6,6 +6,7 @@ declare global {
         email: string 
         name: string
         author: boolean
+        profilPictureSrc: string
     } | null; // Kezdetben null, amíg nincs bejelentkezve
   }
 }

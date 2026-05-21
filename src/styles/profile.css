@@ -1,16 +1,28 @@
-#body{
+#content{
     width: 100%;
     display: flex;
-    flex-direction: column;
 }
 
+#body{
+        flex: 55%;
+}
 
-#profile{
-    width: 100%;
-    margin: 3%;
+#picture{
+    margin-top: 1%;
+    flex: 45%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+#profile{
+    margin-top: 3%;
+    margin-left: 3%;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
     flex-direction: column;
 }
 
@@ -31,4 +43,55 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2%;
+}
+
+
+#addProfPic{
+    border-radius: 100px;
+    background-color: #4e4e4e;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 300px;
+    text-align: center;
+    height: 18rem;
+    align-content: center;
+    color: #ccc;
+}
+
+#profPicImage{
+    border-radius: 100px;
+    background-color: #4e4e4e;
+    font-size: 20px;
+    cursor: not-allowed;
+    transition: 0.5s;
+    width: 300px;
+    text-align: center;
+    height: 18rem;
+    align-content: center;
+    color: #ccc;
+    object-fit: cover;
+    z-index: 2;
+}
+
+#profilePicContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#deleteProfPic {
+    opacity: 0;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    position: absolute;
+    border-radius: 100px;
+    width: 300px;
+    height: 18rem;
+    z-index: 0;
+    text-align: center;
+    cursor: pointer;
 }
