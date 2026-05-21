@@ -2,6 +2,7 @@ import './styles/style.css'
 import './styles/signup_login.css'
 import type { User } from "./types/User";
 import { getUsers, createUser, getNewUser } from "./api/user_handler";
+import { showConfirm, showPopup } from '../src/components/popup';
 import { Navbar } from './components/navbar';
 import {emailFoglalt, emailValidForma, saveAndContinue, inputNotFilled, showError, showSuccess} from './components/user_validations'
 
@@ -91,9 +92,13 @@ function LoadPage() {
         let password = (loginDiv?.querySelector("#pwd") as HTMLInputElement).value
         let foundUser = users.find(m => m.email == email && m.password == password)
         console.log(foundUser)
-        if (loginValidation(loginInputs, foundUser) && foundUser != undefined) {
-            succesDiv.innerHTML += "Sikeres bejelentkezés!"
-            await showSuccess(2000)
+        if (await loginValidation(loginInputs, foundUser) && foundUser != undefined) {
+            await showPopup({
+                title: "Sikeres bejelentkezés",
+                message: undefined,
+                duration: 2000
+            })
+            await showSuccess(1500)
             saveAndContinue(foundUser)
             window.location.replace("/")
 
@@ -124,7 +129,12 @@ function LoadPage() {
                 succesDiv.innerHTML += "Sikeres regisztrálás!"
                 newUser = await getNewUser(newUser)
                 console.log(newUser)
-                await showSuccess(2000)
+                await showPopup({
+                    title: "Sikeres regisztráció",
+                    message: undefined,
+                    duration: 2000
+                })
+                await showSuccess(1500)
                 saveAndContinue(newUser)
                 window.location.replace("/")
 
@@ -140,7 +150,7 @@ LoadPage()
 
 
 
-function signinValidation(inputs: HTMLInputElement[]): Object{
+async function signinValidation(inputs: HTMLInputElement[]){
     let email = (inputs.find(i => i.classList.contains("email")) as HTMLInputElement).value
     let pwd1 = (inputs.find(i => i.id == "pwd1") as HTMLInputElement).value
     let pwd2 = (inputs.find(i => i.id == "pwd2") as HTMLInputElement).value
@@ -164,15 +174,21 @@ function signinValidation(inputs: HTMLInputElement[]): Object{
         }
     }
     showError(errors)
-    return {}
+    if(errors.length > 0){
+        await showConfirm({
+            title: "Sikertelen regisztráció",
+            message: showError(errors),
+        })
+        return false
+    }
 }
 
-function loginValidation(inputs: HTMLInputElement[], foundUser: User | undefined): boolean{
+async function loginValidation(inputs: HTMLInputElement[], foundUser: User | undefined): Promise<boolean>{
     let email = (inputs.find(i => i.classList.contains("email")) as HTMLInputElement).value
 
     let errors: string[] = []
     if (inputNotFilled(inputs)){
-        errors.push("Mezők kitöltése kötelező")
+        errors.push("Mezők kitöltése kötelező!")
     }
 
     if (!inputNotFilled(inputs)){
@@ -184,11 +200,17 @@ function loginValidation(inputs: HTMLInputElement[], foundUser: User | undefined
             errors.push("Hibás email cím vagy jelszó")
         }
     }
-    showError(errors)
+
     if(errors.length == 0){
         return true
     }
-    else{ return false}
+    else{ 
+        await showConfirm({
+            title: "Sikertelen bejelentkezés",
+            message: showError(errors),
+        })
+        return false
+    }
 }
 
 function passwordVisible(passwordInputs: HTMLInputElement[]) {

@@ -50,10 +50,12 @@ export function showConfirm(options: PopupTexts): Promise<boolean> {
 
     // 3. Eseménykezelő az "Igen" gombra
     const confirmBtn = modalElement.querySelector('#tsModalConfirmBtn') as HTMLButtonElement;
-    confirmBtn.addEventListener('click', () => {
-        wasConfirmed = true;
-        bootstrapModal.hide(); // Ez ki fogja váltani a rejtett (hidden) eseményt
-    }, {once: true});
+    if(confirmBtn){
+      confirmBtn.addEventListener('click', () => {
+          wasConfirmed = true;
+          bootstrapModal.hide(); // Ez ki fogja váltani a rejtett (hidden) eseményt
+      }, {once: true});
+    }
     
     // 4. Takarítás és a Promise lezárása (BÁRMELYIK bezárás gombra lefut)
     modalElement.addEventListener('hidden.bs.modal', () => {
