@@ -4,8 +4,10 @@ import { GetNews } from './api/http';
 import type { News } from './types/News';
 import type { User } from "./types/User";
 import { topics } from './global/topics';
+import { LatestNews } from './components/latestNews';
 
 Navbar()
+LatestNews()
 
 let data = localStorage.getItem("aktualisUser")
 

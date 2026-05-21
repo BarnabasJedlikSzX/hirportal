@@ -202,11 +202,11 @@ body:has(.CodeMirror-fullscreen) #navbar {
     scale: 0;
 }
 
-#navbar .btn:hover{
+#navbar .btn:hover {
     box-shadow: 0 3px grey;
 }
 
-#navbar .btn:active{
+#navbar .btn:active {
     box-shadow: 0 3px black;
 }
 
@@ -220,6 +220,29 @@ body:has(.CodeMirror-fullscreen) #navbar {
 
 }
 
-#logout{
+#logout {
     box-shadow: none !important;
+}
+
+.latestNews {
+    border-left: 1px solid white;
+    padding: 10px;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+.latestNews:hover {
+    border-radius: 10px;
+    background-color: rgb(80, 80, 80);
+    border-color: transparent;
+}
+
+.latestNews:first-child {
+    border: none;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
