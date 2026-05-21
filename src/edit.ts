@@ -1,4 +1,4 @@
-import { GetFormattedDate } from './api/getFormattedDate';
+import { GetFormattedDate } from './components/getFormattedDate';
 import { AddNews, DeleteNews, EditNews, GetNewsById } from './api/http';
 import { Error } from './components/error';
 import { Navbar } from './components/navbar';

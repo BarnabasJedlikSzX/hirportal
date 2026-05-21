@@ -201,3 +201,25 @@ body:has(.CodeMirror-fullscreen) #navbar {
     transition: 0.4s;
     scale: 0;
 }
+
+#navbar .btn:hover{
+    box-shadow: 0 3px grey;
+}
+
+#navbar .btn:active{
+    box-shadow: 0 3px black;
+}
+
+#deleteNewsBtn:hover {
+    box-shadow: 0 3px black;
+
+}
+
+#deleteNewsBtn:active {
+    box-shadow: 0 3px white;
+
+}
+
+#logout{
+    box-shadow: none !important;
+}

@@ -1,4 +1,4 @@
-import { GetFormattedDate } from "../api/getFormattedDate"
+import { GetFormattedDate } from "./getFormattedDate"
 import { GetCurrencies, GetWeather, Nevnapok } from "../api/http"
 import type { User } from "../types/User"
 
@@ -77,11 +77,11 @@ export function Navbar() {
     TopBar()
     document.querySelector("#navbar")!.insertAdjacentHTML("beforeend", `
             <nav class="navbar bg-warning p-0">
-                <div class="row container-fluid p-0 px-md-3 m-0">
+                <div class="row container-fluid p-1 py-md-0 px-md-3 m-0">
 
                 <div class="d-flex col p-0">
-                    <button class="btn btn-dark p-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-hash fs-3"></i></button>
-                    ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light h-25 m-auto ms-3" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}   
+                    <button class="btn btn-dark px-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="me-1">#</span> Témák</button>
+                    ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light ms-3" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}   
                 </div>
 
                 <a href="/" class="d-none d-md-block user-select-none text-center col">
@@ -91,7 +91,7 @@ export function Navbar() {
                 <div class="col text-end p-0">
                    ${loggedIn ?
             `       <div class="dropdown">
-                        <button type="button" class="btn btn-dark p-4 m-0 fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" class="btn btn-dark m-0 fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             ${user.name}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end mt-3" id="mainDropdown">
@@ -110,7 +110,7 @@ export function Navbar() {
                         </ul>
                     </div>`
             :
-            `<a class="btn btn-dark p-4 fw-bold" href="signup_login.html">Bejelentkezés</a>`
+            `<a class="btn btn-dark fw-bold" href="signup_login.html">Bejelentkezés</a>`
         }
                 </div>
 
