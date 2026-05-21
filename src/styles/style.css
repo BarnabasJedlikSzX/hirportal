@@ -225,7 +225,7 @@ body:has(.CodeMirror-fullscreen) #navbar {
 }
 
 .latestNews {
-    border-left: 1px solid white;
+    border-right: 1px solid white;
     padding: 10px;
     font-size: 0.8rem;
     transition: 0.4s;
@@ -237,7 +237,7 @@ body:has(.CodeMirror-fullscreen) #navbar {
     border-color: transparent;
 }
 
-.latestNews:first-child {
+.latestNews:last-child {
     border: none;
 }
 
