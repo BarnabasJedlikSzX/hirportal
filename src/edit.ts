@@ -1,3 +1,4 @@
+import { GetFormattedDate } from './api/getFormattedDate';
 import { AddNews, DeleteNews, EditNews, GetNewsById } from './api/http';
 import { Error } from './components/error';
 import { Navbar } from './components/navbar';
@@ -137,7 +138,7 @@ document.querySelector("#sendModalBtn")!.addEventListener("click", async () => {
     const news: News = {
         id: newsId!,
         userId: currentUser.id!,
-        createdAt: new Date().toLocaleString(),
+        createdAt: GetFormattedDate(),
         imgURL: filename,
         topic: topic,
         title: title,
