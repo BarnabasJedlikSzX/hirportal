@@ -92,7 +92,7 @@ export function Navbar() {
                    ${loggedIn ?
             `       <div class="dropdown">
                         <button type="button" class="btn btn-dark m-0 fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            ${user.name}
+                            <i class="bi bi-person-fill"></i> ${user.name}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end mt-3" id="mainDropdown">
                             ${user.author ?
@@ -101,13 +101,13 @@ export function Navbar() {
                                 <a class="btn btn-outline-light fw-bold w-100 text-center" href="edit.html" style="width:3rem;">+</a>
                             </li>
                             <li>
-                            <a class="dropdown-item" href="ownNews.html">Saját hírek</a>
+                            <a class="dropdown-item" href="ownNews.html"><i class="bi bi-newspaper me-1"></i> Saját hírek</a>
                             </li>
                             
                             `: ""
             }
                             <li>
-                            <a class="dropdown-item" href="profile.html">Profil</a>
+                            <a class="dropdown-item" href="profile.html"><i class="bi bi-person-circle me-1"></i> Profil</a>
                             </li>
                             <li>
                             <button id="logout" class="btn text-primary dropdown-item" style="cursor: pointer;">Kijelentkezés</button>

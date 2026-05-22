@@ -269,7 +269,7 @@ body:has(.CodeMirror-fullscreen) #navbar {
 }
 
 .ownNews:hover {
-    background-color: #2d2d2d;
+    background-color: #464646;
 }
 
 #ownNewsContainer {
