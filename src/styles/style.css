@@ -251,3 +251,37 @@ body:has(.CodeMirror-fullscreen) #navbar {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.ownNewsImg {
+    width: 8rem;
+    border-radius: 7px;
+    margin-right: 20px;
+}
+
+.ownNews {
+    margin: 10px;
+    border-radius: 7px;
+    background-color: #2d2d2d;
+    padding: 10px;
+    align-items: center;
+    height: 7rem;
+    transition: 0.4s;
+}
+
+.ownNews:hover {
+    background-color: #2d2d2d;
+}
+
+#ownNewsContainer {
+    height: 600px;
+    overflow: auto;
+}
+
+
+.ownNews .btn:hover {
+    box-shadow: 0 3px black;
+}
+
+.ownNews .btn:active {
+    box-shadow: 0 3px white;
+}
