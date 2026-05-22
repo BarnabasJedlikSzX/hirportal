@@ -15,6 +15,7 @@ if (loggedIn) {
     if (user.author) {
         let newsId = ""
         const news: News[] = await GetNews();
+        news.reverse()
         document.querySelector("#main")!.insertAdjacentHTML("afterbegin", `
             
             <div id="ownNewsContainer"></div>
@@ -68,7 +69,15 @@ if (loggedIn) {
         })
 
         document.querySelector("#deleteModalBtn")!.addEventListener("click", async () => {
-            await DeleteNews(newsId).then(() => location.reload())
+            await DeleteNews(newsId).then(() => {
+                document.querySelector("#deleteModalBtn")!.innerHTML =
+                    `
+        <div class="spinner-border spinner-border-sm" role="status">
+        <span class="visually-hidden">Betöltés...</span>
+        </div>
+            `
+                setTimeout(() => location.reload(), 800)
+            })
         })
 
     } else Error(401)

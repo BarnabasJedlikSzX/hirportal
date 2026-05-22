@@ -65,7 +65,7 @@ if (newsId) {
             })
         })
 
-        document.querySelector("#sendNews")!.innerHTML = "Módosítás"
+        document.querySelector("#sendNews")!.innerHTML = `<i class="bi bi-pen me-1"></i> Módosítás`
         document.querySelector("#sendNews")!.className = "btn btn-warning w-100"
 
         document.querySelector(".modal-body")!.innerHTML = "Biztosan módosítod a cikket?"

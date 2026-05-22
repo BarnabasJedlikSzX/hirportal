@@ -31,7 +31,8 @@ export async function LatestNews() {
             <a href="read.html?id=${n.id}" style="text-decoration:none; min-width:0;" class="text-white latestNews col">
                 <ul>
                     <li style="list-style-type: square;" class="text-info">
-                        ${timeStamp}
+                    ${timeStamp} 
+                    <i class="bi bi-clock ms-1"></i>
                     </li>
                     <p class="truncate">${n.title}</p>
                 </ul>

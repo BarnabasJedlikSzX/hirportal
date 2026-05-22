@@ -110,7 +110,7 @@ export function Navbar() {
                             <a class="dropdown-item" href="profile.html"><i class="bi bi-person-circle me-1"></i> Profil</a>
                             </li>
                             <li>
-                            <button id="logout" class="btn text-primary dropdown-item" style="cursor: pointer;">Kijelentkezés</button>
+                            <button id="logout" class="btn text-primary dropdown-item" style="cursor: pointer;"><i class="bi bi-door-open-fill me-1"></i> Kijelentkezés</button>
                             </li>
                         </ul>
                     </div>`
