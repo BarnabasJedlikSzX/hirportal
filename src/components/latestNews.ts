@@ -2,7 +2,7 @@ import { GetNews } from "../api/http"
 
 
 export async function LatestNews() {
-    document.querySelector("#main")!.insertAdjacentHTML("beforebegin", `<div id="latestNewsContainer" class="row m-3">
+    document.querySelector("#main")!.insertAdjacentHTML("beforebegin", `<div id="latestNewsContainer" class="row m-3 d-none d-sm-flex">
         <p>Legfrissebb hírek</p>
         </div>`)
     const news = await GetNews()

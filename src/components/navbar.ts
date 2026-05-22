@@ -53,7 +53,7 @@ async function TopBar() {
         .slice(0, 2);
 
     document.querySelector("#navbar")!.insertAdjacentHTML("afterbegin", `
-        <div id="topBar" class="row container-fluid m-0">
+        <div id="topBar" class="row container-fluid m-0 d-none d-sm-flex">
          <p class="m-0 ms-2 col">
          <span class="fw-bold">EUR:</span> ${eur.rates.HUF.toPrecision(5)} FT, <span class="fw-bold">USD:</span> ${usd.rates.HUF.toPrecision(5)} FT
          </p>
@@ -99,7 +99,12 @@ export function Navbar() {
                 `
                             <li style="justify-self:center;" class="w-75 m-2">
                                 <a class="btn btn-outline-light fw-bold w-100 text-center" href="edit.html" style="width:3rem;">+</a>
-                            </li>`: ""
+                            </li>
+                            <li>
+                            <a class="dropdown-item" href="ownNews.html">Saját hírek</a>
+                            </li>
+                            
+                            `: ""
             }
                             <li>
                             <a class="dropdown-item" href="profile.html">Profil</a>
