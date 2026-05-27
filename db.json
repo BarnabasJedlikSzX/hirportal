@@ -6,7 +6,7 @@
       "password": "321",
       "name": "anyu",
       "author": false,
-      "profilPictureSrc": ""
+      "profilPictureSrc": "15.jpg"
     },
     {
       "id": "3",
@@ -14,7 +14,7 @@
       "password": "qwerty",
       "name": "Kiss Béla",
       "author": true,
-      "profilPictureSrc": ""
+      "profilPictureSrc": "13.jpg"
     },
     {
       "id": "4",
@@ -22,7 +22,7 @@
       "password": "jelszo",
       "name": "Nagy Júlia",
       "author": false,
-      "profilPictureSrc": ""
+      "profilPictureSrc": "13.jpg"
     },
     {
       "id": "5",
@@ -30,7 +30,7 @@
       "password": "123456",
       "name": "Tóth Róbert",
       "author": false,
-      "profilPictureSrc": ""
+      "profilPictureSrc": "13.jpg"
     },
     {
       "id": "9ZNHON5fHDk",
@@ -38,7 +38,7 @@
       "email": "pali@gmail.com",
       "password": "123",
       "author": false,
-      "profilPictureSrc": ""
+      "profilPictureSrc": "13.jpg"
     }
   ],
   "news": [
