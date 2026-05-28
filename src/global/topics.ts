@@ -1,6 +1,6 @@
 export const topics = [
     "Politika",
-    "Tech",
+    "Technológia",
     "Időjárás",
     "Magyar Péter",
     "Belügy",
