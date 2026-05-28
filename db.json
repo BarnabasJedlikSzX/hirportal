@@ -175,10 +175,12 @@
       "userId": "2",
       "newsId": "nws_006",
       "repliedCommentId": "1",
-      "likes": 0,
+      "likes": 1,
       "content": "a te kurva anyád",
       "createdAt": "2026. 05. 28. 08:35",
-      "likers": []
+      "likers": [
+        "3"
+      ]
     },
     {
       "id": "3",
@@ -189,6 +191,18 @@
       "content": "xdddddd",
       "createdAt": "2026. 05. 28. 09:10",
       "likers": []
+    },
+    {
+      "id": "4",
+      "userId": "4",
+      "newsId": "nws_006",
+      "repliedCommentId": "2",
+      "likes": 4,
+      "content": "asd",
+      "createdAt": "2026. 05. 28. 13:10",
+      "likers": [
+        "3"
+      ]
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

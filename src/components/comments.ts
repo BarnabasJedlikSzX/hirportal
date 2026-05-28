@@ -14,7 +14,7 @@ export async function Comments() {
     const loggedIn = localStorage.getItem("aktualisUser")
     const currentUser: User = JSON.parse(loggedIn!)
     document.querySelector("#commentsContainer")?.remove()
-    document.querySelector("#main")!.insertAdjacentHTML("afterend", `<div id="commentsContainer" class="row mb-5 p-3">
+    document.querySelector("#main")!.insertAdjacentHTML("afterend", `<div id="commentsContainer" class="row mb-5 p-4 justify-content-end">
         <hr style="color:gold;">
         <h3 class="mb-4">Kommentek</h3>
         </div>`)
@@ -42,13 +42,15 @@ export async function Comments() {
             for (let u of users) {
                 if (comment.userId === u.id) user = u
             }
+            let element = document.querySelector("#commentsContainer")!
+            if (comment.repliedCommentId !== "") element = document.querySelector(`#replyContainer-${comment.repliedCommentId}`)!
 
-            document.querySelector("#commentsContainer")?.insertAdjacentHTML("beforeend", `
+            element.insertAdjacentHTML("beforeend", `
             <div class="comment">
                 <div class="d-flex align-items-center mb-3">
-                    <img src="./backend/downloaded/${user.profilPictureSrc}" class="rounded-3 me-2" style="width:2rem;">
+                    <img src="./backend/downloaded/${user.profilPictureSrc}" class="rounded-3 me-2 border border-2 border-white" style="width:2rem; height:2rem;">
                     <p class="m-0">
-                        <span class="fw-bold">${user.name}</span> <span class="text-info">${user.id === news.userId ? "• Szerkesztő <i class='bi bi-pen-fill'></i>" : ""}</span>
+                        <span class="fw-bold">${user.name}</span> <span class="text-info">${user.id === news.userId ? "• Szerkesztő <i class='bi bi-pen-fill ms-1'></i>" : ""}</span>
                     </p>
                 </div>
                 <p class="ms-2">
@@ -70,10 +72,15 @@ export async function Comments() {
                         ${timeStamp}
                         </span>
                     </div>
-                    <button class="btn text-warning">Válasz</button>
+                    <div>
+                    <button class="btn text-warning"><i class="bi bi-reply-fill"></i></button>
+                    ${comment.userId === currentUser.id ? `<button class="btn text-secondary"><i class="bi bi-pencil-fill"></i></button>` : ""}
+                    
+                    </div>
                 </div>
 
             </div>
+            <div id="replyContainer-${comment.id}" style="width:90%; padding:0; margin-left:auto; margin-right:0;"></div>
         `);
         }
 
