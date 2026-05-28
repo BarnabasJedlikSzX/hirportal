@@ -81,3 +81,10 @@ export async function GetComments(newsId: string): Promise<Comment[]> {
 
     return comments
 }
+
+export async function UpdateComment(comment:Comment){
+    await fetch(`http://localhost:3000/comments/${comment.id}`, {
+        method: "PATCH",
+        body: JSON.stringify(comment)
+    })
+}

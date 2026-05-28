@@ -149,9 +149,10 @@
       "userId": "3",
       "newsId": "nws_006",
       "repliedCommentId": "",
-      "likes": 2,
+      "likes": 0,
       "content": "kurva anyád",
-      "createdAt": "2026. 05. 28. 08:30"
+      "createdAt": "2026. 05. 28. 08:30",
+      "likers": []
     },
     {
       "id": "2",
@@ -160,7 +161,8 @@
       "repliedCommentId": "1",
       "likes": 0,
       "content": "a te kurva anyád",
-      "createdAt": "2026. 05. 28. 08:35"
+      "createdAt": "2026. 05. 28. 08:35",
+      "likers": []
     },
     {
       "id": "3",
@@ -169,7 +171,8 @@
       "repliedCommentId": "",
       "likes": 0,
       "content": "xdddddd",
-      "createdAt": "2026. 05. 28. 09:10"
+      "createdAt": "2026. 05. 28. 09:10",
+      "likers": []
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
