@@ -47,8 +47,7 @@ function LoadPage() {
                     profilPicHandler(pictureInput, profPic)
                     break;
                 case "save":                        
-                    inputs.splice(inputs.indexOf(document.querySelector(".pwd1") as HTMLInputElement), 1)
-                    inputs.splice(inputs.indexOf(document.querySelector(".pwd2") as HTMLInputElement), 1)
+
                     let errors: string[] = []
                     let modified: User = collectData(inputs)
                     console.log(modified)
@@ -118,15 +117,19 @@ function loadUserData(){
                 </div>
                 
                 <div id="passwords">
-                    <div >
+                    <div>
                         <label for="pwd-r1">Jelszó</label>
                         <input name="pwd-r1" id="pwd1" type="password" value="${user.password}" disabled>
-                        <input class="pwd1" type="checkbox" disabled>
+                        <button type="button" class="pwdToggle">
+                            <i class="ti ti-eye"></i>
+                        </button>
                     </div>
                     <div class="d-none">
                         <label for="pwd-r1">Jelszó mégegyszer</label>
                         <input name="pwd-r2" id="pwd2" type="password">
-                        <input class="pwd2" type="checkbox" >
+                        <button type="button" class="pwdToggle">
+                            <i class="ti ti-eye"></i>
+                        </button>
                     </div>
                 </div>
                 
@@ -314,6 +317,8 @@ function disableInputs(inputs: HTMLInputElement[]){
 
 function collectData(inputs: HTMLInputElement[]):User{
     //console.log((document.getElementById("profilePicContainer")!.querySelector("#profPicImage") as HTMLInputElement).src.split("/")[5])
+    console.log(inputs);
+    
     let modifiedUser: User = {
         id: user.id,
         name: (inputs.find(i => i.classList.contains("name")) as HTMLInputElement).value,
@@ -360,3 +365,16 @@ function passwordHandler(){
 
     
 }
+
+
+document.querySelectorAll('.pwdToggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = btn.previousElementSibling as HTMLInputElement;; // a mellette lévő input
+    const icon = btn.querySelector('i')
+    if (input){
+        const show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        icon!.className = show ? 'ti ti-eye-off' : 'ti ti-eye';
+    }
+  });
+});
