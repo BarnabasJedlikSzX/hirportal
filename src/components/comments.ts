@@ -1,4 +1,4 @@
-import { GetComments, GetNews, GetNewsById, UpdateComment } from "../api/http";
+import { GetComments, GetNewsById, UpdateComment } from "../api/http";
 import { getUsers } from "../api/user_handler";
 import type { Comment } from "../types/Comment";
 import type { News } from "../types/News";
