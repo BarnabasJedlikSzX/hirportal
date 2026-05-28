@@ -21,6 +21,13 @@ let news: News[] = await GetNews();
 let sortedNews: News[] = news;
 
 function render() {
+    const savedTopic = localStorage.getItem("topic");
+
+    if (savedTopic) {
+        sortedNews = news.filter(n => n.topic === savedTopic);
+        localStorage.removeItem("topic");
+    }
+
     topic();
     newsRender(sortedNews!);
 }
@@ -45,7 +52,8 @@ function topic() {
         if (id === "Összes") {
             sortedNews = [];
             sortedNews = news;
-        } 
+        }
+
         else {
             sortedNews = [];
 
