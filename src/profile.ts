@@ -106,7 +106,7 @@ function loadUserData(){
     body.classList += "container"
     body.innerHTML += `
         <form id="profile">
-                <h1>Profil adatok</h1>
+                <h1 class="panel-title">Profil adatok</h1>
                 <div>
                     <label for="name">Felhasználó név</label>
                     <input name="name" class="name" type="text" value="${user.name}" disabled>
