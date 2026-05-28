@@ -14,19 +14,20 @@ body {
 
 #commentsContainer {
     width: 70%;
+    border-radius: 10px;
     margin: auto;
-    background-color: #1e1e1e;
+    background: linear-gradient(135deg, #0f172a, #020617);
 }
 
 .comment {
-    background-color: #2d2d2d;
+    background: #111b31;
     margin: 10px;
     border-radius: 7px;
     padding: 10px;
 }
 
 #addImgButton {
-    background-color: #151849;
+    background-color: #12143f;
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
@@ -35,6 +36,7 @@ body {
     height: 18rem;
     align-content: center;
     color: #ccc;
+    border-radius: 10px;
 }
 
 #addImgButton:hover {
@@ -50,16 +52,16 @@ body {
     height: 4rem;
     margin: 10px;
     margin-left: 0;
-    border: #ccc 2px solid;
+    border: #190b68 2px solid;
     padding: 10px;
     border-radius: 5px;
     transition: 0.35s;
-    background-color: #171b52;
+    background-color: #11133b;
 }
 
 .inputField:focus {
     outline: none;
-    border-color: orange;
+    box-shadow: 0 3px rgb(9, 131, 172);
 }
 
 #title {
@@ -147,55 +149,51 @@ hr {
 }
 
 .EasyMDEContainer {
-    background: #171b52;
-    border-radius: 10px;
+    background: #0b0d26;
 }
 
 .EasyMDEContainer .CodeMirror {
-    background: #171b52;
-    color: #e0e4ff;
-    border-color: #2e3480;
+    background: #0b0d26;
+    color: #e6e9ff;
+    border-color: #1c214f;
 }
 
 .EasyMDEContainer .editor-toolbar {
-    background: #1f2460;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-color: #2e3480;
+    background: #10143a;
+    border-color: #1c214f;
 }
 
 .EasyMDEContainer .editor-toolbar button {
-    color: #e0e4ff !important;
+    color: #e6e9ff !important;
 }
 
 .EasyMDEContainer .editor-toolbar button:hover,
 .EasyMDEContainer .editor-toolbar button.active {
-    background: #2e3480;
-    border-color: #3d44a8;
+    background: #1a215a;
+    border-color: #2a357f;
 }
 
 .EasyMDEContainer .editor-toolbar i.separator {
-    border-color: #3d44a8;
+    border-color: #2a357f;
 }
 
 .EasyMDEContainer .editor-preview {
-    background: #171b52;
-    color: #e0e4ff;
+    background: #0b0d26;
+    color: #e6e9ff;
 }
 
 .EasyMDEContainer .editor-preview-side {
-    background: #171b52;
-    border-color: #2e3480;
+    background: #0b0d26;
+    border-color: #1c214f;
 }
 
 .EasyMDEContainer .CodeMirror-cursor {
-    border-left-color: #e0e4ff;
+    border-left-color: #e6e9ff;
 }
 
 .CodeMirror-selected {
-    background: #2a3070 !important;
+    background: #1b225e !important;
 }
-
 
 body:has(.CodeMirror-sided) #navbar,
 body:has(.CodeMirror-fullscreen) #navbar {
@@ -203,7 +201,6 @@ body:has(.CodeMirror-fullscreen) #navbar {
 }
 
 #scrollToTop {
-    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     border: none;
     padding: 10px;
@@ -215,6 +212,9 @@ body:has(.CodeMirror-fullscreen) #navbar {
     right: 30px;
     transition: 0.4s;
     scale: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #navbar .btn:hover {

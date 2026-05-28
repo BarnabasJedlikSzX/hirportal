@@ -7,7 +7,7 @@ document.querySelector("head")!.insertAdjacentHTML("beforeend", `
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 `)
 document.querySelector("#app")!.insertAdjacentHTML("beforeend", `
-    <button type="button" id="scrollToTop"><i class="bi bi-arrow-up-circle-fill"></i></button>
+    <button type="button" id="scrollToTop" class="bg-warning text-dark"><i class="bi bi-arrow-up-circle-fill mt-1"></i></button>
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Témák</h5>
