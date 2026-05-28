@@ -6,7 +6,7 @@
       "password": "321",
       "name": "anyu",
       "author": false,
-      "profilPictureSrc": "15.jpg"
+      "profilPictureSrc": "13.jpg"
     },
     {
       "id": "3",
@@ -36,6 +36,22 @@
       "id": "9ZNHON5fHDk",
       "name": "Páli Dávid",
       "email": "pali@gmail.com",
+      "password": "123",
+      "author": false,
+      "profilPictureSrc": "13.jpg"
+    },
+    {
+      "id": "a8CCkRljW5Y",
+      "name": "Lil G",
+      "email": "lil@gmail.com",
+      "password": "123",
+      "author": false,
+      "profilPictureSrc": "13.jpg"
+    },
+    {
+      "id": "cYe0p0HAAUU",
+      "name": "Fasz Szopó",
+      "email": "fasz@gmail.com",
       "password": "123",
       "author": false,
       "profilPictureSrc": "13.jpg"
@@ -127,7 +143,7 @@
       "userId": "3",
       "createdAt": "2026. 05. 22. 21:58 (szerkesztve)",
       "imgURL": "12.png",
-      "topic": "Tech",
+      "topic": "Technológia",
       "title": "Digitális forradalom az iskolákban: 2027-től kötelező lesz a programozás az általánosban",
       "subtitle": "Az Oktatási Minisztérium bejelentette az új Nemzeti Alaptanterv módosítását.",
       "content": "# Digitális forradalom az iskolákban: 2027-től kötelező lesz a programozás az általánosban\n\nAz Oktatási Minisztérium bejelentette, hogy **2027 szeptemberétől** a Nemzeti Alaptanterv kötelező elemeként jelenik meg az algoritmikus gondolkodás és a programozás alapjainak oktatása az általános iskolák 5–8. osztályaiban.\n\n## Mi változik pontosan?\n\nAz új tantárgy, amelynek neve **„Digitális alkotás\"**, hetente két tanórában fog szerepelni. Tartalma:\n\n- **5–6. osztály:** Vizuális programozás (Scratch, MIT App Inventor)\n- **7. osztály:** Python alapjai, logikai feladatok\n- **8. osztály:** Webalap ismeretek, adatkezelés, AI-etika\n\n## Tanárhiány: a legnagyobb kihívás\n\nA bevezetés legnagyobb akadálya a **képzett pedagógushiány**. Becslések szerint legalább 8 000 informatika tanár kellene az új tárgy zavartalan oktatásához, míg jelenleg csak mintegy 3 200 dolgozik a rendszerben.\n\nA minisztérium 3 éves átképzési programot hirdet, és külföldi partnereket von be az online oktatói anyagok fejlesztésébe.\n\n## Szülők és tanárok reakciói\n\nA pedagógusszakszervezetek **vegyes érzelmekkel** fogadták a hírt – üdvözlik a célt, de aggódnak a megvalósíthatóság miatt. A szülők körében végzett felmérés szerint a megkérdezettek **71%-a** támogatja az újítást."

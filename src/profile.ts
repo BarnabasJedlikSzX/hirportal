@@ -13,7 +13,7 @@ if (!data) {
 
 let loggedIn: User = JSON.parse(data!) as User;
 let user: User = await getUser(loggedIn)
-let savedProfilPicSrc = ""
+let savedProfilPicSrc = user.profilPictureSrc
 console.log(user)
 
 
@@ -45,17 +45,13 @@ function LoadPage() {
                     pictureInput.disabled = false
                     passwordVisible([document.getElementById("pwd1") as HTMLInputElement])
                     profilPicHandler(pictureInput, profPic)
-                    console.log(savedProfilPicSrc)
                     break;
                 case "save":                        
                     inputs.splice(inputs.indexOf(document.querySelector(".pwd1") as HTMLInputElement), 1)
                     inputs.splice(inputs.indexOf(document.querySelector(".pwd2") as HTMLInputElement), 1)
                     let errors: string[] = []
                     let modified: User = collectData(inputs)
-                    
                     console.log(modified)
-                    console.log(savedProfilPicSrc)
-                    
                     await saveChanges(modified, errors, inputs, savedProfilPicSrc)
                     profPic.style.cursor = "not-allowed"
                     pictureInput.disabled = true
@@ -211,7 +207,11 @@ function profilPicHandler(input: HTMLInputElement, profPic: HTMLElement){
     
     deleteBtn.addEventListener("click", () => {
         input.value = "";
+        if(document.getElementById("addProfPic")){
+            document.getElementById("addProfPic")?.remove()
+        }
         imgContainer.insertAdjacentHTML("afterbegin", label);
+        savedProfilPicSrc = ""
         profPic.style.display = "none";
         uploaded = false
     });
@@ -227,11 +227,7 @@ async function saveChanges(modifiedUser:User, errors: string[], inputs: HTMLInpu
         if (pwd1 != user.password){
             if ((document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList.contains("d-flex")
                  && pwd1 != user.password){
-                //inputs.push(document.getElementById("pwd2") as HTMLInputElement)
-                // if (inputNotFilled(inputs)){
-                    //     errors.push("Ne hagyjon üresen mezőt")
-                //     console.log("scascca")
-                // }
+
                 let pwd2 = (document.getElementById("pwd2") as HTMLInputElement).value
                 if (pwd1 != pwd2){
                     errors.push("Nem egyeznek a jelszavak")
@@ -261,6 +257,7 @@ async function saveChanges(modifiedUser:User, errors: string[], inputs: HTMLInpu
         }
                                 
         if (errors.length == 0 && changesMade(user, modifiedUser)){
+            if(modifiedUser.profilPictureSrc == "") modifiedUser.profilPictureSrc = "13.jpg"
             if(await updateUser(modifiedUser)){
                 saveAndContinue(modifiedUser)
                 await showPopup({
@@ -284,6 +281,15 @@ async function saveChanges(modifiedUser:User, errors: string[], inputs: HTMLInpu
 }
 
 function changesMade(before: User, after: User): boolean{
+    // console.log(before)
+    // console.log(after)
+
+    // console.log(before.profilPictureSrc)
+    // console.log(after.profilPictureSrc)
+    
+    // console.log(before.profilPictureSrc == after.profilPictureSrc)
+
+
     if(before.id == after.id && before.author == after.author
         && before.email == after.email && before.name == after.name
         && before.password == after.password && before.profilPictureSrc == after.profilPictureSrc
@@ -307,13 +313,14 @@ function disableInputs(inputs: HTMLInputElement[]){
 }
 
 function collectData(inputs: HTMLInputElement[]):User{
+    //console.log((document.getElementById("profilePicContainer")!.querySelector("#profPicImage") as HTMLInputElement).src.split("/")[5])
     let modifiedUser: User = {
         id: user.id,
         name: (inputs.find(i => i.classList.contains("name")) as HTMLInputElement).value,
         email: (inputs.find(i => i.classList.contains("email")) as HTMLInputElement).value,
         password: (document.getElementById("pwd1") as HTMLInputElement).value,
         author: (inputs.find(i => i.classList.contains("author")) as HTMLInputElement).checked,
-        profilPictureSrc: ""
+        profilPictureSrc: (document.getElementById("profilePicContainer")!.querySelector("#profPicImage") as HTMLInputElement).src.split("/")[5]
     }
     return modifiedUser
 }

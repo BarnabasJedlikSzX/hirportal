@@ -17,14 +17,12 @@ export function emailFoglalt(email: string, users: User[]): boolean {
 }
 
 export function saveAndContinue(user: User) {
-    let profilPicSrc = ""
-    if (user.profilPictureSrc != "") profilPicSrc = user.profilPictureSrc
     window.globalisUser = {
         id: user.id,
         email: user.email,
         name: user.name,
         author: user.author,
-        profilPictureSrc: profilPicSrc
+        profilPictureSrc: user.profilPictureSrc
     }
 
     localStorage.setItem("aktualisUser", JSON.stringify(window.globalisUser));

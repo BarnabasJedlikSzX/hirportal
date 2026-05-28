@@ -5,20 +5,29 @@ import type { News } from './types/News';
 import type { User } from "./types/User";
 import { topics } from './global/topics';
 import { LatestNews } from './components/latestNews';
+import { showPopup } from './components/popup';
+import { showSuccess } from './components/user_validations';
 
 Navbar()
 LatestNews()
 
-let data = localStorage.getItem("aktualisUser")
+let data = localStorage.getItem("aktualisUser");
+
 
 const newsDiv = document.getElementById('news') as HTMLDivElement;
 const topicSort = document.getElementById('topicSort') as HTMLDivElement;
 
 let news: News[] = await GetNews();
 let sortedNews: News[] = news;
-console.log(data)
 
 function render() {
+    const savedTopic = localStorage.getItem("topic");
+
+    if (savedTopic) {
+        sortedNews = news.filter(n => n.topic === savedTopic);
+        localStorage.removeItem("topic");
+    }
+
     topic();
     newsRender(sortedNews!);
 }
@@ -43,7 +52,8 @@ function topic() {
         if (id === "Összes") {
             sortedNews = [];
             sortedNews = news;
-        } 
+        }
+
         else {
             sortedNews = [];
 
@@ -63,6 +73,7 @@ function newsRender(updatedNews: News[]) {
     updatedNews.forEach(n => {
         let canEdit = false;
         let user: User = JSON.parse(data!) as User;
+        
         if (user) {
             if (user.id == n.userId && user.author) {
                 canEdit = true;
@@ -77,23 +88,49 @@ function newsRender(updatedNews: News[]) {
                         <h5 class="card-title">${n.title}</h5>
                         <p class="card-text text-success">${n.topic}</p>
                         <p class="card-text">${n.createdAt}</p>
-                        ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5">Szerkeszt</a>` : ''}
-                    </div>
+                        </div>
                 </a>
+                ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5 "><i class="bi bi-pencil-square"></i></a>` : ''}
             </div>
         `;
         newsDiv.innerHTML += card;
     });
 }
 
+let counter = 1;
+
 document.getElementById('search')!.addEventListener('click', () => {
+    counter++;
     const searchBar = document.getElementById('searchBar') as HTMLDivElement;
     searchBar.innerHTML = 
     `
     <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5">
-        <input type="text" class="form-control w-50" placeholder="Keresés">
-        <button class="btn btn-secondary">Keresés</button>
+        <input type="text" class="form-control w-50" placeholder="Keresés" id="searchValue">
+        <button class="btn btn-secondary" id="search-btn">Keresés</button>
     </div>
     `;
-    searchBar.style.display = 'block';
-})
+    if (counter % 2 == 0) searchBar.style.display = 'block';
+    else searchBar.style.display = 'none';
+
+    
+    document.getElementById('search-btn')!.addEventListener('click', async () => {
+        sortedNews = [];
+        const searchValue = (document.getElementById('searchValue') as HTMLInputElement).value;
+        news.forEach(n => {
+            if ((n.content.toLowerCase()).includes(searchValue.toLowerCase()) || 
+                (n.subtitle.toLowerCase()).includes(searchValue.toLowerCase()) ||
+                (n.title.toLowerCase()).includes(searchValue.toLowerCase())) {
+                    sortedNews.push(n);
+            }
+        });        
+        if (sortedNews.length === 0){
+            await showPopup({
+                title: "Nincs ilyen hír",
+                message: undefined,
+                duration: 2000
+            })
+            await showSuccess(1500)
+        }
+        newsRender(sortedNews);
+    });
+});
