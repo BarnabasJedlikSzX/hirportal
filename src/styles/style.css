@@ -2,7 +2,7 @@
 
 body {
     font-family: Akt, Arial;
-    background-color: rgb(36, 36, 36);
+    background: linear-gradient(135deg, #0f172a, #020617);
 }
 
 #main,
@@ -26,7 +26,7 @@ body {
 }
 
 #addImgButton {
-    background-color: #4e4e4e;
+    background-color: #151849;
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
@@ -54,6 +54,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     transition: 0.35s;
+    background-color: #171b52;
 }
 
 .inputField:focus {
@@ -145,52 +146,54 @@ hr {
     transition: 0.45s;
 }
 
-/* Dark theme for EasyMDE */
 .EasyMDEContainer {
-    background: #1e1e1e;
+    background: #171b52;
+    border-radius: 10px;
 }
 
 .EasyMDEContainer .CodeMirror {
-    background: #1e1e1e;
-    color: #e0e0e0;
-    border-color: #444;
+    background: #171b52;
+    color: #e0e4ff;
+    border-color: #2e3480;
 }
 
 .EasyMDEContainer .editor-toolbar {
-    background: #2d2d2d;
-    border-color: #444;
+    background: #1f2460;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-color: #2e3480;
 }
 
 .EasyMDEContainer .editor-toolbar button {
-    color: #e0e0e0 !important;
+    color: #e0e4ff !important;
 }
 
 .EasyMDEContainer .editor-toolbar button:hover,
 .EasyMDEContainer .editor-toolbar button.active {
-    background: #444;
-    border-color: #555;
+    background: #2e3480;
+    border-color: #3d44a8;
 }
 
 .EasyMDEContainer .editor-toolbar i.separator {
-    border-color: #555;
+    border-color: #3d44a8;
 }
 
 .EasyMDEContainer .editor-preview {
-    background: #1e1e1e;
-    color: #e0e0e0;
+    background: #171b52;
+    color: #e0e4ff;
 }
 
 .EasyMDEContainer .editor-preview-side {
-    background: #1e1e1e;
-    border-color: #444;
+    background: #171b52;
+    border-color: #2e3480;
 }
 
 .EasyMDEContainer .CodeMirror-cursor {
-    border-left-color: #e0e0e0;
+    border-left-color: #e0e4ff;
 }
 
 .CodeMirror-selected {
-    background: #3a3a3a !important;
+    background: #2a3070 !important;
 }
 
 
@@ -244,7 +247,7 @@ body:has(.CodeMirror-fullscreen) #navbar {
 }
 
 .latestNews:hover {
-    background-color: rgb(80, 80, 80);
+    background-color: rgb(29, 27, 68);
 }
 
 .latestNews:last-child {
@@ -273,15 +276,15 @@ body:has(.CodeMirror-fullscreen) #navbar {
 .ownNews {
     margin: 10px;
     border-radius: 7px;
-    background-color: #2d2d2d;
+    background-color: #171846;
     padding: 10px;
     align-items: center;
-    height: 7rem;
+    min-height: 7rem;
     transition: 0.4s;
 }
 
 .ownNews:hover {
-    background-color: #464646;
+    background-color: #20255e;
 }
 
 #ownNewsContainer {

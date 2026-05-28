@@ -37,8 +37,8 @@ function topic() {
     topicSort.innerHTML = '';
     topicSort.innerHTML += `<span class="m-auto"><button class='btn btn-sm btn-outline-warning adopt-btn' data-id="Összes">Összes</button></span>`;
     topics.forEach(t => {
-        topicSort.innerHTML += 
-        `
+        topicSort.innerHTML +=
+            `
             <span class="m-auto"><button class='btn btn-sm btn-outline-warning adopt-btn' data-id="${t}">${t}</button></span>
         `;
     });
@@ -74,7 +74,7 @@ function newsRender(updatedNews: News[]) {
     updatedNews.forEach(n => {
         let canEdit = false;
         let user: User = JSON.parse(data!) as User;
-        
+
         if (user) {
             if (user.id == n.userId && user.author) {
                 canEdit = true;
@@ -95,14 +95,14 @@ function newsRender(updatedNews: News[]) {
                                 ${n.title}
                             </h5>
                             <div class="glass-meta">
-                                ${new Date(n.createdAt).toLocaleString()}
+                                ${n.createdAt}
                             </div>
                         </div>
                     </a>
                     ${canEdit ? `
                     <div class="glass-footer">
                         <a href="edit.html?id=${n.id}" class="glass-btn">
-                        ✏️ Edit
+                        <i class="bi bi-pen me-1"></i> Szerkesztés
                         </a>
                     </div>
                     ` : ''}
@@ -118,8 +118,8 @@ let counter = 1;
 document.getElementById('search')!.addEventListener('click', () => {
     counter++;
     const searchBar = document.getElementById('searchBar') as HTMLDivElement;
-    searchBar.innerHTML = 
-    `
+    searchBar.innerHTML =
+        `
     <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5">
         <input type="text" class="form-control w-50" placeholder="Keresés" id="searchValue">
         <button class="btn btn-secondary" id="search-btn">Keresés</button>
@@ -128,18 +128,18 @@ document.getElementById('search')!.addEventListener('click', () => {
     if (counter % 2 == 0) searchBar.style.display = 'block';
     else searchBar.style.display = 'none';
 
-    
+
     document.getElementById('search-btn')!.addEventListener('click', async () => {
         sortedNews = [];
         const searchValue = (document.getElementById('searchValue') as HTMLInputElement).value;
         news.forEach(n => {
-            if ((n.content.toLowerCase()).includes(searchValue.toLowerCase()) || 
+            if ((n.content.toLowerCase()).includes(searchValue.toLowerCase()) ||
                 (n.subtitle.toLowerCase()).includes(searchValue.toLowerCase()) ||
                 (n.title.toLowerCase()).includes(searchValue.toLowerCase())) {
-                    sortedNews.push(n);
+                sortedNews.push(n);
             }
-        });        
-        if (sortedNews.length === 0){
+        });
+        if (sortedNews.length === 0) {
             await showPopup({
                 title: "Nincs ilyen hír",
                 message: undefined,

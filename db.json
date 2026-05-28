@@ -5,7 +5,7 @@
       "email": "asd2@gmail.com",
       "password": "321",
       "name": "anyu",
-      "author": false,
+      "author": true,
       "profilPictureSrc": "13.jpg"
     },
     {
@@ -21,7 +21,7 @@
       "email": "juli@gmail.com",
       "password": "jelszo",
       "name": "Nagy Júlia",
-      "author": false,
+      "author": true,
       "profilPictureSrc": "13.jpg"
     },
     {
@@ -90,7 +90,7 @@
     },
     {
       "id": "nws_004",
-      "userId": "1",
+      "userId": "4",
       "createdAt": "2026. 05. 22. 11:15",
       "imgURL": "2.jpg",
       "topic": "Gazdaság",
@@ -120,7 +120,7 @@
     },
     {
       "id": "nws_007",
-      "userId": "1",
+      "userId": "4",
       "createdAt": "2026. 05. 22. 14:00",
       "imgURL": "environment.jpg",
       "topic": "Környezet",
@@ -150,7 +150,7 @@
     },
     {
       "id": "nws_010",
-      "userId": "1",
+      "userId": "4",
       "createdAt": "2026. 05. 22. 17:45",
       "imgURL": "travel.jpg",
       "topic": "Utazás",

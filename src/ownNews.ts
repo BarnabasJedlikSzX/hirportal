@@ -44,15 +44,14 @@ if (loggedIn) {
                 <div class="ownNews d-flex justify-content-between">
                     <a class="text-decoration-none d-flex text-white align-items-center w-100" href="read.html?id=${n.id}">
                         <img src="./backend/downloaded/${n.imgURL}" class="ownNewsImg">
-                            <div>
+                            <div style="max-width:34rem; min-width:0;">
                                 <p class="badge text-info m-0 p-0"># ${n.topic}</p>
                                 <p class="fw-bold m-0">${n.title}</p>
-                                <p class="text-secondary m-0">${n.subtitle}</p>
-                                <p class="badge bg-primary m-0">${n.createdAt}</p>
-
+                                <p class="text-secondary m-0 truncate">${n.subtitle}</p>
+                                <p class="badge bg-warning text-dark m-0">${n.createdAt}</p>
                             </div>
                     </a>
-                    <div class="d-flex w-25 justify-content-end">
+                    <div class="d-flex w-25 justify-content-end" style="min-width:0;">
                     <a class="btn btn-outline-warning w-50 me-3" href="edit.html?id=${n.id}"><i class="bi bi-pen-fill"></i></a>
                     <button class="btn btn-outline-danger deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-newsId="${n.id}"><i class="bi bi-trash3-fill"></i></button>
                     </div>
