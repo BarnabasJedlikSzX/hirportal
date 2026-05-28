@@ -18,6 +18,13 @@ body {
     background-color: #1e1e1e;
 }
 
+.comment {
+    background-color: #2d2d2d;
+    margin: 10px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
 #addImgButton {
     background-color: #4e4e4e;
     font-size: 20px;

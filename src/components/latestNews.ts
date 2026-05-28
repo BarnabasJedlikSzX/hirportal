@@ -25,7 +25,7 @@ export async function LatestNews() {
         const totalMinutes = Math.floor(difference / 1000 / 60);
         const hours = Math.floor(totalMinutes / 60);
         const minutes = totalMinutes % 60;
-        const timeStamp = `${hours === 0 ? "" : hours + " óra "}${minutes} perce`.trim();
+            const timeStamp = totalMinutes < 24 * 60 ? `${hours === 0 ? "" : hours + " óra "}${minutes} perce`.trim() : n.createdAt;
 
         document.querySelector("#latestNewsContainer")?.insertAdjacentHTML("beforeend", `
             <a href="read.html?id=${n.id}" style="text-decoration:none; min-width:0;" class="text-white latestNews col">

@@ -6,4 +6,5 @@ export interface Comment {
     likes: number
     content: string
     createdAt: string
+    likers:string[]
 }

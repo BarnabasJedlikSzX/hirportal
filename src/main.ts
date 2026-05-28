@@ -35,11 +35,11 @@ render();
 
 function topic() {
     topicSort.innerHTML = '';
-    topicSort.innerHTML += `<span class="m-auto"><button class='btn btn-sm btn-warning adopt-btn' data-id="Összes">Összes</button></span>`;
+    topicSort.innerHTML += `<span class="m-auto"><button class='btn btn-sm btn-outline-warning adopt-btn' data-id="Összes">Összes</button></span>`;
     topics.forEach(t => {
         topicSort.innerHTML += 
         `
-            <span class="m-auto"><button class='btn btn-sm btn-warning adopt-btn' data-id="${t}">${t}</button></span>
+            <span class="m-auto"><button class='btn btn-sm btn-outline-warning adopt-btn' data-id="${t}">${t}</button></span>
         `;
     });
     topicSort.addEventListener('click', (e) => {
@@ -70,6 +70,7 @@ function topic() {
 
 function newsRender(updatedNews: News[]) {
     newsDiv.innerHTML = '';
+    newsDiv.classList.add('mt-2');
     updatedNews.forEach(n => {
         let canEdit = false;
         let user: User = JSON.parse(data!) as User;
@@ -81,16 +82,31 @@ function newsRender(updatedNews: News[]) {
         }
         const card =
             `
-            <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;">
-                <a href="read.html?id=${n.id}" class="text-white text-decoration-none" id="${n.id}">
-                    <img src="./backend/downloaded/${n.imgURL}" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">${n.title}</h5>
-                        <p class="card-text text-success">${n.topic}</p>
-                        <p class="card-text">${n.createdAt}</p>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="glass-card h-100">
+                    <a href="read.html?id=${n.id}" class="glass-link text-decoration-none">
+                        <div class="glass-image">
+                            <img src="./backend/downloaded/${n.imgURL}" alt="">
+                            <div class="glass-overlay"></div>
                         </div>
-                </a>
-                ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5 "><i class="bi bi-pencil-square"></i></a>` : ''}
+                        <div class="glass-body">
+                            <span class="glass-badge">${n.topic}</span>
+                            <h5 class="glass-title">
+                                ${n.title}
+                            </h5>
+                            <div class="glass-meta">
+                                ${new Date(n.createdAt).toLocaleString()}
+                            </div>
+                        </div>
+                    </a>
+                    ${canEdit ? `
+                    <div class="glass-footer">
+                        <a href="edit.html?id=${n.id}" class="glass-btn">
+                        ✏️ Edit
+                        </a>
+                    </div>
+                    ` : ''}
+                </div>
             </div>
         `;
         newsDiv.innerHTML += card;
