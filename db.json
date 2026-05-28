@@ -143,5 +143,34 @@
       "content": "# Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista\n\nA Forbes Travel Guide 2026-os éves rangsorában **Budapest a 7. helyre** került a világ legjobb városturisztikai célpontjainak listáján – megelőzve Barcelonát, Prágát és Amszterdamot. Ez az eddigi legjobb magyar szereplés a rangsorban.\n\n## Miért Budapest?\n\nA szerkesztők három fő tényezőt emeltek ki:\n\n### 1. Gasztronómia\nBudapest éttermi kínálata az elmúlt öt évben robbanásszerűen fejlődött. A városban ma már **5 Michelin-csillagos étterem** működik, miközben az utcai ételek és a romkocsmák egyedi élményt nyújtanak.\n\n### 2. Fürdőkultúra\nA termálvizes fürdők – különösen a Gellért és a Széchenyi – **világszínvonalú élménnyé** nőtték ki magukat, miután milliárdos fejlesztések folytak bennük.\n\n### 3. Ár-érték arány\nAz euróövezeten kívüliség miatt Budapest az európai fővárosok közül az egyik **legkedvezőbb árú célpont**. Egy átlagos nyugat-európai turista ugyanannyiból 3 napot tölthet el Budapesten, mint 1,5-et Párizsban.\n\n## Számok\n\n- 2025-ben **6,2 millió külföldi turista** érkezett Budapestre\n- Az átlagos tartózkodási idő 3,4 éjszaka\n- A turizmus a GDP **4,8%-át** adja\n\n## Kihívások\n\nA siker árnyoldalai is megjelennek: az ingatlanárak emelkedése és az **overtourism** jelei már érzékelhetők a belvárosban. A Fővárosi Önkormányzat tervezi a turisztikai fejlesztési stratégia felülvizsgálatát."
     }
   ],
+  "comments": [
+    {
+      "id": "1",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "likes": 2,
+      "content": "kurva anyád",
+      "createdAt": "2026. 05. 28. 08:30"
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "newsId": "nws_006",
+      "repliedCommentId": "1",
+      "likes": 0,
+      "content": "a te kurva anyád",
+      "createdAt": "2026. 05. 28. 08:35"
+    },
+    {
+      "id": "3",
+      "userId": "4",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "likes": 0,
+      "content": "xdddddd",
+      "createdAt": "2026. 05. 28. 09:10"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

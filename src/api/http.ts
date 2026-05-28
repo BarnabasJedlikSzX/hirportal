@@ -1,3 +1,4 @@
+import type { Comment } from "../types/Comment";
 import type { News } from "../types/News";
 
 export async function AddNews(news: News) {
@@ -68,4 +69,15 @@ export async function GetWeather() {
         if (code <= 99) return 'Zivatar';
         return '';
     }
+}
+
+
+export async function GetComments(newsId: string): Promise<Comment[]> {
+    const res = await fetch(`http://localhost:3000/comments`, { method: "GET" })
+    const comments: Comment[] = []
+    for (let comment of (await res.json())) {
+        if (comment.newsId === newsId) comments.push(comment)
+    }
+
+    return comments
 }

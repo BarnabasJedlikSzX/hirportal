@@ -12,6 +12,11 @@ body {
     width: 70%;
 }
 
+#commentsContainer {
+    width: 70%;
+    margin: auto;
+    background-color: #1e1e1e;
+}
 
 #addImgButton {
     background-color: #4e4e4e;

@@ -1,5 +1,6 @@
 import { GetNewsById } from './api/http';
 import { getUsers } from './api/user_handler';
+import { Comments } from './components/comments';
 import { Error } from './components/error';
 import { Navbar } from './components/navbar';
 import './styles/style.css'
@@ -8,6 +9,7 @@ import type { User } from './types/User';
 import { marked } from "marked";
 
 Navbar()
+Comments()
 
 let users: User[] = await getUsers()
 
