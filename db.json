@@ -6,7 +6,7 @@
       "password": "321",
       "name": "anyu",
       "author": false,
-      "profilPictureSrc": "15.jpg"
+      "profilPictureSrc": "13.jpg"
     },
     {
       "id": "3",
@@ -36,6 +36,22 @@
       "id": "9ZNHON5fHDk",
       "name": "Páli Dávid",
       "email": "pali@gmail.com",
+      "password": "123",
+      "author": false,
+      "profilPictureSrc": "13.jpg"
+    },
+    {
+      "id": "a8CCkRljW5Y",
+      "name": "Lil G",
+      "email": "lil@gmail.com",
+      "password": "123",
+      "author": false,
+      "profilPictureSrc": "13.jpg"
+    },
+    {
+      "id": "cYe0p0HAAUU",
+      "name": "Fasz Szopó",
+      "email": "fasz@gmail.com",
       "password": "123",
       "author": false,
       "profilPictureSrc": "13.jpg"

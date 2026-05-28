@@ -124,7 +124,7 @@ function LoadPage() {
                 email: email,
                 password: pwd1,
                 author: false,
-                profilPictureSrc: ""
+                profilPictureSrc: "13.jpg"
             }
             if (await createUser(newUser)){
                 succesDiv.innerHTML += "Sikeres regisztrálás!"
