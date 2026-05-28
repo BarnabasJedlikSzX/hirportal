@@ -9,14 +9,14 @@ import { LatestNews } from './components/latestNews';
 Navbar()
 LatestNews()
 
-let data = localStorage.getItem("aktualisUser")
+let data = localStorage.getItem("aktualisUser");
+
 
 const newsDiv = document.getElementById('news') as HTMLDivElement;
 const topicSort = document.getElementById('topicSort') as HTMLDivElement;
 
 let news: News[] = await GetNews();
 let sortedNews: News[] = news;
-console.log(data)
 
 function render() {
     topic();
@@ -63,6 +63,7 @@ function newsRender(updatedNews: News[]) {
     updatedNews.forEach(n => {
         let canEdit = false;
         let user: User = JSON.parse(data!) as User;
+        
         if (user) {
             if (user.id == n.userId && user.author) {
                 canEdit = true;
@@ -77,9 +78,9 @@ function newsRender(updatedNews: News[]) {
                         <h5 class="card-title">${n.title}</h5>
                         <p class="card-text text-success">${n.topic}</p>
                         <p class="card-text">${n.createdAt}</p>
-                        ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5">Szerkeszt</a>` : ''}
-                    </div>
+                        </div>
                 </a>
+                ${canEdit ? `<a href="edit.html?id=${n.id}" class="btn btn-warning me-5 "><i class="bi bi-pencil-square"></i></a>` : ''}
             </div>
         `;
         newsDiv.innerHTML += card;
