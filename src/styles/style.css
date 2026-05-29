@@ -28,6 +28,11 @@ body {
     margin-right: 0;
 }
 
+#commentContent {
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
 #newComment {
     transition: 0.72s;
     width: 15rem;

@@ -244,6 +244,33 @@
       "content": "asd",
       "createdAt": "2026. 05. 29. 18:44",
       "likers": []
+    },
+    {
+      "id": "m7XqrthTOCU",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "content": "",
+      "createdAt": "2026. 05. 29. 18:47",
+      "likers": []
+    },
+    {
+      "id": "es-bSHhn3IE",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "content": "dű\nd\nd\nd\nd\nd",
+      "createdAt": "2026. 05. 29. 18:47",
+      "likers": []
+    },
+    {
+      "id": "K4y-_8gpf1I",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "content": "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "createdAt": "2026. 05. 29. 18:51",
+      "likers": []
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

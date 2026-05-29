@@ -68,9 +68,7 @@ export async function Comments() {
                         <span class="fw-bold">${user.name}</span> <span class="text-info">${user.id === news.userId ? "• Szerkesztő <i class='bi bi-pen-fill ms-1'></i>" : ""}</span>
                     </p>
                 </div>
-                <p class="ms-2">
-                ${comment.content}
-                </p>
+                <p class="ms-2" id="commentContent">${comment.content}</p>
                 <div class="d-flex justify-content-between">
                     <div class="d-flex align-items-center ">
                         
