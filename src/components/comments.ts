@@ -14,9 +14,19 @@ export async function Comments() {
     const loggedIn = localStorage.getItem("aktualisUser")
     const currentUser: User = JSON.parse(loggedIn!)
     document.querySelector("#commentsContainer")?.remove()
-    document.querySelector("#main")!.insertAdjacentHTML("afterend", `<div id="commentsContainer" class="row mb-5 p-4 justify-content-end">
-        <hr style="color:gold;">
-        <h3 class="mb-4">Kommentek</h3>
+    document.querySelector("#main")!.insertAdjacentHTML("afterend", `
+        <div id="commentsContainer" class="row mb-5 p-4">
+            <hr style="color:gold;">
+            <h3 class="mb-4">Kommentek</h3>
+            <div class="btn btn-light" id="newComment">
+                <div id="newCommentText">
+                    <i class="bi bi-pen-fill me-1"></i> Új komment
+                </div>
+                <div id="newCommentForm" style="display:none;">
+                <textarea>
+                </textarea>
+                </div>
+            </div>
         </div>`)
 
     if (comments.length === 0) {
@@ -48,7 +58,7 @@ export async function Comments() {
             element.insertAdjacentHTML("beforeend", `
             <div class="comment">
                 <div class="d-flex align-items-center mb-3">
-                    <img src="./backend/downloaded/${user.profilPictureSrc}" class="rounded-3 me-2 border border-2 border-white" style="width:2rem; height:2rem;">
+                    <img src="./backend/downloaded/${user.profilPictureSrc}" class="rounded-3 me-2" style="width:2rem; height:2rem;">
                     <p class="m-0">
                         <span class="fw-bold">${user.name}</span> <span class="text-info">${user.id === news.userId ? "• Szerkesztő <i class='bi bi-pen-fill ms-1'></i>" : ""}</span>
                     </p>
@@ -74,7 +84,7 @@ export async function Comments() {
                     </div>
                     <div>
                     <button class="btn text-warning"><i class="bi bi-reply-fill"></i></button>
-                    ${comment.userId === currentUser.id ? `<button class="btn text-secondary"><i class="bi bi-pencil-fill"></i></button>` : ""}
+                    ${comment.userId === currentUser.id ? `<button class="btn text-secondary"><i class="bi bi-pen-fill"></i></button>` : ""}
                     
                     </div>
                 </div>
@@ -83,6 +93,14 @@ export async function Comments() {
             <div id="replyContainer-${comment.id}" style="width:90%; padding:0; margin-left:auto; margin-right:0;"></div>
         `);
         }
+        const newCommentDiv = document.querySelector<HTMLDivElement>("#newComment")!
+        newCommentDiv.addEventListener("click", () => {
+            newCommentDiv.style.width = "100%"
+            newCommentDiv.style.height = "15rem"
+            document.querySelector("#newCommentText")?.remove()
+            newCommentDiv.classList.remove("btn")
+            document.querySelector<HTMLDivElement>("#newCommentForm")!.style.display = "block"
+        })
 
         document.querySelectorAll(".likeButton").forEach((btn) => {
             btn.addEventListener("click", async () => {

@@ -24,6 +24,14 @@ body {
     margin: 10px;
     border-radius: 7px;
     padding: 10px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#newComment {
+    transition: 0.5s;
+    width: 15rem;
+    height: 2.5rem;
 }
 
 #addImgButton {
