@@ -41,19 +41,19 @@ if (loggedIn) {
 
         for (let n of news) {
             if (n.userId === user.id) document.querySelector("#ownNewsContainer")?.insertAdjacentHTML("beforeend", `
-                <div class="ownNews d-flex justify-content-between">
-                    <a class="text-decoration-none d-flex text-white align-items-center w-100" href="read.html?id=${n.id}">
+                <div class="ownNews row">
+                    <a class="text-decoration-none d-flex text-white align-items-center col-lg-8" href="read.html?id=${n.id}">
                         <img src="./backend/downloaded/${n.imgURL}" class="ownNewsImg">
-                            <div style="max-width:34rem; min-width:0;">
-                                <p class="badge text-info m-0 p-0"># ${n.topic}</p>
+                            <div style="min-width:0;">
+                                <p class="badge text-info m-0 p-0 d-none d-lg-inline-block"># ${n.topic}</p>
                                 <p class="fw-bold m-0">${n.title}</p>
-                                <p class="text-secondary m-0 truncate">${n.subtitle}</p>
-                                <p class="badge bg-warning text-dark m-0">${n.createdAt}</p>
+                                <p class="text-secondary m-0 truncate d-none d-lg-block">${n.subtitle}</p>
+                                <p class="badge bg-warning text-dark m-0 d-none d-lg-inline-block">${n.createdAt}</p>
                             </div>
                     </a>
-                    <div class="d-flex w-25 justify-content-end" style="min-width:0;">
-                    <a class="btn btn-outline-warning w-50 me-3" href="edit.html?id=${n.id}"><i class="bi bi-pen-fill"></i></a>
-                    <button class="btn btn-outline-danger deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-newsId="${n.id}"><i class="bi bi-trash3-fill"></i></button>
+                    <div class="col-lg-4 text-end">
+                        <a class="btn btn-outline-warning w-50 me-3" href="edit.html?id=${n.id}"><i class="bi bi-pen-fill"></i></a>
+                        <button class="btn btn-outline-danger deleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-newsId="${n.id}"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                 
                     </div>

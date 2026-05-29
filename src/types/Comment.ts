@@ -3,8 +3,7 @@ export interface Comment {
     userId: string
     newsId: string
     repliedCommentId: string
-    likes: number
     content: string
     createdAt: string
-    likers:string[]
+    likers: string[]
 }

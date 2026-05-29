@@ -61,11 +61,11 @@ export async function Comments() {
                         
                         ${loggedIn && comment!.likers.includes(currentUser.id!) ? `
                             <button class="btn me-2 likeButton text-warning" data-commentId="${comment.id}">
-                                <i class="bi bi-hand-thumbs-up-fill"></i> ${comment.likes}
+                                <i class="bi bi-hand-thumbs-up-fill"></i> ${comment.likers.length}
                             </button>
                             ` : `
                             <button class="btn me-2 likeButton" data-commentId="${comment.id}">
-                                <i class="bi bi-hand-thumbs-up"></i> ${comment.likes}
+                                <i class="bi bi-hand-thumbs-up"></i> ${comment.likers.length}
                             </button>
                             `} 
                         <span style="color:grey; font-size:0.8rem;">
@@ -95,13 +95,9 @@ export async function Comments() {
 
                     console.log(comment!.likers)
                     if (!comment!.likers.includes(currentUser.id!)) {
-                        comment!.likes += 1
                         comment?.likers.push(currentUser.id!)
-
                     } else {
-                        comment!.likes -= 1
                         const index = comment!.likers.indexOf(currentUser.id!);
-
                         if (index !== -1) {
                             comment!.likers.splice(index, 1);
                         }

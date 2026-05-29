@@ -122,7 +122,7 @@
       "id": "nws_007",
       "userId": "4",
       "createdAt": "2026. 05. 22. 14:00",
-      "imgURL": "environment.jpg",
+      "imgURL": "1.jpg",
       "topic": "Környezet",
       "title": "A Balaton vízszintje aggasztóan alacsony – szakértők azonnali beavatkozást sürgetnek",
       "subtitle": "A tó vízszintje rekordalacsony értékre süllyedt, ami komolyan veszélyezteti az ökoszisztémát.",
@@ -132,7 +132,7 @@
       "id": "nws_008",
       "userId": "2",
       "createdAt": "2026. 05. 22. 15:00",
-      "imgURL": "health.jpg",
+      "imgURL": "2.jpg",
       "topic": "Egészség",
       "title": "Áttörés az Alzheimer-kutatásban: új gyógyszer lassíthatja a betegség előrehaladását",
       "subtitle": "A klinikai vizsgálatok harmadik fázisában lévő szer 40%-kal csökkentette a kognitív hanyatlást.",
@@ -152,7 +152,7 @@
       "id": "nws_010",
       "userId": "4",
       "createdAt": "2026. 05. 22. 17:45",
-      "imgURL": "travel.jpg",
+      "imgURL": "2.jpg",
       "topic": "Utazás",
       "title": "Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista",
       "subtitle": "A magyar főváros különösen a gasztronómia, a fürdőkultúra és az árak miatt lett népszerű.",
@@ -165,7 +165,6 @@
       "userId": "3",
       "newsId": "nws_006",
       "repliedCommentId": "",
-      "likes": 0,
       "content": "kurva anyád",
       "createdAt": "2026. 05. 28. 08:30",
       "likers": []
@@ -175,7 +174,6 @@
       "userId": "2",
       "newsId": "nws_006",
       "repliedCommentId": "1",
-      "likes": 1,
       "content": "a te kurva anyád",
       "createdAt": "2026. 05. 28. 08:35",
       "likers": [
@@ -187,7 +185,6 @@
       "userId": "4",
       "newsId": "nws_006",
       "repliedCommentId": "",
-      "likes": 0,
       "content": "xdddddd",
       "createdAt": "2026. 05. 28. 09:10",
       "likers": []
@@ -197,7 +194,6 @@
       "userId": "4",
       "newsId": "nws_006",
       "repliedCommentId": "2",
-      "likes": 4,
       "content": "asd",
       "createdAt": "2026. 05. 28. 13:10",
       "likers": [

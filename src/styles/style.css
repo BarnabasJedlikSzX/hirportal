@@ -269,6 +269,8 @@ body:has(.CodeMirror-fullscreen) #navbar {
 
 .ownNewsImg {
     width: 8rem;
+    height: 5rem;
+    object-fit: cover;
     border-radius: 7px;
     margin-right: 20px;
 }
@@ -281,6 +283,7 @@ body:has(.CodeMirror-fullscreen) #navbar {
     align-items: center;
     min-height: 7rem;
     transition: 0.4s;
+    min-height: 11.5rem;
 }
 
 .ownNews:hover {

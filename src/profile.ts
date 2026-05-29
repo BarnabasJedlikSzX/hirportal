@@ -155,7 +155,7 @@ function loadUserPicture(){
     <div class="col" id="profilePicContainer" style="position: relative;">
         <img src="./backend/downloaded/${user.profilPictureSrc}" id="profPicImage">
         <a id="deleteProfPic"><i class="bi bi-x-circle-fill"></i></a>
-        <input type="file" name="imgInput" id="imgInput" style="display: none;" disabled>
+        <input type="file" name="imgInput" id="imgInput" style="display: none;" disabled accept="image/*">
         <p>Profilkép szerkesztése</p>
     </div>
     `
