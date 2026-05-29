@@ -8,6 +8,13 @@ export async function AddNews(news: News) {
     })
 }
 
+export async function AddComment(comment: Comment) {
+    await fetch("http://localhost:3000/comments", {
+        method: "POST",
+        body: JSON.stringify(comment)
+    })
+}
+
 export async function EditNews(news: News) {
     await fetch(`http://localhost:3000/news/${news.id}`, {
         method: "PATCH",
@@ -82,7 +89,7 @@ export async function GetComments(newsId: string): Promise<Comment[]> {
     return comments
 }
 
-export async function UpdateComment(comment:Comment){
+export async function UpdateComment(comment: Comment) {
     await fetch(`http://localhost:3000/comments/${comment.id}`, {
         method: "PATCH",
         body: JSON.stringify(comment)

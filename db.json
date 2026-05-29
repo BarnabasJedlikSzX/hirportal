@@ -199,6 +199,51 @@
       "likers": [
         "3"
       ]
+    },
+    {
+      "id": "Q9WKU-Twvek",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "content": "asd",
+      "createdAt": "2026. 05. 29. 18:33",
+      "likers": []
+    },
+    {
+      "id": "fftyUs2iiJo",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "content": "dsadsadas",
+      "createdAt": "2026. 05. 29. 18:33",
+      "likers": []
+    },
+    {
+      "id": "F20BFAnpeFY",
+      "userId": "3",
+      "newsId": "nws_006",
+      "repliedCommentId": "",
+      "content": "dsadwadyssssssssss",
+      "createdAt": "2026. 05. 29. 18:34",
+      "likers": []
+    },
+    {
+      "id": "FnopTCkNJfs",
+      "userId": "2",
+      "newsId": "nws_006",
+      "repliedCommentId": "fftyUs2iiJo",
+      "content": "asdxd",
+      "createdAt": "2026. 05. 29. 18:38",
+      "likers": []
+    },
+    {
+      "id": "W8vGfqLsQlE",
+      "userId": "3",
+      "newsId": "nws_003",
+      "repliedCommentId": "",
+      "content": "asd",
+      "createdAt": "2026. 05. 29. 18:44",
+      "likers": []
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
