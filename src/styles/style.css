@@ -33,14 +33,16 @@ body {
     white-space: pre-line;
 }
 
-#newComment {
+#newComment,
+#replyField {
     transition: 0.72s;
     width: 15rem;
     border-radius: 10px;
     height: 2.5rem;
 }
 
-#newComment textarea {
+#newComment textarea,
+#replyField textarea {
     background-color: #1a294b;
     border-radius: 10px;
     border: none;

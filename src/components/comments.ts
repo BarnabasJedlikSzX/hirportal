@@ -1,4 +1,4 @@
-import { AddComment, GetComments, GetNewsById, UpdateComment } from "../api/http";
+import { AddComment, DeleteComment, GetComments, GetNewsById, UpdateComment } from "../api/http";
 import { getUsers } from "../api/user_handler";
 import type { Comment } from "../types/Comment";
 import type { News } from "../types/News";
@@ -14,9 +14,10 @@ export async function Comments() {
     const news: News | string = await GetNewsById(newsID!)
     const loggedIn = localStorage.getItem("aktualisUser")
     const currentUser: User = JSON.parse(loggedIn!)
+    let replyingTo = ""
     document.querySelector("#commentsContainer")?.remove()
     document.querySelector("#main")!.insertAdjacentHTML("afterend", `
-        <div id="commentsContainer" class="row mb-5 p-4">
+        <div id="commentsContainer" class="mb-5 p-4">
             <hr style="color:gold;">
             <h3 class="mb-4">Kommentek</h3>
             ${loggedIn ? `
@@ -30,6 +31,7 @@ export async function Comments() {
                     <button id="sendCommentBtn" class="btn btn-info"><i class="bi bi-send-fill"></i></button>
                 </div>
             </div>`: "<p>Komment írásához jelentkezz be!</p>"}
+            <div id="commentSection"></div>
         </div>
             `)
 
@@ -57,10 +59,10 @@ export async function Comments() {
             for (let u of users) {
                 if (comment.userId === u.id) user = u
             }
-            let element = document.querySelector("#commentsContainer")!
+            let element = document.querySelector("#commentSection")!
             if (comment.repliedCommentId !== "") element = document.querySelector(`#replyContainer-${comment.repliedCommentId}`)!
 
-            element.insertAdjacentHTML("beforeend", `
+            element?.insertAdjacentHTML("afterbegin", `
             <div class="comment">
                 <div class="d-flex align-items-center mb-3">
                     <img src="./backend/downloaded/${user.profilPictureSrc}" class="rounded-3 me-2" style="width:2rem; height:2rem;">
@@ -86,8 +88,8 @@ export async function Comments() {
                         </span>
                     </div>
                     <div>
-                    ${loggedIn ? `<button class="btn text-warning"><i class="bi bi-reply-fill"></i></button>` : ""}
-                    ${loggedIn && comment.userId === currentUser.id ? `<button class="btn text-secondary"><i class="bi bi-pen-fill"></i></button>` : ""}
+                    ${loggedIn ? `<button class="btn text-warning replyCommentBtn" data-commentId="${comment.id}"><i class="bi bi-reply-fill"></i></button>` : ""}
+                    ${loggedIn && comment.userId === currentUser.id ? `<button class="btn text-secondary deleteCommentBtn" data-commentId="${comment.id}"><i class="bi bi-trash-fill"></i></button>` : ""}
                     
                     </div>
                 </div>
@@ -97,6 +99,57 @@ export async function Comments() {
         `);
         }
 
+
+        document.querySelectorAll(".deleteCommentBtn").forEach((btn) => {
+            btn.addEventListener("click", async () => {
+                const commentId = (btn.attributes as any)["data-commentId"].textContent
+                await DeleteComment(commentId)
+                Comments()
+            })
+        })
+
+        const replyField = `<div class="btn btn-light text-dark text-center mb-4" id="replyField">
+                <div id="newCommentText">
+                    <i class="bi bi-pen-fill me-1"></i> Új komment
+                </div>
+                <div id="newReplyForm" style="display:none;">
+                    <textarea placeholder="Írj egy hozzászólást..." class="text-light" maxlength="500"></textarea>
+                    <p class="p-0 text-secondary">max. 500 karakter</p>
+                    <button id="sendReplyBtn" class="btn btn-info"><i class="bi bi-send-fill"></i></button>
+                </div>
+            </div>`
+
+
+        document.querySelectorAll(".replyCommentBtn").forEach((btn) => {
+            btn.addEventListener("click", async () => {
+                replyingTo = (btn.attributes as any)["data-commentId"].textContent
+
+                document.querySelector(`#replyField`)?.remove()
+                if (!document.querySelector(`#replyField`)) document.querySelector(`#replyContainer-${replyingTo}`)!.insertAdjacentHTML("afterbegin", replyField)
+                const newCommentDiv = document.querySelector<HTMLDivElement>("#replyField")!
+                setTimeout(() => {
+                    newCommentDiv.style.width = "100%"
+                    newCommentDiv.style.height = "20rem"
+                    newCommentDiv.style.backgroundColor = "#111b31"
+                    newCommentDiv.className = "text-light text-start p-3"
+                    document.querySelector<HTMLDivElement>("#newReplyForm")!.style.display = "block"
+
+                    document.querySelector("#sendReplyBtn")?.addEventListener("click", async () => {
+                        const content = document.querySelector<HTMLTextAreaElement>("#newReplyForm textarea")!
+                        if (content.value !== "") await AddComment({
+                            id: "",
+                            userId: currentUser.id!,
+                            newsId: newsID!,
+                            repliedCommentId: replyingTo,
+                            content: content.value,
+                            createdAt: GetFormattedDate(),
+                            likers: []
+                        }).then(() => Comments())
+                        else content.placeholder = "Nem írhatsz üres kommentet!"
+                    })
+                }, 10);
+            })
+        })
 
         document.querySelectorAll(".likeButton").forEach((btn) => {
             btn.addEventListener("click", async () => {
@@ -117,7 +170,7 @@ export async function Comments() {
                     }
                     await UpdateComment(comment!)
                     Comments()
-                } else (alert("jelentkezz be a lájkoláshoz!"))
+                } else (alert("Jelentkezz be a likeoláshoz!"))
 
             })
         })
@@ -125,6 +178,8 @@ export async function Comments() {
     } else Error(404)
     const newCommentDiv = document.querySelector<HTMLDivElement>("#newComment")!
     newCommentDiv?.addEventListener("click", () => {
+        replyingTo = ""
+        document.querySelector("#replyField")?.remove()
         if (loggedIn) {
             newCommentDiv.style.width = "100%"
             newCommentDiv.style.height = "20rem"
@@ -135,15 +190,17 @@ export async function Comments() {
     })
 
     document.querySelector("#sendCommentBtn")?.addEventListener("click", async () => {
-        await AddComment({
+        const content = document.querySelector<HTMLTextAreaElement>("#newCommentForm textarea")!
+        if (content.value !== "") await AddComment({
             id: "",
             userId: currentUser.id!,
             newsId: newsID!,
             repliedCommentId: "",
-            content: document.querySelector<HTMLTextAreaElement>("#newCommentForm textarea")!.value,
+            content: content.value,
             createdAt: GetFormattedDate(),
             likers: []
         }).then(() => Comments())
+        else content.placeholder = "Nem írhatsz üres kommentet!"
     })
 
 

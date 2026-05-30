@@ -95,3 +95,7 @@ export async function UpdateComment(comment: Comment) {
         body: JSON.stringify(comment)
     })
 }
+
+export async function DeleteComment(commentId: string) {
+    await fetch(`http://localhost:3000/comments/${commentId}`, { method: "DELETE" })
+}
