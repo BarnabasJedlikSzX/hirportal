@@ -54,17 +54,20 @@ body {
     margin-top: 20px;
 }
 
-#sendCommentBtn:hover {
+#sendCommentBtn:hover,
+#sendReplyBtn:hover {
     box-shadow: 0 3px white;
 
 }
 
-#sendCommentBtn:active {
+#sendCommentBtn:active,
+#sendReplyBtn:active {
     box-shadow: 0 3px #1a294b;
 
 }
 
-#sendCommentBtn {
+#sendCommentBtn,
+#sendReplyBtn {
     width: 5rem;
     transition: 0.3s;
 }

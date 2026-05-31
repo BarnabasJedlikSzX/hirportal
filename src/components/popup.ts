@@ -77,7 +77,7 @@ export async function  showPopup(options: PopupTexts): Promise<boolean> {
       <div class="modal fade" id="tsConfirmModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header ${options.message ? "" : "border border-0"}">
               <h5 class="modal-title">${options.title || 'Megerősítés'}</h5>
               
             </div>

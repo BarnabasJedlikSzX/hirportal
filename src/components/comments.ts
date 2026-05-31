@@ -5,6 +5,7 @@ import type { News } from "../types/News";
 import type { User } from "../types/User";
 import { Error } from "./error";
 import { GetFormattedDate } from "./getFormattedDate";
+import { showPopup } from "./popup";
 
 export async function Comments() {
     const params = new URLSearchParams(window.location.search);
@@ -127,7 +128,14 @@ export async function Comments() {
                 document.querySelector(`#replyField`)?.remove()
                 if (!document.querySelector(`#replyField`)) document.querySelector(`#replyContainer-${replyingTo}`)!.insertAdjacentHTML("afterbegin", replyField)
                 const newCommentDiv = document.querySelector<HTMLDivElement>("#replyField")!
+                const newCommentDiv2 = document.querySelector<HTMLDivElement>("#newComment")!
                 setTimeout(() => {
+                    newCommentDiv2.style.width = "15rem"
+                    newCommentDiv2.style.backgroundColor = "white"
+                    newCommentDiv2.style.height = "2.5rem"
+                    document.querySelector<HTMLDivElement>("#newCommentForm")!.style.display = "none"
+                    newCommentDiv2.className = "btn btn-light text-dark text-center mb-4"
+
                     newCommentDiv.style.width = "100%"
                     newCommentDiv.style.height = "20rem"
                     newCommentDiv.style.backgroundColor = "#111b31"
@@ -170,7 +178,11 @@ export async function Comments() {
                     }
                     await UpdateComment(comment!)
                     Comments()
-                } else (alert("Jelentkezz be a likeoláshoz!"))
+                } else await showPopup({
+                    title: "Jelentkezz be a likeoláshoz!",
+                    message: undefined,
+                    duration: 850
+                })
 
             })
         })
@@ -179,7 +191,14 @@ export async function Comments() {
     const newCommentDiv = document.querySelector<HTMLDivElement>("#newComment")!
     newCommentDiv?.addEventListener("click", () => {
         replyingTo = ""
-        document.querySelector("#replyField")?.remove()
+        const reply = document.querySelector<HTMLDivElement>("#replyField")!
+        if (reply) {
+            reply.style.scale = "0"
+            setTimeout(() => {
+                reply.remove()
+            }, 720);
+
+        }
         if (loggedIn) {
             newCommentDiv.style.width = "100%"
             newCommentDiv.style.height = "20rem"
