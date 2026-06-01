@@ -67,11 +67,7 @@ function LoadPage() {
 
 
                 <a id="signupbtn" class="btn btn-outline-primary">Regisztráció</a>
-                <br>
-                <br>
-                <p>asd@gmail.com</p>
-                <p>bela@gmail.com</p>
-                <p>qwerty</p>
+
             </div>
         </from>`
 

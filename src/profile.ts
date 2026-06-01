@@ -25,8 +25,8 @@ let picture = document.getElementById("picture") as HTMLDivElement
 function LoadPage() {
 
     loadUserData()
-    loadUserPicture()
-
+    loadUserPicture();
+    (document.getElementById("deleteProfPic") as HTMLElement).style.cursor = "not-allowed"
         
         document.getElementById("modifySaveBtn")?.addEventListener("click", async ()=>{
             let inputs: HTMLInputElement[] = [...document.getElementById("profile")!.querySelectorAll("input")] as HTMLInputElement[]
@@ -34,30 +34,32 @@ function LoadPage() {
             let pictureInput = document.getElementById("imgInput") as HTMLInputElement
             let profPic = document.getElementById("profPicImage") as HTMLElement
 
-            let btn = document.getElementById("modifySaveBtn")
+            let btn = document.getElementById("modifySaveBtn") as HTMLButtonElement
             switch(btn?.dataset.purpose){
                 case "modify":
                     btn!.dataset.purpose = "save"
-                    btn!.classList = "btn btn-outline-primary"
+                    btn!.classList = "btn btn-primary"
                     btn!.innerHTML = "Mentés"
-                    ableInputs(inputs)
-                    profPic.style.cursor = "pointer"
+                    ableInputs(inputs);
+                    (document.getElementById("deleteProfPic") as HTMLElement).style.cursor = "pointer"
                     pictureInput.disabled = false
                     passwordVisible([document.getElementById("pwd1") as HTMLInputElement])
-                    profilPicHandler(pictureInput, profPic)
+                    profilPicHandler(pictureInput, profPic, btn)
+                    document.getElementById('profilePicContainer')!.classList.toggle('editable');
                     break;
                 case "save":                        
 
                     let errors: string[] = []
                     let modified: User = collectData(inputs)
                     console.log(modified)
-                    await saveChanges(modified, errors, inputs, savedProfilPicSrc)
-                    profPic.style.cursor = "not-allowed"
-                    pictureInput.disabled = true
+                    await saveChanges(modified, errors, inputs, savedProfilPicSrc);
+                    document.getElementById('profilePicContainer')!.classList.remove('editable');
+                    pictureInput.disabled = true;
+                    (document.getElementById("deleteProfPic") as HTMLElement).style.cursor = "not-allowed"
 
                     if (errors.length == 0){
                         btn!.dataset.purpose = "modify"
-                        btn!.classList = "btn btn-outline-success"
+                        btn!.classList = "btn btn-success"
                         btn!.innerHTML = "Szerkesztés"
                         disableInputs(inputs)
                     }
@@ -141,7 +143,7 @@ function loadUserData(){
 
                 <div>
                     <a id="deleteBtn" class="btn btn-outline-danger">Felhasználó fiók törlése</a>
-                    <a id="modifySaveBtn" data-purpose="modify" class="btn btn-outline-success">Szerkesztés</a>
+                    <a id="modifySaveBtn" data-purpose="modify" class="btn btn-success">Szerkesztés</a>
                 </div>
 
             </div>
@@ -163,7 +165,7 @@ function loadUserPicture(){
 
 }
 
-function profilPicHandler(input: HTMLInputElement, profPic: HTMLElement){
+function profilPicHandler(input: HTMLInputElement, profPic: HTMLElement, btn: HTMLButtonElement){
     let imgContainer = document.getElementById("profilePicContainer") as HTMLInputElement
     let label = `<label for="imgInput" id="addProfPic">Kép hozzáadása</label>`
     let filename = ""
@@ -195,7 +197,7 @@ function profilPicHandler(input: HTMLInputElement, profPic: HTMLElement){
     let deleteBtn = document.getElementById("deleteProfPic") as HTMLElement
     
     imgContainer.addEventListener("mouseover", () => {
-        if (uploaded){
+        if (uploaded && btn.dataset.purpose == "save"){
             console.log("szex")
             deleteBtn.style.opacity = "1";  
             deleteBtn.style.zIndex = "5";
