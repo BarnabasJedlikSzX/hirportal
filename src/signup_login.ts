@@ -16,7 +16,7 @@ if (data) {
 Navbar()
 
 function LoadPage() {
-    body.classList += "container"
+    // body.classList += "container"
     body.innerHTML += `
     <form id="login">
             <div id="errors"></div>
@@ -28,10 +28,12 @@ function LoadPage() {
                 <input name="email" class="email" type="text">
             </div>
             
-            <div>
+            <div class="password">
                 <label for="pwd">Jelszó</label>
                 <input id="pwd" name="pwd" type="password">
-                <input class="pwd" type="checkbox">
+                <button type="button" class="pwdToggle">
+                            <i class="ti ti-eye"></i>
+                </button>
             </div>
             <a class="btn btn-outline-primary" id="loginbtn">Bejelentkezés</a>
         </form>
@@ -50,17 +52,21 @@ function LoadPage() {
                 
                 <div>
                     <label for="pwd-r1">Jelszó</label>
-                    <div>
+                    <div class="password">
                         <input name="pwd-r1" id="pwd1" type="password">
-                        <input class="pwd1" type="checkbox">
+                        <button type="button" class="pwdToggle">
+                            <i class="ti ti-eye"></i>
+                        </button>
                     </div>
                 </div>
                 
                 <div>
                     <label for="pwd-r2">Jelszó mégegyszer</label>
-                    <div>
+                    <div class="password">
                         <input name="pwd-r2" id="pwd2" type="password">
-                        <input class="pwd2" type="checkbox">
+                        <button type="button" class="pwdToggle">
+                            <i class="ti ti-eye"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -141,6 +147,58 @@ function LoadPage() {
 
 
     })
+
+    //stílus
+    
+    // Alapból bejelentkezés aktív
+    if (loginDiv != null && signupDiv != null){
+        loginDiv.classList.add('active');
+        signupDiv.classList.add('inactive');
+        
+        // Hint szövegek hozzáadása (HTML módosítás nélkül)
+        const loginHint = document.createElement('p');
+        loginHint.className = 'hint';
+        loginHint.textContent = 'Kattintás a megnyitáshoz';
+        loginDiv.querySelector('h1')!.after(loginHint);
+        
+        const signupHint = document.createElement('p');
+        signupHint.className = 'hint';
+        signupHint.textContent = 'Nincs fiókja? Kattintás a megnyitáshoz';
+        signupDiv.querySelector('h1')!.after(signupHint);
+        
+        // Mezők field-group-ba csomagolása (HTML módosítás nélkül)
+        function wrapFieldGroup(form: HTMLElement) {
+            const group = document.createElement('div');
+            group.className = 'field-group';
+            const toWrap = Array.from(form.children).filter(el =>
+                el.tagName !== 'H1' &&
+                !el.classList.contains('hint') &&
+                el.id !== 'errors' &&
+                el.id !== 'success'
+            );
+            toWrap.forEach(el => group.appendChild(el));
+            form.appendChild(group);
+        }
+        
+        wrapFieldGroup(loginDiv);
+        wrapFieldGroup(signupDiv);
+        
+        // Panel váltás
+        loginDiv.addEventListener('click', () => {
+        if (loginDiv.classList.contains('inactive')) {
+            loginDiv.className = 'active';
+            signupDiv.className = 'inactive';
+        }
+        });
+        
+        signupDiv.addEventListener('click', () => {
+        if (signupDiv.classList.contains('inactive')) {
+            signupDiv.className = 'active';
+            loginDiv.className = 'inactive';
+        }
+        });
+
+    }
 }
 LoadPage()
 
@@ -226,3 +284,16 @@ function passwordVisible(passwordInputs: HTMLInputElement[]) {
     })
     
 }
+
+document.querySelectorAll('.pwdToggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = btn.previousElementSibling as HTMLInputElement;; // a mellette lévő input
+    const icon = btn.querySelector('i')
+    if (input){
+        const show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        icon!.className = show ? 'ti ti-eye-off' : 'ti ti-eye';
+    }
+  });
+});
+

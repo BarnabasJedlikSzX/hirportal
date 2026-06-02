@@ -1,4 +1,10 @@
-#body{
+@import url('https://fonts.googleapis.com/css2?family=Akt:wght@100..900&display=swap');
+body {
+    font-family: Akt, Arial !important;
+    background: linear-gradient(135deg, #0f172a, #020617) !important;
+}
+
+/* #body{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,4 +37,403 @@
     width: 70%;
     display: flex;
     justify-content: space-between;
+} */
+
+
+
+#body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 2vh 30vh 0 30vh;
+  
+}
+
+#signup div > div {
+  flex-direction: row !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+#signup div > div input[type="password"],
+#signup div > div input[type="text"],
+#login div > div input[type="password"],
+#login div > div input[type="text"] {
+  flex: 1 !important;
+  min-height: 4vh;
+  min-width: 40vh !important;
+  max-width: 40vh !important;
+  background-color: #fff;
+}
+
+html, body {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#body {
+  min-height: 60vh !important;
+}
+
+/* =====================
+   PANELEK
+   ===================== */
+ 
+#login,
+#signup {
+  overflow: hidden;
+  transition: flex 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 3rem;
+  height: 400px;
+  position: relative;
+  cursor: pointer;
+}
+
+#login div,
+#signup > div {
+    width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  margin: 0 0 0.9rem 0 !important;
+  padding: 0 !important;
+  float: none !important;
+}
+ 
+#login  { 
+    flex: 2; 
+    border: 0.5px solid #2a2f45; 
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+#signup { 
+    flex: 1; 
+    border-bottom: 0.5px solid #2a2f45; 
+    border-right: 0.5px solid #2a2f45; 
+    border-top: 0.5px solid #2a2f45; 
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+ 
+#login.active,
+#signup.active  { 
+    flex: 2; 
+    cursor: default; 
+    padding-bottom: 0;
+}
+
+ 
+#login.inactive,
+#signup.inactive { flex: 1; }
+ 
+/* Felső narancsvörös csík */
+#login::before,
+#signup::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f5a623, #e8380d);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease 0.2s;
+}
+ 
+#login.active::before,
+#signup.active::before {
+  transform: scaleX(1);
+}
+ 
+/* Sötét overlay inaktív panelen */
+#login.inactive::after,
+#signup.inactive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 25, 0.45);
+  pointer-events: none;
+}
+ 
+/* =====================
+   CÍMEK
+   ===================== */
+ 
+#login h1,
+#signup h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0rem;
+  transition: font-size 0.4s ease, margin 0.4s ease;
+}
+ 
+#login.inactive h1,
+#signup.inactive h1 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+ 
+/* Hint szöveg (JS adja hozzá) */
+.hint {
+  font-size: 11px;
+  color: #6b7399;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+  margin-bottom: 0;
+}
+ 
+#login.inactive .hint,
+#signup.inactive .hint {
+  opacity: 1;
+}
+ 
+/* =====================
+   MEZŐK WRAPPER (JS adja hozzá)
+   ===================== */
+ 
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease;
+}
+ 
+#login.active .field-group,
+#signup.active .field-group {
+  max-height: 600px;
+  opacity: 1;
+  pointer-events: auto;
+}
+ 
+/* =====================
+   LABELEK
+   ===================== */
+ 
+#login label,
+#signup label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #6b7399;
+  display: block;
+  margin-bottom: 4px;
+}
+ 
+/* =====================
+   INPUTOK
+   ===================== */
+#signup div > div,
+#login div > div {
+  flex-direction: column !important;
+  align-items: start !important;
+  margin: 0 !important;
+}
+
+
+ 
+#login input[type="text"],
+#login input[type="password"],
+#signup input[type="text"],
+#signup input[type="password"] {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 13px;
+  color: black;
+  background: #1e2235;
+  border: 0.5px solid #3a3f5c;
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 !important;
+}
+ 
+#login input[type="text"]:focus,
+#login input[type="password"]:focus,
+#signup input[type="text"]:focus,
+#signup input[type="password"]:focus {
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
+}
+ 
+/* Checkbox elrejtése */
+#login input[type="checkbox"],
+#signup input[type="checkbox"] {
+  display: none;
+}
+ 
+/* Jelszó wrapper divek */
+#signup div > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+ 
+/* =====================
+   GOMBOK
+   ===================== */
+ 
+#loginbtn,
+#signupbtn {
+  margin-top: 1.25rem;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  color: #fff !important;
+  background: linear-gradient(135deg, #f5a623, #e8380d);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(232, 56, 13, 0.25);
+  text-decoration: none !important;
+  align-self: flex-start;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease 0.3s,
+              transform 0.35s ease 0.3s,
+              box-shadow 0.2s;
+}
+ 
+#login.active #loginbtn,
+#signup.active #signupbtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+ 
+#loginbtn:hover,
+#signupbtn:hover {
+  box-shadow: 0 4px 14px rgba(232, 56, 13, 0.35);
+  transform: scale(1.02) !important;
+}
+ 
+/* Error / success üzenetek */
+#errors  { font-size: 12px; color: #e24b4a; margin-bottom: 0.5rem; }
+#success { font-size: 12px; color: #1d9e75; margin-bottom: 0.5rem; }
+ 
+/* pwd */
+.password {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  position: relative;
+}
+
+#login .pwdToggle {
+  position: absolute;
+  left: 220px;
+  top: 53%;
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  padding: 0;
+  transition: color 0.2s;
+  color: #f5a623;
+}
+
+#signup .pwdToggle {
+  position: absolute;
+  right: 2%;
+  top: 12%;
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  padding: 0;
+  transition: color 0.2s;
+  color: #f5a623;
+}
+
+
+.pwdToggle:hover {
+  color: #f5a623;
+}
+
+
+/* =====================
+   RESZPONZÍV — mobil
+   ===================== */
+ 
+@media (max-width: 640px) {
+  #body {
+    flex-direction: column;
+    padding: 0;
+  }
+ 
+  #login,
+  #signup {
+    border: none;
+    border-radius: 0;
+    border-right: none;
+    border-bottom: 0.5px solid #2a2f45;
+    padding: 1.75rem 1.5rem;
+    flex: unset !important;
+    transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                padding 0.3s ease;
+    max-height: 600px;
+    align-items: center;
+  }
+ 
+  #login.inactive,
+  #signup.inactive {
+    max-height: 80px;
+    overflow: hidden;
+  }
+ 
+  #login h1,
+  #signup h1 {
+    font-size: 18px;
+  }
+ 
+  #login.inactive h1,
+  #signup.inactive h1 {
+    font-size: 14px;
+  }
+
+  #signup div > div, #login div > div{
+    align-items: center !important;
+  }
+
+  #login div > div input[type="text"],
+   #signup div > div input[type="text"],
+   #login div > div input[type="password"],
+   #signup div > div input[type="password"]{
+    min-height: 6vh;
+  }
+
+  #loginbtn, #signupbtn{
+    margin: auto !important;
+  }
+
+  #login .pwdToggle{
+      right: 15%;
+      top: 53%;
+  }
 }
