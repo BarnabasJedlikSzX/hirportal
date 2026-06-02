@@ -157,7 +157,107 @@
       "title": "Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista",
       "subtitle": "A magyar főváros különösen a gasztronómia, a fürdőkultúra és az árak miatt lett népszerű.",
       "content": "# Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista\n\nA Forbes Travel Guide 2026-os éves rangsorában **Budapest a 7. helyre** került a világ legjobb városturisztikai célpontjainak listáján – megelőzve Barcelonát, Prágát és Amszterdamot. Ez az eddigi legjobb magyar szereplés a rangsorban.\n\n## Miért Budapest?\n\nA szerkesztők három fő tényezőt emeltek ki:\n\n### 1. Gasztronómia\nBudapest éttermi kínálata az elmúlt öt évben robbanásszerűen fejlődött. A városban ma már **5 Michelin-csillagos étterem** működik, miközben az utcai ételek és a romkocsmák egyedi élményt nyújtanak.\n\n### 2. Fürdőkultúra\nA termálvizes fürdők – különösen a Gellért és a Széchenyi – **világszínvonalú élménnyé** nőtték ki magukat, miután milliárdos fejlesztések folytak bennük.\n\n### 3. Ár-érték arány\nAz euróövezeten kívüliség miatt Budapest az európai fővárosok közül az egyik **legkedvezőbb árú célpont**. Egy átlagos nyugat-európai turista ugyanannyiból 3 napot tölthet el Budapesten, mint 1,5-et Párizsban.\n\n## Számok\n\n- 2025-ben **6,2 millió külföldi turista** érkezett Budapestre\n- Az átlagos tartózkodási idő 3,4 éjszaka\n- A turizmus a GDP **4,8%-át** adja\n\n## Kihívások\n\nA siker árnyoldalai is megjelennek: az ingatlanárak emelkedése és az **overtourism** jelei már érzékelhetők a belvárosban. A Fővárosi Önkormányzat tervezi a turisztikai fejlesztési stratégia felülvizsgálatát."
-    }
+    },
+    {
+    "id": "nws_011",
+    "userId": "2",
+    "createdAt": "2026. 05. 23. 08:00",
+    "imgURL": "13.jpg",
+    "topic": "Politika",
+    "title": "Rendkívüli parlamenti ülésen tárgyalták az önkormányzatok finanszírozását",
+    "subtitle": "A kormány szerint új támogatási rendszerre van szükség a kisebb települések számára.",
+    "content": "# Rendkívüli parlamenti ülés az önkormányzatok helyzetéről\n\nAz Országgyűlés rendkívüli ülésén a képviselők az önkormányzatok finanszírozásának átalakításáról vitáztak.\n\n## A javaslat lényege\n\nA tervezet szerint a kisebb települések többlettámogatásban részesülhetnek, különösen az oktatási és egészségügyi feladatok ellátása terén.\n\n- Több forrás a falvaknak\n- Új pályázati rendszer\n- Egyszerűsített elszámolás\n\n## Ellenzéki kritikák\n\nAz ellenzéki pártok szerint a rendszer nem garantál elegendő átláthatóságot."
+  },
+  {
+    "id": "nws_012",
+    "userId": "3",
+    "createdAt": "2026. 05. 23. 09:15",
+    "imgURL": "14.jpg",
+    "topic": "Technológia",
+    "title": "Magyar fejlesztésű mesterséges intelligencia segítheti a vasúti közlekedést",
+    "subtitle": "A rendszer valós időben elemzi a forgalmat és előre jelzi a fennakadásokat.",
+    "content": "# AI a vasúti közlekedésben\n\nEgy hazai startup olyan mesterséges intelligencia rendszert mutatott be, amely képes előre jelezni a késéseket és optimalizálni a menetrendeket.\n\n## Előnyök\n\n- Kevesebb késés\n- Gyorsabb hibaelhárítás\n- Hatékonyabb erőforrás-kezelés\n\nA pilot programot három nagyobb vasútvonalon indítják el."
+  },
+  {
+    "id": "nws_013",
+    "userId": "4",
+    "createdAt": "2026. 05. 23. 10:30",
+    "imgURL": "15.jpg",
+    "topic": "Időjárás",
+    "title": "Heves zivatarok érkezhetnek az ország nyugati részére",
+    "subtitle": "A meteorológusok több megyére is figyelmeztetést adtak ki.",
+    "content": "# Zivatarveszély a hét elején\n\nAz előrejelzések szerint a következő 24 órában jelentős csapadék érheti el a Dunántúlt.\n\n## Várható jelenségek\n\n- Villámlás\n- Jégeső\n- Viharos széllökések\n\nA hatóságok fokozott óvatosságra kérik a közlekedőket."
+  },
+  {
+    "id": "nws_014",
+    "userId": "2",
+    "createdAt": "2026. 05. 23. 11:20",
+    "imgURL": "16.jpg",
+    "topic": "Magyar Péter",
+    "title": "Magyar Péter országjáró fórumot indított a vidéki településeken",
+    "subtitle": "A politikus több mint húsz várost keres fel a következő hetekben.",
+    "content": "# Országjárásba kezdett Magyar Péter\n\nMagyar Péter bejelentette, hogy országos fórumkörutat indít, amely során számos vidéki városban találkozik a választókkal.\n\n## A program célja\n\n- Lakossági egyeztetések\n- Helyi problémák feltérképezése\n- Közösségi javaslatok gyűjtése\n\nA rendezvények több helyszínen telt házzal zajlottak."
+  },
+  {
+    "id": "nws_015",
+    "userId": "4",
+    "createdAt": "2026. 05. 23. 12:40",
+    "imgURL": "17.jpg",
+    "topic": "Belügy",
+    "title": "Új digitális ügyintézési rendszert vezetnek be az okmányirodákban",
+    "subtitle": "A fejlesztés célja a várakozási idő csökkentése.",
+    "content": "# Korszerűsítik az ügyintézést\n\nAz illetékes minisztérium bejelentette az új digitális ügyintézési rendszer bevezetését.\n\n## Mit jelent ez az állampolgároknak?\n\n- Online időpontfoglalás\n- Gyorsabb ügyintézés\n- Kevesebb papírmunka\n\nA rendszer fokozatosan kerül bevezetésre."
+  },
+  {
+    "id": "nws_016",
+    "userId": "3",
+    "createdAt": "2026. 05. 23. 14:10",
+    "imgURL": "18.jpg",
+    "topic": "Bulvár",
+    "title": "Titkos esküvő? Ismert magyar énekesről terjednek pletykák",
+    "subtitle": "A közösségi médiában megjelent fotók találgatásokat indítottak el.",
+    "content": "# Rejtélyes képek lepték el az internetet\n\nEgy népszerű magyar előadóról készült fotók alapján sokan úgy vélik, hogy titokban összeházasodhatott párjával.\n\n## Mit tudni eddig?\n\n- Hivatalos megerősítés nincs\n- A rajongók találgatnak\n- Több ismert személy gratulált a közösségi médiában\n\nAz érintettek egyelőre nem kommentálták az értesüléseket."
+  },
+  {
+    "id": "nws_017",
+    "userId": "2",
+    "createdAt": "2026. 05. 23. 15:00",
+    "imgURL": "19.jpg",
+    "topic": "Orbán Viktor",
+    "title": "Orbán Viktor gazdasági fórumon beszélt a következő évek céljairól",
+    "subtitle": "A miniszterelnök szerint a versenyképesség erősítése a legfontosabb feladat.",
+    "content": "# Gazdasági fórum Budapesten\n\nOrbán Viktor egy nemzetközi konferencián ismertette a kormány gazdasági prioritásait.\n\n## Főbb célkitűzések\n\n- Beruházások ösztönzése\n- Munkahelyteremtés\n- Export növelése\n\nA beszédet több külföldi üzleti delegáció is figyelemmel kísérte."
+  },
+  {
+    "id": "nws_018",
+    "userId": "4",
+    "createdAt": "2026. 05. 23. 16:25",
+    "imgURL": "20.jpg",
+    "topic": "Technológia",
+    "title": "Új akkumulátortechnológia növelheti az elektromos autók hatótávját",
+    "subtitle": "A fejlesztők szerint akár 40%-os javulás is elérhető lehet.",
+    "content": "# Forradalmi akkumulátor-fejlesztés\n\nKutatók bemutatták legújabb energiatárolási megoldásukat, amely jelentősen növelheti az elektromos járművek teljesítményét.\n\n## A fejlesztés előnyei\n\n- Hosszabb hatótáv\n- Gyorsabb töltés\n- Alacsonyabb gyártási költség\n\nA technológia kereskedelmi alkalmazása 2028 körül várható."
+  },
+  {
+    "id": "nws_019",
+    "userId": "3",
+    "createdAt": "2026. 05. 23. 18:00",
+    "imgURL": "21.jpg",
+    "topic": "Belügy",
+    "title": "Jelentősen csökkent a közúti balesetek száma az év első negyedévében",
+    "subtitle": "A rendőrség szerint a fokozott ellenőrzések meghozták eredményüket.",
+    "content": "# Kedvező baleseti statisztikák\n\nAz országos adatok szerint 12%-kal kevesebb személyi sérüléses közlekedési baleset történt az előző év azonos időszakához képest.\n\n## A javulás okai\n\n- Több traffipax\n- Gyakoribb ellenőrzések\n- Közlekedésbiztonsági kampányok\n\nA szakemberek további javulást várnak az év hátralévő részében."
+  },
+  {
+    "id": "nws_020",
+    "userId": "2",
+    "createdAt": "2026. 05. 23. 19:30",
+    "imgURL": "22.jpg",
+    "topic": "Magyar Péter",
+    "title": "Magyar Péter új oktatási programot mutatott be",
+    "subtitle": "A javaslat a digitális készségek fejlesztésére helyezi a hangsúlyt.",
+    "content": "# Oktatási reformjavaslatot ismertetett Magyar Péter\n\nSajtótájékoztatón mutatták be az új oktatási program főbb elemeit.\n\n## A tervezet szerint\n\n- Több informatikai óra\n- Modern tananyagok\n- Digitális eszközök bővítése\n\nA szakmai szervezetek a következő hetekben értékelik a javaslatot."
+  }
   ],
   "comments": [
     {
