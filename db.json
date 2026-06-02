@@ -59,115 +59,115 @@
   ],
   "news": [
     {
-      "id": "nws_001",
-      "userId": "2",
-      "createdAt": "2026. 05. 22. 08:15",
-      "imgURL": "3.png",
-      "topic": "Időjárás",
-      "title": "Rekordmeleg várható a hétvégén: 38 fokot is mérhetnek egyes területeken",
-      "subtitle": "Az Országos Meteorológiai Szolgálat riasztást adott ki több megyére is.",
-      "content": "# Rekordmeleg várható a hétvégén: 38 fokot is mérhetnek egyes területeken\n\nAz Országos Meteorológiai Szolgálat **harmadfokú hőségriadót** hirdetett ki a Dél-Alföld és a Duna–Tisza köze térségére ezen a hétvégén. Az előrejelzések szerint szombaton és vasárnap a hőmérséklet egyes területeken elérheti a **38 Celsius-fokot** is.\n\n## Mire számíthatunk?\n\nA mediterrán légtömegek betörése következtében az ország keleti felén péntektől fokozatosan emelkedni fog a hőmérséklet. Az éjszakák sem hoznak majd enyhülést: a legalacsonyabb hőmérsékletek is 22–25 fok között alakulnak.\n\n- **Pénteken:** 32–35 fok, napos idő\n- **Szombaton:** 35–38 fok, lokális zivatarok lehetségesége\n- **Vasárnap:** 33–36 fok, délutántól hidegfront érkezik\n\n## Egészségügyi tanácsok\n\nAz ÁNTSZ arra kéri a lakosságot, hogy kerüljék a déli órákban a szabadban tartózkodást, fogyasszanak elegendő folyadékot, és fokozottan figyeljenek az idős emberekre és a kisgyermekekre.\n\n> „Az ilyen szélsőséges hőhullámok egyre gyakoribbá válnak a klimatikus változások következtében\" – nyilatkozta dr. Kovács Péter meteorológus.\n\n## Mikor jön az enyhülés?\n\nHétfőn egy hidegfront érkezik nyugat felől, amely zivatarokat és 8–12 fokos hőmérséklet-csökkenést hoz magával. Az előrejelzések szerint a jövő héten már megszokottabb, 26–28 fokos értékek várhatók."
-    },
-    {
-      "id": "nws_002",
-      "userId": "2",
-      "createdAt": "2026. 05. 22. 09:30",
-      "imgURL": "7.jpg",
-      "topic": "Technológia",
-      "title": "A mesterséges intelligencia már orvosi diagnózisokban is megelőzi az embereket",
-      "subtitle": "Egy új tanulmány szerint az AI 94%-os pontossággal diagnosztizál egyes daganatos betegségeket.",
-      "content": "# A mesterséges intelligencia már orvosi diagnózisokban is megelőzi az embereket\n\nEgy friss, a *Nature Medicine* folyóiratban közzétett tanulmány szerint egy új mesterséges intelligencia alapú diagnosztikai rendszer **94%-os pontossággal** képes azonosítani a mellrák korai stádiumait – ez az érték meghaladja az átlagos radiológus teljesítményét.\n\n## A kutatás részletei\n\nA Stanford Egyetem kutatói több mint 200 000 mammográfiai felvételen tanították be a modellt. Az eredmények azt mutatják, hogy az AI nem csupán gyorsabb, hanem bizonyos esetekben megbízhatóbb is az emberi szakértőknél.\n\n```\nEmberi diagnosztika átlagos pontossága: 87,6%\nAI rendszer pontossága:                94,1%\nKülönbség:                             +6,5 százalékpont\n```\n\n## Etikai kérdések\n\nA technológia terjedésével párhuzamosan egyre több szakértő vet fel **etikai aggályokat**. Ki a felelős, ha az AI téves diagnózist ad? Hogyan lehet biztosítani az adatvédelmet?\n\n- Az EU már dolgozik az AI orvosi alkalmazásának szabályozásán\n- Magyarországon 3 kórházban indult pilot program\n- Az orvosok 78%-a üdvözli a technológiát asszisztensi szerepkörben\n\n## Mi a következő lépés?\n\nA fejlesztők 2027-re tervezik a rendszer szélesebb körű klinikai bevezetését. A cél nem az orvosok helyettesítése, hanem **munkájuk hatékonyabbá tétele** – különösen az amúgy is leterhelt egészségügyi rendszerekben."
-    },
-    {
-      "id": "nws_003",
-      "userId": "3",
-      "createdAt": "2026. 05. 22. 21:59 (szerkesztve)",
-      "imgURL": "10.jpg",
-      "topic": "Bulvár",
-      "title": "Milák Kristóf új világcsúccsal nyert aranyat a budapesti úszó Eb-n",
-      "subtitle": "A magyar úszólegenda 49,68 másodperces idővel írta be magát a történelemkönyvekbe.",
-      "content": "# Milák Kristóf új világcsúccsal nyert aranyat a budapesti úszó Eb-n\n\nA Duna Arénában rendezett Európa-bajnokságon **Milák Kristóf** csütörtöki estén megdöntötte a 100 méteres pillangóúszás saját korábbi világcsúcsát. Az új eredmény **49,68 másodperc**, ami 0,14 másodperccel javít a korábbi rekordon.\n\n## A döntő menete\n\nA döntőbe öten jutottak be a legjobbak közül, ám az első 50 méter után már egyértelmű volt, hogy a győzelem Milák nevéhez fog fűződni. A hazai közönség hangos buzdítása mellett a 26 éves sportoló végig uralta a futamot.\n\n| Helyezés | Versenyző | Ország | Idő |\n|----------|-----------|--------|-----|\n| 1. | Milák Kristóf | Magyarország | 49,68 |\n| 2. | Léon Marchand | Franciaország | 50,12 |\n| 3. | Thomas Ceccon | Olaszország | 50,34 |\n\n## Milák nyilatkozata\n\n> „Éreztem, hogy ma valami különleges jöhet. A hazai közönség erőt ad, és a felkészülés is tökéletesen sikerült. Nagyon boldog vagyok!\"\n\n## Magyar éremtermés\n\nAz Eb harmadik napján a magyarok összesen **4 arany-, 2 ezüst- és 1 bronzérmet** szereztek, ezzel a közös pontverseny első helyén állnak."
-    },
-    {
-      "id": "nws_004",
-      "userId": "4",
-      "createdAt": "2026. 05. 22. 11:15",
-      "imgURL": "inflation.jpg",
-      "topic": "Gazdaság",
-      "title": "Az infláció 3,2%-ra csökkent – hat év legalacsonyabb értéke",
-      "subtitle": "A KSH legfrissebb adatai szerint az élelmiszerárak csökkenése húzta le a mutatót.",
-      "content": "# Az infláció 3,2%-ra csökkent – hat év legalacsonyabb értéke\n\nA Központi Statisztikai Hivatal (KSH) pénteken közzétett adatai szerint Magyarországon a fogyasztói árak éves szinten **3,2%-kal emelkedtek** 2026 áprilisában – ez a legalacsonyabb érték 2020 óta.\n\n## Mi húzta le az inflációt?\n\nA mérséklődés mögött több tényező áll:\n\n1. **Élelmiszerárak csökkenése** – Az alapvető élelmiszerek ára 1,8%-kal esett vissza\n2. **Energiaárak stabilizálódása** – A gázárak az európai piacon mérséklődtek\n3. **Erősödő forint** – A forint–euró árfolyam javulása olcsóbbá tette az importot\n\n## Szakértői vélemények\n\nA Magyar Nemzeti Bank elemzői szerint az infláció az előrejelzéseknek megfelelően alakul, és az év végére **2,5–3% közé** süllyedhet.\n\n> „Óvatosnak kell lenni az optimizmussal – a szolgáltatások ára még mindig gyorsan nő, különösen a vendéglátásban és a turizmusban.\" – mondta Varga Eszter közgazdász.\n\n## Hatás a mindennapokra\n\nA statisztika ellenére a háztartások jelentős része még mindig **áremelkedést tapasztal** a piacon, különösen a húsok és a tejtermékek esetében. A szakértők szerint az infláció „személyre szabott\" megélése különbözhet a hivatalos adatoktól."
-    },
-    {
-      "id": "nws_005",
-      "userId": "2",
-      "createdAt": "2026. 05. 22. 12:00",
-      "imgURL": "shortmovie.jpg",
-      "topic": "Kultúra",
-      "title": "Cannes-i Arany Pálma: egy magyar rendező rövidfilmje kapott különdíjat",
-      "subtitle": "Fekete Ádám alkotása a fesztiválon nagy ovációt kapott, és új fejezetet nyithat a magyar film számára.",
-      "content": "# Cannes-i Arany Pálma: egy magyar rendező rövidfilmje kapott különdíjat\n\nA 79. Cannes-i Filmfesztiválon **Fekete Ádám** magyar rendező *Csend a Tiszán* című rövidfilmje elnyerte a zsűri különdíját a rövidfilm kategóriában. A 24 perces alkotás a Tisza-vidéken élő halászcsaládok mindennapjait mutatja be páratlan vizualitással.\n\n## A film\n\nA *Csend a Tiszán* egy öreghalász és unokája kapcsolatát követi végig egyetlen nyári napon. A párbeszédmentes, képekben mesélő alkotás erőteljesen támaszkodik a természeti hangokra és a tiszai táj szépségére.\n\n- **Rendező:** Fekete Ádám (28 éves, debreceni születésű)\n- **Operatőr:** Nemes Judit\n- **Gyártó:** Közép-európai Filmstúdió\n- **Vetítések száma Cannes-ban:** 4\n\n## A zsűri indoklása\n\n> „Egy olyan film, amely visszaadja a mozgóképnek azt a csodát, amit az első filmesek éreztek a kamera feltalálásakor. Időtlen és mégis nagyon mai.\"\n\n## Mi következik?\n\nA film szeptembertől elérhető lesz a magyar mozikban, és tárgyalások folynak egy streaming platform számára is. Fekete Ádám első nagyjátékfilmjének forgatókönyvét már jóváhagyták, a forgatás **2027 tavaszán** kezdődhet."
-    },
-    {
-      "id": "nws_006",
-      "userId": "3",
-      "createdAt": "2026. 05. 22. 21:58 (szerkesztve)",
-      "imgURL": "eu.jpg",
-      "topic": "Politika",
-      "title": "EU-csúcs: megállapodás született a közös védelmi alap finanszírozásáról",
-      "subtitle": "A tagállamok 650 milliárd eurós keretet hagytak jóvá a következő öt évre.",
-      "content": "# EU-csúcs: megállapodás született a közös védelmi alap finanszírozásáról\n\nBrüsszelben az Európai Tanács rendkívüli ülésén a tagállamok jóváhagytak egy **650 milliárd eurós közös védelmi alapot** a 2027–2031-es időszakra. Ez az EU eddigi legnagyobb közös védelmi vállalkozása.\n\n## Mit tartalmaz a megállapodás?\n\nA keretből finanszíroznák:\n\n- Közös légvédelmi rendszerek fejlesztését\n- Kiberbiztonsági infrastruktúra megerősítését\n- Határvédelmi technológiákat\n- Hadiipari kutatás-fejlesztést\n\n## Viták a tárgyalóteremben\n\nA megállapodás nem született vita nélkül. Több kisebb tagállam – köztük **Ausztria és Írország** – fenntartásait fejezte ki a semlegességi politikájukra hivatkozva, végül azonban kompromisszumos szövegre jutottak.\n\n> „Ez az Európa önvédelmi képességének megerősítéséről szól, nem militarizálásról.\" – hangsúlyozta az Európai Bizottság elnöke.\n\n## Magyar álláspont\n\nA magyar kormány megszavazta az alapot, ugyanakkor ragaszkodott ahhoz, hogy a finanszírozás ne érintse a szuverén nemzeti hadsereget. Budapest külön tárgyalásokat is folytat bilaterális védelmi szerződésekről."
-    },
-    {
-      "id": "nws_007",
-      "userId": "4",
-      "createdAt": "2026. 05. 22. 14:00",
-      "imgURL": "balaton.jpg",
-      "topic": "Környezet",
-      "title": "A Balaton vízszintje aggasztóan alacsony – szakértők azonnali beavatkozást sürgetnek",
-      "subtitle": "A tó vízszintje rekordalacsony értékre süllyedt, ami komolyan veszélyezteti az ökoszisztémát.",
-      "content": "# A Balaton vízszintje aggasztóan alacsony – szakértők azonnali beavatkozást sürgetnek\n\nA Balatoni Vízügyi Igazgatóság legújabb mérései szerint a tó vízszintje jelenleg **88 cm-rel van a sokéves átlag alatt**, ami az elmúlt 80 év legalacsonyabb értéke. A helyzet azonnali cselekvést igényel.\n\n## Az okok\n\nA szakértők több tényezőt azonosítottak:\n\n1. Rendkívül csapadékszegény tél és tavasz\n2. Fokozódó párolgás a melegedő klíma miatt\n3. Megnövekedett mezőgazdasági vízfelhasználás a vízgyűjtő területen\n4. A Kis-Balaton szűrőrendszer kapacitásproblémái\n\n## Mi a következmény?\n\nAz alacsony vízszint komoly következményekkel jár:\n\n- A sekély öblök egyes részei **kiszáradtak**\n- A halfajok szaporodása veszélybe kerülhet\n- A nádasok visszahúzódnak\n- A strandok egy részén nem lehet biztonságosan fürdeni\n\n## Mit tesznek a hatóságok?\n\nA Vízügyi Igazgatóság elkezdett tárgyalásokat a somogyi és zalai mezőgazdasági szövetségekkel a vízfelhasználás korlátozásáról. Emellett vizsgálják egy **mesterséges vízpótlási rendszer** kiépítésének lehetőségét is.\n\n> „Ha az idei nyár is száraz lesz, 2027-re tartósan kritikus szintre süllyedhet a vízszint.\" – figyelmeztetett dr. Horváth Tamás hidrológus."
-    },
-    {
-      "id": "nws_008",
-      "userId": "2",
-      "createdAt": "2026. 05. 22. 15:00",
-      "imgURL": "alzheimer.png",
-      "topic": "Egészség",
-      "title": "Áttörés az Alzheimer-kutatásban: új gyógyszer lassíthatja a betegség előrehaladását",
-      "subtitle": "A klinikai vizsgálatok harmadik fázisában lévő szer 40%-kal csökkentette a kognitív hanyatlást.",
-      "content": "# Áttörés az Alzheimer-kutatásban: új gyógyszer lassíthatja a betegség előrehaladását\n\nEgy multinacionális gyógyszeripari konzorcium bejelentette, hogy a **Neurostat-7** elnevezésű vegyület a klinikai vizsgálatok harmadik fázisában **40%-kal lassította a kognitív hanyatlást** enyhe és közepesen súlyos Alzheimer-kórban szenvedő betegeknél.\n\n## A vizsgálat eredményei\n\nA vizsgálatban 4 200 beteg vett részt 18 hónapon keresztül. Az eredmények:\n\n| Mutató | Kontrollcsoport | Kezelési csoport |\n|--------|----------------|-----------------|\n| Kognitív hanyatlás | 100% | 60% |\n| Memóriateszt romlás | 100% | 58% |\n| Önellátási képesség megőrzése | 41% | 67% |\n\n## Hogyan működik?\n\nA Neurostat-7 egy úgynevezett **tau-protein aggregáció-gátló**. Az Alzheimer-kórnál a tau-fehérje kóros csomókba rendeződik az agyban – ez a folyamat az új szer hatására lelassul.\n\n## Mikor lesz elérhető?\n\nAz FDA és az EMA engedélyezési eljárása **2027 közepére** várható. Magyar szakértők szerint a gyógyszer a hazai egészségbiztosítási rendszerbe legkorábban 2028-ban kerülhet be.\n\n> „Ez nem gyógymód, de az első igazi terápiás lehetőség, amely érdemben befolyásolja a betegség lefolyását.\" – nyilatkozta Prof. Szabó Marianna neurológus, az MTA tagja."
-    },
-    {
-      "id": "nws_009",
-      "userId": "3",
-      "createdAt": "2026. 05. 22. 21:58 (szerkesztve)",
-      "imgURL": "12.png",
-      "topic": "Technológia",
-      "title": "Digitális forradalom az iskolákban: 2027-től kötelező lesz a programozás az általánosban",
-      "subtitle": "Az Oktatási Minisztérium bejelentette az új Nemzeti Alaptanterv módosítását.",
-      "content": "# Digitális forradalom az iskolákban: 2027-től kötelező lesz a programozás az általánosban\n\nAz Oktatási Minisztérium bejelentette, hogy **2027 szeptemberétől** a Nemzeti Alaptanterv kötelező elemeként jelenik meg az algoritmikus gondolkodás és a programozás alapjainak oktatása az általános iskolák 5–8. osztályaiban.\n\n## Mi változik pontosan?\n\nAz új tantárgy, amelynek neve **„Digitális alkotás\"**, hetente két tanórában fog szerepelni. Tartalma:\n\n- **5–6. osztály:** Vizuális programozás (Scratch, MIT App Inventor)\n- **7. osztály:** Python alapjai, logikai feladatok\n- **8. osztály:** Webalap ismeretek, adatkezelés, AI-etika\n\n## Tanárhiány: a legnagyobb kihívás\n\nA bevezetés legnagyobb akadálya a **képzett pedagógushiány**. Becslések szerint legalább 8 000 informatika tanár kellene az új tárgy zavartalan oktatásához, míg jelenleg csak mintegy 3 200 dolgozik a rendszerben.\n\nA minisztérium 3 éves átképzési programot hirdet, és külföldi partnereket von be az online oktatói anyagok fejlesztésébe.\n\n## Szülők és tanárok reakciói\n\nA pedagógusszakszervezetek **vegyes érzelmekkel** fogadták a hírt – üdvözlik a célt, de aggódnak a megvalósíthatóság miatt. A szülők körében végzett felmérés szerint a megkérdezettek **71%-a** támogatja az újítást."
-    },
-    {
-      "id": "nws_010",
-      "userId": "4",
-      "createdAt": "2026. 05. 22. 17:45",
-      "imgURL": "budapest.jpg",
-      "topic": "Utazás",
-      "title": "Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista",
-      "subtitle": "A magyar főváros különösen a gasztronómia, a fürdőkultúra és az árak miatt lett népszerű.",
-      "content": "# Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista\n\nA Forbes Travel Guide 2026-os éves rangsorában **Budapest a 7. helyre** került a világ legjobb városturisztikai célpontjainak listáján – megelőzve Barcelonát, Prágát és Amszterdamot. Ez az eddigi legjobb magyar szereplés a rangsorban.\n\n## Miért Budapest?\n\nA szerkesztők három fő tényezőt emeltek ki:\n\n### 1. Gasztronómia\nBudapest éttermi kínálata az elmúlt öt évben robbanásszerűen fejlődött. A városban ma már **5 Michelin-csillagos étterem** működik, miközben az utcai ételek és a romkocsmák egyedi élményt nyújtanak.\n\n### 2. Fürdőkultúra\nA termálvizes fürdők – különösen a Gellért és a Széchenyi – **világszínvonalú élménnyé** nőtték ki magukat, miután milliárdos fejlesztések folytak bennük.\n\n### 3. Ár-érték arány\nAz euróövezeten kívüliség miatt Budapest az európai fővárosok közül az egyik **legkedvezőbb árú célpont**. Egy átlagos nyugat-európai turista ugyanannyiból 3 napot tölthet el Budapesten, mint 1,5-et Párizsban.\n\n## Számok\n\n- 2025-ben **6,2 millió külföldi turista** érkezett Budapestre\n- Az átlagos tartózkodási idő 3,4 éjszaka\n- A turizmus a GDP **4,8%-át** adja\n\n## Kihívások\n\nA siker árnyoldalai is megjelennek: az ingatlanárak emelkedése és az **overtourism** jelei már érzékelhetők a belvárosban. A Fővárosi Önkormányzat tervezi a turisztikai fejlesztési stratégia felülvizsgálatát."
-    },
-    {
-      "id": "nws_011",
-      "userId": "2",
-      "createdAt": "2026. 05. 23. 08:00",
-      "imgURL": "parlament.jpg",
-      "topic": "Politika",
-      "title": "Rendkívüli parlamenti ülésen tárgyalták az önkormányzatok finanszírozását",
-      "subtitle": "A kormány szerint új támogatási rendszerre van szükség a kisebb települések számára.",
-      "content": "# Rendkívüli parlamenti ülés az önkormányzatok helyzetéről\n\nAz Országgyűlés rendkívüli ülésén a képviselők az önkormányzatok finanszírozásának átalakításáról vitáztak.\n\n## A javaslat lényege\n\nA tervezet szerint a kisebb települések többlettámogatásban részesülhetnek, különösen az oktatási és egészségügyi feladatok ellátása terén.\n\n- Több forrás a falvaknak\n- Új pályázati rendszer\n- Egyszerűsített elszámolás\n\n## Ellenzéki kritikák\n\nAz ellenzéki pártok szerint a rendszer nem garantál elegendő átláthatóságot."
-    },
+    "id": "nws_001",
+    "userId": "2",
+    "createdAt": "2026. 05. 22. 08:15",
+    "imgURL": "3.png",
+    "topic": "Időjárás",
+    "title": "Rekordmeleg várható a hétvégén: 38 fokot is mérhetnek egyes területeken",
+    "subtitle": "Az Országos Meteorológiai Szolgálat riasztást adott ki több megyére is.",
+    "content": "Az Országos Meteorológiai Szolgálat **harmadfokú hőségriadót** hirdetett ki a Dél-Alföld és a Duna–Tisza köze térségére ezen a hétvégén. Az előrejelzések szerint szombaton és vasárnap a hőmérséklet egyes területeken elérheti a **38 Celsius-fokot** is.\n\n## Mire számíthatunk?\n\nA mediterrán légtömegek betörése következtében az ország keleti felén péntektől fokozatosan emelkedni fog a hőmérséklet. Az éjszakák sem hoznak majd enyhülést: a legalacsonyabb hőmérsékletek is 22–25 fok között alakulnak.\n\n- **Pénteken:** 32–35 fok, napos idő\n- **Szombaton:** 35–38 fok, lokális zivatarok lehetségesége\n- **Vasárnap:** 33–36 fok, délutántól hidegfront érkezik\n\n## Egészségügyi tanácsok\n\nAz ÁNTSZ arra kéri a lakosságot, hogy kerüljék a déli órákban a szabadban tartózkodást, fogyasszanak elegendő folyadékot, és fokozottan figyeljenek az idős emberekre és a kisgyermekekre.\n\n> „Az ilyen szélsőséges hőhullámok egyre gyakoribbá válnak a klimatikus változások következtében\" – nyilatkozta dr. Kovács Péter meteorológus.\n\n## Mikor jön az enyhülés?\n\nHétfőn egy hidegfront érkezik nyugat felől, amely zivatarokat és 8–12 fokos hőmérséklet-csökkenést hoz magával. Az előrejelzések szerint a jövő héten már megszokottabb, 26–28 fokos értékek várhatók."
+  },
+  {
+    "id": "nws_002",
+    "userId": "2",
+    "createdAt": "2026. 05. 22. 09:30",
+    "imgURL": "7.jpg",
+    "topic": "Technológia",
+    "title": "A mesterséges intelligencia már orvosi diagnózisokban is megelőzi az embereket",
+    "subtitle": "Egy új tanulmány szerint az AI 94%-os pontossággal diagnosztizál egyes daganatos betegségeket.",
+    "content": "Egy friss, a *Nature Medicine* folyóiratban közzétett tanulmány szerint egy új mesterséges intelligencia alapú diagnosztikai rendszer **94%-os pontossággal** képes azonosítani a mellrák korai stádiumait – ez az érték meghaladja az átlagos radiológus teljesítményét.\n\n## A kutatás részletei\n\nA Stanford Egyetem kutatói több mint 200 000 mammográfiai felvételen tanították be a modellt. Az eredmények azt mutatják, hogy az AI nem csupán gyorsabb, hanem bizonyos esetekben megbízhatóbb is az emberi szakértőknél.\n\n```\nEmberi diagnosztika átlagos pontossága: 87,6%\nAI rendszer pontossága:                 94,1%\nKülönbség:                             +6,5 százalékpont\n```\n\n## Etikai kérdések\n\nA technológia terjedésével párhuzamosan egyre több szakértő vet fel **etikai aggályokat**. Ki a felelős, ha az AI téves diagnózist ad? Hogyan lehet biztosítani az adatvédelmet?\n\n- Az EU már dolgozik az AI orvosi alkalmazásának szabályozásán\n- Magyarországon 3 kórházban indult pilot program\n- Az orvosok 78%-a üdvözli a technológiát asszisztensi szerepkörben\n\n## Mi a következő lépés?\n\nA fejlesztők 2027-re tervezik a rendszer szélesebb körű klinikai bevezetését. A cél nem az orvosok helyettesítése, hanem **munkájuk hatékonyabbá tétele** – különösen az amúgy is leterhelt egészségügyi rendszerekben."
+  },
+  {
+    "id": "nws_003",
+    "userId": "3",
+    "createdAt": "2026. 05. 22. 21:59 (szerkesztve)",
+    "imgURL": "10.jpg",
+    "topic": "Bulvár",
+    "title": "Milák Kristóf új világcsúccsal nyert aranyat a budapesti úszó Eb-n",
+    "subtitle": "A magyar úszólegenda 49,68 másodperces idővel írta be magát a történelemkönyvekbe.",
+    "content": "A Duna Arénában rendezett Európa-bajnokságon **Milák Kristóf** csütörtöki estén megdöntötte a 100 méteres pillangóúszás saját korábbi világcsúcsát. Az új eredmény **49,68 másodperc**, ami 0,14 másodperccel javít a korábbi rekordon.\n\n## A döntő menete\n\nA döntőbe öten jutottak be a legjobbak közül, ám az első 50 méter után már egyértelmű volt, hogy a győzelem Milák nevéhez fog fűződni. A hazai közönség hangos buzdítása mellett a 26 éves sportoló végig uralta a futamot.\n\n| Helyezés | Versenyző | Ország | Idő |\n|----------|-----------|--------|-----|\n| 1. | Milák Kristóf | Magyarország | 49,68 |\n| 2. | Léon Marchand | Franciaország | 50,12 |\n| 3. | Thomas Ceccon | Olaszország | 50,34 |\n\n## Milák nyilatkozata\n\n> „Éreztem, hogy ma valami különleges jöhet. A hazai közönség erőt ad, és a felkészülés is tökéletesen sikerült. Nagyon boldog vagyok!\"\n\n## Magyar éremtermés\n\nAz Eb harmadik napján a magyarok összesen **4 arany-, 2 ezüst- és 1 bronzérmet** szereztek, ezzel a közös pontverseny első helyén állnak."
+  },
+  {
+    "id": "nws_004",
+    "userId": "4",
+    "createdAt": "2026. 05. 22. 11:15",
+    "imgURL": "inflation.jpg",
+    "topic": "Gazdaság",
+    "title": "Az infláció 3,2%-ra csökkent – hat év legalacsonyabb értéke",
+    "subtitle": "A KSH legfrissebb adatai szerint az élelmiszerárak csökkenése húzta le a mutatót.",
+    "content": "A Központi Statisztikai Hivatal (KSH) pénteken közzétett adatai szerint Magyarországon a fogyasztói árak éves szinten **3,2%-kal emelkedtek** 2026 áprilisában – ez a legalacsonyabb érték 2020 óta.\n\n## Mi húzta le az inflációt?\n\nA mérséklődés mögött több tényező áll:\n\n1. **Élelmiszerárak csökkenése** – Az alapvető élelmiszerek ára 1,8%-kal esett vissza\n2. **Energiaárak stabilizálódása** – A gázárak az európai piacon mérséklődtek\n3. **Erősödő forint** – A forint–euró árfolyam javulása olcsóbbá tette az importot\n\n## Szakértői vélemények\n\nA Magyar Nemzeti Bank elemzői szerint az infláció az előrejelzéseknek megfelelően alakul, és az év végére **2,5–3% közé** süllyedhet.\n\n> „Óvatosnak kell lenni az optimizmussal – a szolgáltatások ára még mindig gyorsan nő, különösen a vendéglátásban és a turizmusban.\" – mondta Varga Eszter közgazdász.\n\n## Hatás a mindennapokra\n\nA statisztika ellenére a háztartások jelentős része még mindig **áremelkedést tapasztal** a piacon, különösen a húsok és a tejtermékek esetében. A szakértők szerint az infláció „személyre szabott\" megélése különbözhet a hivatalos adatoktól."
+  },
+  {
+    "id": "nws_005",
+    "userId": "2",
+    "createdAt": "2026. 05. 22. 12:00",
+    "imgURL": "shortmovie.jpg",
+    "topic": "Kultúra",
+    "title": "Cannes-i Arany Pálma: egy magyar rendező rövidfilmje kapott különdíjat",
+    "subtitle": "Fekete Ádám alkotása a fesztiválon nagy ovációt kapott, és új fejezetet nyithat a magyar film számára.",
+    "content": "A 79. Cannes-i Filmfesztiválon **Fekete Ádám** magyar rendező *Csend a Tiszán* című rövidfilmje elnyerte a zsűri különdíját a rövidfilm kategóriában. A 24 perces alkotás a Tisza-vidéken élő halászcsaládok mindennapjait mutatja be páratlan vizualitással.\n\n## A film\n\nA *Csend a Tiszán* egy öreghalász és unokája kapcsolatát követi végig egyetlen nyári napon. A párbeszédmentes, képekben mesélő alkotás erőteljesen támaszkodik a természeti hangokra és a tiszai táj szépségére.\n\n- **Rendező:** Fekete Ádám (28 éves, debreceni születésű)\n- **Operatőr:** Nemes Judit\n- **Gyártó:** Közép-európai Filmstúdió\n- **Vetítések száma Cannes-ban:** 4\n\n## A zsűri indoklása\n\n> „Egy olyan film, amely visszaadja a mozgóképnek azt a csodát, amit az első filmesek éreztek a kamera feltalálásakor. Időtlen és mégis nagyon mai.\"\n\n## Mi következik?\n\nA film szeptembertől elérhető lesz a magyar mozikban, és tárgyalások folynak egy streaming platform számára is. Fekete Ádám első nagyjátékfilmjének forgatókönyvét már jóváhagyták, a forgatás **2027 tavaszán** kezdődhet."
+  },
+  {
+    "id": "nws_006",
+    "userId": "3",
+    "createdAt": "2026. 05. 22. 21:58 (szerkesztve)",
+    "imgURL": "eu.jpg",
+    "topic": "Politika",
+    "title": "EU-csúcs: megállapodás született a közös védelmi alap finanszírozásáról",
+    "subtitle": "A tagállamok 650 milliárd eurós keretet hagytak jóvá a következő öt évre.",
+    "content": "Brüsszelben az Európai Tanács rendkívüli ülésén a tagállamok jóváhagytak egy **650 milliárd eurós közös védelmi alapot** a 2027–2031-es időszakra. Ez az EU eddigi legnagyobb közös védelmi vállalkozása.\n\n## Mit tartalmaz a megállapodás?\n\nA keretből finanszíroznák:\n\n- Közös légvédelmi rendszerek fejlesztését\n- Kiberbiztonsági infrastruktúra megerősítését\n- Határvédelmi technológiákat\n- Hadiipari kutatás-fejlesztést\n\n## Viták a tárgyalóteremben\n\nA megállapodás nem született vita nélkül. Több kisebb tagállam – köztük **Ausztria és Írország** – fenntartásait fejezte ki a semlegességi politikájukra hivatkozva, végül azonban kompromisszumos szövegre jutottak.\n\n> „Ez az Európa önvédelmi képességének megerősítéséről szól, nem militarizálásról.\" – hangsúlyozta az Európai Bizottság elnöke.\n\n## Magyar álláspont\n\nA magyar kormány megszavazta az alapot, ugyanakkor ragaszkodott ahhoz, hogy a finanszírozás ne érintse a szuverén nemzeti hadsereget. Budapest külön tárgyalásokat is folytat bilaterális védelmi szerződésekről."
+  },
+  {
+    "id": "nws_007",
+    "userId": "4",
+    "createdAt": "2026. 05. 22. 14:00",
+    "imgURL": "balaton.jpg",
+    "topic": "Környezet",
+    "title": "A Balaton vízszintje aggasztóan alacsony – szakértők azonnali beavatkozást sürgetnek",
+    "subtitle": "A tó vízszintje rekordalacsony értékre süllyedt, ami komolyan veszélyezteti az ökoszisztémát.",
+    "content": "A Balatoni Vízügyi Igazgatóság legújabb mérései szerint a tó vízszintje jelenleg **88 cm-rel van a sokéves átlag alatt**, ami az elmúlt 80 év legalacsonyabb értéke. A helyzet azonnali cselekvést igényel.\n\n## Az okok\n\nA szakértők több tényezőt azonosítottak:\n\n1. Rendkívül csapadékszegény tél és tavasz\n2. Fokozódó párolgás a melegedő klíma miatt\n3. Megnövekedett mezőgazdasági vízfelhasználás a vízgyűjtő területen\n4. A Kis-Balaton szűrőrendszer kapacitásproblémái\n\n## Mi a következmény?\n\nAz alacsony vízszint komoly következményekkel jár:\n\n- A sekély öblök egyes részei **kiszáradtak**\n- A halfajok szaporodása veszélybe kerülhet\n- A nádasok visszahúzódnak\n- A strandok egy részén nem lehet biztonságosan fürdeni\n\n## Mit tesznek a hatóságok?\n\nA Vízügyi Igazgatóság elkezdett tárgyalásokokat a somogyi és zalai mezőgazdasági szövetségekkel a vízfelhasználás korlátozásáról. Emellett vizsgálják egy **mesterséges vízpótlási rendszer** kiépítésének lehetőségét is.\n\n> „Ha az idei nyár is száraz lesz, 2027-re tartósan kritikus szintre süllyedhet a vízszint.\" – figyelmeztetett dr. Horváth Tamás hidrológus."
+  },
+  {
+    "id": "nws_008",
+    "userId": "2",
+    "createdAt": "2026. 05. 22. 15:00",
+    "imgURL": "alzheimer.png",
+    "topic": "Egészség",
+    "title": "Áttörés az Alzheimer-kutatásban: új gyógyszer lassíthatja a betegség előrehaladását",
+    "subtitle": "A klinikai vizsgálatok harmadik fázisában lévő szer 40%-kal csökkentette a kognitív hanyatlást.",
+    "content": "Egy multinacionális gyógyszeripari konzorcium bejelentette, hogy a **Neurostat-7** elnevezésű vegyület a klinikai vizsgálatok harmadik fázisában **40%-kal lassította a kognitív hanyatlást** enyhe és közepesen súlyos Alzheimer-kórban szenvedő betegeknél.\n\n## A vizsgálat eredményei\n\nA vizsgálatban 4 200 beteg vett részt 18 hónapon keresztül. Az eredmények:\n\n| Mutató | Kontrollcsoport | Kezelési csoport |\n|--------|----------------|-----------------|\n| Kognitív hanyatlás | 100% | 60% |\n| Memóriateszt romlás | 100% | 58% |\n| Önellátási képesség megőrzése | 41% | 67% |\n\n## Hogyan működik?\n\nA Neurostat-7 egy úgynevezett **tau-protein aggregáció-gátló**. Az Alzheimer-kórnál a tau-fehérje kóros csomókba rendeződik az agyban – ez a folyamat az új szer hatására lelassul.\n\n## Mikor lesz elérhető?\n\nAz FDA és az EMA engedélyezési eljárása **2027 közepére** várható. Magyar szakértők szerint a gyógyszer a hazai egészségbiztosítási rendszerbe legkorábban 2028-ban kerülhet be.\n\n> „Ez nem gyógymód, de az első igazi terápiás lehetőség, amely érdemben befolyásolja a betegség lefolyását.\" – nyilatkozta Prof. Szabó Marianna neurológus, az MTA tagja."
+  },
+  {
+    "id": "nws_009",
+    "userId": "3",
+    "createdAt": "2026. 05. 22. 21:58 (szerkesztve)",
+    "imgURL": "12.png",
+    "topic": "Technológia",
+    "title": "Digitális forradalom az iskolákban: 2027-től kötelező lesz a programozás az általánosban",
+    "subtitle": "Az Oktatási Minisztérium bejelentette az új Nemzeti Alaptanterv módosítását.",
+    "content": "Az Oktatási Minisztérium bejelentette, hogy **2027 szeptemberétől** a Nemzeti Alaptanterv kötelező elemeként jelenik meg az algoritmikus gondolkodás és a programozás alapjainak oktatása az általános iskolák 5–8. osztályaiban.\n\n## Mi változik pontosan?\n\nAz új tantárgy, amelynek neve **„Digitális alkotás\"**, hetente két tanórában fog szerepelni. Tartalma:\n\n- **5–6. osztály:** Vizuális programozás (Scratch, MIT App Inventor)\n- **7. osztály:** Python alapjai, logikai feladatok\n- **8. osztály:** Webalap ismeretek, adatkezelés, AI-etika\n\n## Tanárhiány: a legnagyobb kihívás\n\nA bevezetés legnagyobb akadálya a **képzett pedagógushiány**. Becslések szerint legalább 8 000 informatika tanár kellene az új tárgy zavartalan oktatásához, míg jelenleg csak mintegy 3 200 dolgozik a rendszerben.\n\nA minisztérium 3 éves átképzési programot hirdet, és külföldi partnereket von be az online oktatói anyagok fejlesztésébe.\n\n## Szülők és tanárok reakciói\n\nA pedagógusszakszervezetek **vegyes érzelmekkel** fogadták a hírt – üdvözlik a célt, de aggódnak a megvalósíthatóság miatt. A szülők körében végzett felmérés szerint a megkérdezettek **71%-a** támogatja az újítást."
+  },
+  {
+    "id": "nws_010",
+    "userId": "4",
+    "createdAt": "2026. 05. 22. 17:45",
+    "imgURL": "budapest.jpg",
+    "topic": "Utazás",
+    "title": "Budapest a világ 10 legjobb városturisztikai célpontja között – Forbes lista",
+    "subtitle": "A magyar főváros különösen a gasztronómia, a fürdőkultúra és az árak miatt lett népszerű.",
+    "content": "A Forbes Travel Guide 2026-os éves rangsorában **Budapest a 7. helyre** került a világ legjobb városturisztikai célpontjainak listáján – megelőzve Barcelonát, Prágát és Amszterdamot. Ez az eddigi legjobb magyar szereplés a rangsorban.\n\n## Miért Budapest?\n\nA szerkesztők három fő tényezőt emeltek ki:\n\n### 1. Gasztronómia\nBudapest éttermi kínálata az elmúlt öt évben robbanásszerűen fejlődött. A városban ma már **5 Michelin-csillagos étterem** működik, miközben az utcai ételek és a romkocsmák egyedi élményt nyújtanak.\n\n### 2. Fürdőkultúra\nA termálvizes fürdők – különösen a Gellért és a Széchenyi – **világszínvonalú élménnyé** nőtték ki magukat, miután milliárdos fejlesztések folytak bennük.\n\n### 3. Ár-érték arány\nAz euróövezeten kívüliség miatt Budapest az európai fővárosok közül az egyik **legkedvezőbb árú célpont**. Egy átlagos nyugat-európai turista ugyanannyiból 3 napot tölthet el Budapesten, mint 1,5-et Párizsban.\n\n## Számok\n\n- 2025-ben **6,2 millió külföldi turista** érkezett Budapestre\n- Az átlagos tartózkodási idő 3,4 éjszaka\n- A turizmus a GDP **4,8%-át** adja\n\n## Kihívások\n\nA siker árnyoldalai is megjelennek: az ingatlanárak emelkedése és az **overtourism** jelei már érzékelhetők a belvárosban. A Fővárosi Önkormányzat tervezi a turisztikai fejlesztési stratégia felülvizsgálatát."
+  },
+  {
+    "id": "nws_011",
+    "userId": "2",
+    "createdAt": "2026. 05. 23. 08:00",
+    "imgURL": "parlament.jpg",
+    "topic": "Politika",
+    "title": "Rendkívüli parlamenti ülésen tárgyalták az önkormányzatok finanszírozását",
+    "subtitle": "A kormány szerint új támogatási rendszerre van szükség a kisebb települések számára.",
+    "content": "Az Országgyűlés rendkívüli ülésén a képviselők az önkormányzatok finanszírozásának átalakításáról vitáztak.\n\n## A javaslat lényege\n\nA tervezet szerint a kisebb települések többlettámogatásban részesülhetnek, különösen az oktatási és egészségügyi feladatok ellátása terén.\n\n- Több forrás a falvaknak\n- Új pályázati rendszer\n- Egyszerűsített elszámolás\n\n## Ellenzéki kritikák\n\nAz ellenzéki pártok szerint a rendszer nem garantál elegendő átláthatóságot."
+  },
     {
       "id": "nws_012",
       "userId": "3",

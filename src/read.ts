@@ -38,7 +38,7 @@ function render(n: News) {
     });
     mainDiv.innerHTML = `
     <h1 class="text-center mb-2">${n.title}</h1>
-    <img src="./backend/downloaded/${n!.imgURL}" alt="${n!.title}" class="mb-3">
+    <img src="./backend/downloaded/${n!.imgURL}" alt="${n!.title}" class="d-block mx-auto mb-3">
 
     <hr>
 
