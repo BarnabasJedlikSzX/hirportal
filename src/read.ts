@@ -37,31 +37,30 @@ function render(n: News) {
         }
     });
     mainDiv.innerHTML = `
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
+    <h1 class="text-center mb-2">${n.title}</h1>
+    <img src="./backend/downloaded/${n!.imgURL}" alt="${n!.title}" class="mb-3">
 
-                <h1 class="fw-bold mb-2">${n.title}</h1>
+    <hr>
 
-                <h5 class="text-muted mb-3">
-                    ${n.subtitle}
-                </h5>
+    <div class="d-flex align-items-center gap-2 text-secondary small mb-3">
+        <span>${n.createdAt}</span>
+        <span>•</span>
+        <img src="./backend/downloaded/${author!.profilPictureSrc}" alt="${author!.name}" class="rounded-circle" style="width:28px;height:28px;object-fit:cover;">
+        <span>Szerző: <b>${author!.name}</b></span>
+        <span>•</span>
+        <span>Téma:
+        <b class="text-success">
+            <a href="index.html">${n.topic}</a>
+        </b>
+        </span>
+    </div>
 
-                <div class="d-flex gap-2 text-secondary small mb-3">
-                    <span>${n.createdAt}</span>
-                    <span>•</span>
-                    <span>Szerző: ${author!.name}</span>
-                    <span>•</span>
-                    <span>Téma: <b class="text-success" id="${n.topic}"><a href="index.html">${n.topic}</a></b></span>
-                </div>
+    <hr>
 
-                <img src="./backend/downloaded/${n.imgURL}" alt="${n.title}" class="img-fluid mb-4 rounded">
-
-    
-                <div class="fs-5 lh-lg">
+        <div class="fs-5 lh-lg">
                 ${marked.parse(n.content)}
-                </div>
-            </div>
+        </div>
+        </div>
         </div>
     </div>
     `;
