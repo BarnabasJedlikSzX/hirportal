@@ -338,7 +338,7 @@ body{
 
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: not-allowed;
   color: var(--color-text-secondary);
   font-size: 18px;
   padding: 0;

@@ -62,8 +62,7 @@ body {
 #login div > div input[type="text"] {
   flex: 1 !important;
   min-height: 4vh;
-  min-width: 40vh !important;
-  max-width: 40vh !important;
+  width: 20vw !important;
   background-color: #fff;
 }
 
@@ -342,7 +341,7 @@ html, body {
 
 #login .pwdToggle {
   position: absolute;
-  left: 220px;
+  left: 18vw !important;
   top: 53%;
   z-index: 10;
   background: none;
@@ -429,6 +428,7 @@ html, body {
    #login div > div input[type="password"],
    #signup div > div input[type="password"]{
     min-height: 6vh;
+    width: 70vw !important;
   }
 
   #loginbtn, #signupbtn{
@@ -436,7 +436,14 @@ html, body {
   }
 
   #login .pwdToggle{
-      right: 15%;
+      left: 70vw !important;
       top: 53%;
   }
+
+  #signup .pwdToggle{
+      left: 60vw !important;
+      top: 38%;
+  }
+
+
 }

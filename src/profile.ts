@@ -122,14 +122,14 @@ function loadUserData(){
                     <div>
                         <label for="pwd-r1">Jelszó</label>
                         <input name="pwd-r1" id="pwd1" type="password" value="${user.password}" disabled>
-                        <button type="button" class="pwdToggle">
+                        <button type="button" class="pwdToggle" disabled>
                             <i class="ti ti-eye"></i>
                         </button>
                     </div>
                     <div class="d-none">
                         <label for="pwd-r1">Jelszó mégegyszer</label>
                         <input name="pwd-r2" id="pwd2" type="password">
-                        <button type="button" class="pwdToggle">
+                        <button type="button" class="pwdToggle" disabled>
                             <i class="ti ti-eye"></i>
                         </button>
                     </div>
@@ -306,14 +306,25 @@ function ableInputs(inputs: HTMLInputElement[]){
     
     inputs.forEach(input =>{
         input.disabled = false
-    })
+    });
+    let szemek = document.querySelectorAll<HTMLButtonElement>(".pwdToggle")
+    szemek.forEach(szem =>{
+        szem.disabled = false
+        szem.style.cursor = "pointer"
+    });
 }
 
 function disableInputs(inputs: HTMLInputElement[]){
     (document.getElementById("pwd2")?.parentElement as HTMLDivElement).classList = "d-none"
     inputs.forEach(input =>{
         input.disabled = true
-    })
+    });
+    let szemek = document.querySelectorAll<HTMLButtonElement>(".pwdToggle")
+    szemek.forEach(szem =>{
+        szem.disabled = true
+        szem.style.cursor = "not-allowed"
+
+    });
     
 }
 

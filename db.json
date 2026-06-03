@@ -63,6 +63,14 @@
       "password": "asd",
       "author": false,
       "profilPictureSrc": "13.jpg"
+    },
+    {
+      "id": "AYZqAgfnNdY",
+      "name": "Lofasz",
+      "email": "lofasz@gmail.com",
+      "password": "asdasd",
+      "author": false,
+      "profilPictureSrc": "13.jpg"
     }
   ],
   "news": [
