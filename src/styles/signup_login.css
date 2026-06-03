@@ -89,7 +89,6 @@ html, body {
   flex-direction: column;
   justify-content: center;
   padding: 2.5rem 3rem;
-  height: 400px;
   position: relative;
   cursor: pointer;
 }
@@ -397,14 +396,18 @@ html, body {
     flex: unset !important;
     transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
                 padding 0.3s ease;
-    max-height: 600px;
+    /* max-height: 600px; */
     align-items: center;
   }
  
   #login.inactive,
   #signup.inactive {
-    max-height: 80px;
     overflow: hidden;
+  }
+  
+  #signup.inactive{
+    
+    height: 51vw !important;
   }
  
   #login h1,
