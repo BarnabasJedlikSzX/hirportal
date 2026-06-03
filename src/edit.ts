@@ -2,7 +2,7 @@ import { GetFormattedDate } from './components/getFormattedDate';
 import { AddNews, DeleteNews, EditNews, GetNewsById } from './api/http';
 import { Error } from './components/error';
 import { Navbar } from './components/navbar';
-import { topics } from './global/topics';
+import { allTopics } from './global/topics';
 import './styles/style.css'
 import type { News } from './types/News';
 import type { User } from './types/User';
@@ -30,7 +30,8 @@ const mde = new EasyMDE({
     minHeight: "800px"
 });
 
-for (let topic of topics) {
+for (let topic of allTopics) {
+    if (topic.includes("---")) continue
     const option = document.createElement("option")
     option.innerText = topic
     option.value = topic

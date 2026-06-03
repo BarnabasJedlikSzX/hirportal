@@ -81,23 +81,35 @@ body {
 
 #sendCommentBtn:hover,
 #sendReplyBtn:hover,
-#errorHomeBtn:hover {
+#errorHomeBtn:hover,
+#search-btn:hover {
     box-shadow: 0 3px white;
 
 }
 
 #sendCommentBtn:active,
 #sendReplyBtn:active,
-#errorHomeBtn:active {
+#errorHomeBtn:active,
+#search-btn:active {
     box-shadow: 0 3px #1a294b;
 
 }
 
 #sendCommentBtn,
 #sendReplyBtn,
-#errorHomeBtn {
+#errorHomeBtn,
+#search-btn {
     width: 5rem;
     transition: 0.3s;
+}
+
+#sidebarTopics a {
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+#sidebarTopics a:hover {
+    color: orange !important;
 }
 
 #addImgButton {

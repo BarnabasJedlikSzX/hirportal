@@ -2,6 +2,7 @@ import { GetFormattedDate } from "./getFormattedDate"
 import { GetCurrencies, GetWeather, Nevnapok } from "../api/http"
 import type { User } from "../types/User"
 import { Error } from "./error"
+import { allTopics } from "../global/topics";
 
 const pages = new Set([
     "/",
@@ -23,14 +24,33 @@ document.querySelector("#app")!.insertAdjacentHTML("beforeend", `
     <button type="button" id="scrollToTop" class="bg-warning text-dark"><i class="bi bi-arrow-up-circle-fill mt-1"></i></button>
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Témák</h5>
+    <h3 class="offcanvas-title fw-bold w-100" id="offcanvasWithBothOptionsLabel">Témák
+    <hr>
+    </h3>
+    
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <p>asd</p>
+  <div class="offcanvas-body d-flex flex-column" id="sidebarTopics">
   </div>
 </div>
     `)
+
+allTopics.forEach(topic => {
+    if (topic.includes("---")) {
+        document.querySelector("#sidebarTopics")?.insertAdjacentHTML("beforeend", `
+            <p class="text-light m-0 mt-3 fs-4">${topic.split("---")[1]}</p>
+            <hr class="mt-0">
+            `)
+    } else {
+        document.querySelector("#sidebarTopics")?.insertAdjacentHTML("beforeend", `
+            <a class="text-success fs-5 ms-3" id="topic-${topic}" href="index.html">#${topic}</a>
+            `)
+        document.getElementById("topic-" + topic)!.addEventListener('click', () => {
+            localStorage.setItem('topic', topic);
+        });
+    }
+});
+
 window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
         document.querySelector<HTMLElement>("#scrollToTop")!.style.scale = "1"

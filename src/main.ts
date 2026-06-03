@@ -122,8 +122,8 @@ document.querySelectorAll('.searchButton')!.forEach(btn => {
         searchBar.innerHTML =
             `
     <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5 search-container">
-        <input type="text" class="form-control w-50" placeholder="Keresés" id="searchValue">
-        <button class="btn btn-secondary" id="search-btn">Keresés</button>
+        <input type="text" class="form-control w-50" placeholder="Keresés cím vagy tartalom alapján..." id="searchValue">
+        <button class="btn btn-info w-25" id="search-btn"><i class="bi bi-search me-1"></i> Keresés</button>
     </div>
     `;
         if (counter % 2 == 0) searchBar.style.display = 'block';
