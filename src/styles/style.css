@@ -60,7 +60,7 @@ body {
 
 #newComment,
 #replyField {
-    transition: 0.72s;
+    transition: 1.5s cubic-bezier(0.19, 1, 0.22, 1);
     width: 15rem;
     border-radius: 10px;
     height: 2.5rem;

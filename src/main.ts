@@ -115,38 +115,40 @@ function newsRender(updatedNews: News[]) {
 
 let counter = 1;
 
-document.getElementById('search')!.addEventListener('click', () => {
-    counter++;
-    const searchBar = document.getElementById('searchBar') as HTMLDivElement;
-    searchBar.innerHTML =
-        `
+document.querySelectorAll('.searchButton')!.forEach(btn => {
+    btn.addEventListener('click', () => {
+        counter++;
+        const searchBar = document.getElementById('searchBar') as HTMLDivElement;
+        searchBar.innerHTML =
+            `
     <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5 search-container">
         <input type="text" class="form-control w-50" placeholder="Keresés" id="searchValue">
         <button class="btn btn-secondary" id="search-btn">Keresés</button>
     </div>
     `;
-    if (counter % 2 == 0) searchBar.style.display = 'block';
-    else searchBar.style.display = 'none';
+        if (counter % 2 == 0) searchBar.style.display = 'block';
+        else searchBar.style.display = 'none';
 
 
-    document.getElementById('search-btn')!.addEventListener('click', async () => {
-        sortedNews = [];
-        const searchValue = (document.getElementById('searchValue') as HTMLInputElement).value;
-        news.forEach(n => {
-            if ((n.content.toLowerCase()).includes(searchValue.toLowerCase()) ||
-                (n.subtitle.toLowerCase()).includes(searchValue.toLowerCase()) ||
-                (n.title.toLowerCase()).includes(searchValue.toLowerCase())) {
-                sortedNews.push(n);
+        document.getElementById('search-btn')!.addEventListener('click', async () => {
+            sortedNews = [];
+            const searchValue = (document.getElementById('searchValue') as HTMLInputElement).value;
+            news.forEach(n => {
+                if ((n.content.toLowerCase()).includes(searchValue.toLowerCase()) ||
+                    (n.subtitle.toLowerCase()).includes(searchValue.toLowerCase()) ||
+                    (n.title.toLowerCase()).includes(searchValue.toLowerCase())) {
+                    sortedNews.push(n);
+                }
+            });
+            if (sortedNews.length === 0) {
+                await showPopup({
+                    title: "Nincs ilyen hír",
+                    message: undefined,
+                    duration: 2000
+                })
+                await showSuccess(1500)
             }
+            newsRender(sortedNews);
         });
-        if (sortedNews.length === 0) {
-            await showPopup({
-                title: "Nincs ilyen hír",
-                message: undefined,
-                duration: 2000
-            })
-            await showSuccess(1500)
-        }
-        newsRender(sortedNews);
     });
-});
+})
