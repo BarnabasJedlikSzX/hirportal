@@ -120,7 +120,7 @@ document.getElementById('search')!.addEventListener('click', () => {
     const searchBar = document.getElementById('searchBar') as HTMLDivElement;
     searchBar.innerHTML =
         `
-    <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5">
+    <div class="container my-5 d-flex flex-column align-items-center justify-content-center gap-2 mt-5 search-container">
         <input type="text" class="form-control w-50" placeholder="Keresés" id="searchValue">
         <button class="btn btn-secondary" id="search-btn">Keresés</button>
     </div>

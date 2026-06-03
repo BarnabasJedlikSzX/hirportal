@@ -2,7 +2,6 @@ body {
     background: linear-gradient(135deg, #0f172a, #020617);
 }
 
-/* CARD */
 .glass-card {
     position: relative;
     border-radius: 8px;
@@ -20,7 +19,6 @@ body {
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* IMAGE */
 .glass-image {
     position: relative;
     height: 190px;
@@ -35,7 +33,6 @@ body {
     transform: scale(1.02);
 }
 
-/* dark overlay */
 .glass-overlay {
     position: absolute;
     inset: 0;
@@ -44,13 +41,11 @@ body {
             rgba(0, 0, 0, 0.1));
 }
 
-/* BODY */
 .glass-body {
     padding: 14px 16px 16px;
     color: white;
 }
 
-/* badge */
 .glass-badge {
     display: inline-block;
     font-size: 11px;
@@ -63,7 +58,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* title */
 .glass-title {
     font-size: 16px;
     font-weight: 600;
@@ -76,13 +70,11 @@ body {
     overflow: hidden;
 }
 
-/* meta */
 .glass-meta {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* footer */
 .glass-footer {
     padding: 10px 14px 14px;
     display: flex;
@@ -105,4 +97,19 @@ body {
 
 .glass-btn:hover {
     background: rgba(255, 255, 255, 0.15);
+}
+
+.search-container {
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
