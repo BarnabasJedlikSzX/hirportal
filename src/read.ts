@@ -49,18 +49,20 @@ function render(n: News) {
 
                 <hr>
 
-                <div class="d-flex gap-2 text-secondary small mb-3">
+                <div class="d-flex gap-2 text-secondary mb-3">
                     <span>${n.createdAt}</span>
                     <span>•</span>
-                    <img src="./backend/downloaded/${author!.profilPictureSrc}" alt="${author!.name}" class="rounded-circle" style="width:28px;height:28px;object-fit:cover;">
-                    <span>Szerző: ${author!.name}</span>
+                    
+                    <span>Szerző: 
+                    <img src="./backend/downloaded/${author!.profilPictureSrc}" alt="${author!.name}" class="rounded-circle mx-1" style="width:28px;height:28px;object-fit:cover;">
+                    ${author!.name}</span>
                     <span>•</span>
-                    <span>Téma: <b id="${n.topic}"><a href="index.html" class="text-decoration-none text-success">#${n.topic}</a></b></span>
+                    <span><b id="${n.topic}"><a href="index.html" class="text-decoration-none text-success">#${n.topic}</a></b></span>
                 </div>
 
                 <hr>
 
-                <img src="./backend/downloaded/${n.imgURL}" alt="${n.title}" class="img-fluid mb-4 rounded">
+                <img src="./backend/downloaded/${n.imgURL}" alt="${n.title}" class="img-fluid mb-4 rounded mx-auto w-100">
 
     
                 <div class="fs-5 lh-lg">

@@ -90,7 +90,7 @@ function newsRender(updatedNews: News[]) {
                             <div class="glass-overlay"></div>
                         </div>
                         <div class="glass-body">
-                            <span class="glass-badge">${n.topic}</span>
+                            <span class="glass-badge">#${n.topic}</span>
                             <h5 class="glass-title">
                                 ${n.title}
                             </h5>

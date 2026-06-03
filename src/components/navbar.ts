@@ -81,7 +81,7 @@ export function Navbar() {
 
                 <div class="d-flex col p-0">
                     <button class="btn btn-dark px-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="me-1">#</span> Témák</button>
-                    ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light ms-3" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}   
+                    ${location.pathname === "/index.html" || location.pathname === "/" ? `<button class="btn btn-light ms-3 d-none d-sm-block" id="search"><i class="bi bi-search me-1"></i> Keresés</button>` : ""}   
                 </div>
 
                 <a href="/" class="d-none d-md-block user-select-none text-center col">
@@ -99,6 +99,9 @@ export function Navbar() {
                 `
                             <li style="justify-self:center;" class="w-75 m-2">
                                 <a class="btn btn-outline-light fw-bold w-100 text-center" href="edit.html" style="width:3rem;">+</a>
+                            </li>
+                             <li>
+                            <a class="dropdown-item d-block d-md-none" href="index.html"><i class="bi bi-house-fill me-1"></i> Főoldal</a>
                             </li>
                             <li>
                             <a class="dropdown-item" href="ownNews.html"><i class="bi bi-newspaper me-1"></i> Saját hírek</a>
