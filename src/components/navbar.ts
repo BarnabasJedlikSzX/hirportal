@@ -24,9 +24,7 @@ document.querySelector("#app")!.insertAdjacentHTML("beforeend", `
     <button type="button" id="scrollToTop" class="bg-warning text-dark"><i class="bi bi-arrow-up-circle-fill mt-1"></i></button>
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
-    <h3 class="offcanvas-title fw-bold w-100" id="offcanvasWithBothOptionsLabel">Témák
-    <hr>
-    </h3>
+    <h3 class="offcanvas-title fw-bold w-100" id="offcanvasWithBothOptionsLabel">Témák</h3>
     
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
@@ -136,10 +134,11 @@ export function Navbar() {
                             <li>
                                 <a class="dropdown-item d-block d-md-none" href="index.html"><i class="bi bi-house-fill me-1"></i> Főoldal</a>
                             </li>
+                            ${location.pathname === "/index.html" || location.pathname === "/" ? `
                             <li>
                                 <button class="dropdown-item d-block d-sm-none searchButton"><i class="bi bi-search me-1"></i> Keresés</button>
                             </li>
-                            
+                            `: ""}
                             <li>
                                 <a class="dropdown-item" href="ownNews.html"><i class="bi bi-newspaper me-1"></i> Saját hírek</a>
                             </li>

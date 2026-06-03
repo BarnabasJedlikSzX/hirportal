@@ -144,7 +144,7 @@ document.querySelectorAll('.searchButton')!.forEach(btn => {
                 await showPopup({
                     title: "Nincs ilyen hír",
                     message: undefined,
-                    duration: 2000
+                    duration: 600
                 })
                 await showSuccess(1500)
             }
